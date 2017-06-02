@@ -5,29 +5,49 @@ import 'rxjs/add/operator/toPromise';
 
 import { Movies } from './movies';
 import { Movie } from './movie';
+import { MovieCredits } from './movieCredits';
+import { MovieImage } from './movieImage';
 
 @Injectable()
 export class MovieService {
     
+    private baseUrl = 'https://api.themoviedb.org/3/movie/';
+    private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19&language=en-US';
     private headers = new Headers({'Content-Type': 'application/json'});
-    private popularMovie = 'https://api.themoviedb.org/3/movie/now_playing?api_key=8109b23cc9abaf02cf3c699ec62ccc19&language=en-US&page=1';
-    private movieDetail = 'https://api.themoviedb.org/3/movie/4566?api_key=8109b23cc9abaf02cf3c699ec62ccc19&language=en-US';
-    
+
     constructor(private http: Http) { }
     
     getPopularMovie(): Promise<Movies> {
-        const movies = this.http.get(this.popularMovie)
+        const moviesUrl = this.baseUrl + 'now_playing' + this.apiKey + '&page=1';
+        const movies = this.http.get(moviesUrl)
                         .toPromise()
                         .then(response => response.json() as Movies)
                         .catch(this.handleError);
         return movies;
     }
     
-    getMovieDetail(): Promise<Movie> {
-        return this.http.get(this.movieDetail)
+    getMovieDetail(id: number): Promise<Movie> {
+        const movieDetail = this.baseUrl + id + this.apiKey;
+        return this.http.get(movieDetail)
                         .toPromise()
                         .then(response => response.json() as Movie)
                         .catch(this.handleError);
+    }
+    
+    getMovieImages(id: number): Promise<MovieImage> {
+        const movieCredits = this.baseUrl + id + '/images' + this.apiKey;
+        return this.http.get(movieCredits)
+                    .toPromise()
+                    .then(res => res.json() as MovieImage)
+                    .catch(this.handleError);
+    }
+    
+    getMovieCredits(id: number): Promise<MovieCredits> {
+        const movieCredits = this.baseUrl + id + '/credits' + this.apiKey;
+        return this.http.get(movieCredits)
+                    .toPromise()
+                    .then(res => res.json() as MovieCredits)
+                    .catch(this.handleError);
     }
     
     private handleError(error: any): Promise<any> {

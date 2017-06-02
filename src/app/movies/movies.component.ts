@@ -20,9 +20,6 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getPopularMovie()
       .then(movies => this.movieList = movies.results);
-    
-    this.movieService.getMovieDetail()
-      .then(movie => this.selectedMovie = movie);
   }
   
   onSelect(movie: Movie): void {

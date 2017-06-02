@@ -1,0 +1,54 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+
+//Import the switchMap operator to use later with the route parameters Observable.
+import 'rxjs/add/operator/switchMap';
+
+import { Movie } from '../movie';
+import { MovieCredits } from '../movieCredits';
+import { MovieImage } from '../movieImage';
+import { MovieService } from '../movie.service';
+
+@Component({
+  selector: 'movie',
+  templateUrl: './movie.component.html',
+  styleUrls: ['./movie.component.css']
+})
+export class MovieComponent implements OnInit {
+  movie: Movie;
+  movieCredits: MovieCredits;
+  movieImages: MovieImage;
+
+  constructor(
+    private movieService: MovieService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.movieService.getMovieDetail(+params['id'])
+      .then(movie => this.movie = movie);
+    });
+    
+    this.route.params.subscribe(params => {
+      this.movieService.getMovieImages(+params['id'])
+      .then(movieImages => this.movieImages = movieImages);
+    });
+    
+    this.route.params.subscribe(params => {
+      this.movieService.getMovieCredits(+params['id'])
+      .then(movieCredits => this.movieCredits = movieCredits);
+    });
+    
+    // this.route.params
+    // .switchMap((params: Params) => this.movieService.getMovieDetail(+params['id']))
+    // .subscribe(movie => this.movie = movie);
+  }
+  
+  goBack(): void {
+    this.location.back();
+  }
+
+}

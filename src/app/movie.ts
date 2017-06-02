@@ -13,4 +13,15 @@ export class Movie {
     vote_count: number;
     video: boolean;
     vote_average: number;
+    budget: number;
+    belongs_to_collection: null;
+    homepage: string;
+    imdb_id: string;
+    production_companies: Array<{name: string, id: number}>;
+    production_countries: Array<any>;
+    revenue: number;
+    runtime: number;
+    spoken_languages: Array<any>;
+    status: string;
+    tagline: string;
 }
