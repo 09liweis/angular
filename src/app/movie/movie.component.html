@@ -36,5 +36,16 @@
                 </div>
             </div>
         </div>
+        <div id="videos" *ngIf="movieVideo">
+            <h3>Videos</h3>
+            <div class="row">
+                <div class="col l3" *ngFor="let video of movieVideo.results">
+                    <iframe id="ytplayer" type="text/html" width="100%" height="315"
+                        src="https://www.youtube.com/embed/{{video.key}}?autoplay=0"
+                        frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

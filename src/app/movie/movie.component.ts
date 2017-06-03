@@ -8,6 +8,7 @@ import 'rxjs/add/operator/switchMap';
 import { Movie } from '../movie';
 import { MovieCredits } from '../movieCredits';
 import { MovieImage } from '../movieImage';
+import { MovieVideo } from '../movieVideo';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class MovieComponent implements OnInit {
   movie: Movie;
   movieCredits: MovieCredits;
   movieImages: MovieImage;
+  movieVideo: MovieVideo;
 
   constructor(
     private movieService: MovieService,
@@ -40,6 +42,11 @@ export class MovieComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.movieService.getMovieCredits(+params['id'])
       .then(movieCredits => this.movieCredits = movieCredits);
+    });
+    
+    this.route.params.subscribe(params => {
+      this.movieService.getMovieVideos(+params['id'])
+      .then(movieVideo => this.movieVideo = movieVideo);
     });
     
     // this.route.params

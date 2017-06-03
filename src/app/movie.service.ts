@@ -7,6 +7,7 @@ import { Movies } from './movies';
 import { Movie } from './movie';
 import { MovieCredits } from './movieCredits';
 import { MovieImage } from './movieImage';
+import { MovieVideo } from './movieVideo';
 
 @Injectable()
 export class MovieService {
@@ -47,6 +48,14 @@ export class MovieService {
         return this.http.get(movieCredits)
                     .toPromise()
                     .then(res => res.json() as MovieCredits)
+                    .catch(this.handleError);
+    }
+    
+    getMovieVideos(id: number): Promise<MovieVideo> {
+        const movieVideo = this.baseUrl + id + '/videos' + this.apiKey;
+        return this.http.get(movieVideo)
+                    .toPromise()
+                    .then(res => res.json() as MovieVideo)
                     .catch(this.handleError);
     }
     
