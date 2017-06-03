@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,11 +25,11 @@ import { MovieService } from './movie.service';
     MdCardModule,
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'movies',
         component: MoviesComponent
       },
       {
-        path: 'movies',
+        path: 'movies/:type',
         component: MoviesComponent
       },
       {
@@ -38,7 +38,10 @@ import { MovieService } from './movie.service';
       }
     ]),
   ],
-  providers: [MovieService],
+  providers: [
+    Title,
+    MovieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

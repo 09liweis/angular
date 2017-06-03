@@ -1,7 +1,16 @@
-<md-grid-list cols="6" rowHeight="3:5">
-    <md-grid-tile *ngFor="let movie of movieList" [class.selected]="movie === selectedMovie" [routerLink]="['/movie', movie.id]">
-        <md-card>
-            <img md-card-image src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
-        </md-card>
-    </md-grid-tile>
-</md-grid-list>
+<ul class="tabs">
+    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'now_playing']">Now Playing</a></li>-->
+    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'popular']">Popular</a></li>-->
+    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'top_rated']">Top Rated</a></li>-->
+    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>-->
+    
+    <li class="tab col s3"><a [routerLink]="['/movies', 'now_playing']">Now Playing</a></li>
+    <li class="tab col s3"><a [routerLink]="['/movies', 'popular']">Popular</a></li>
+    <li class="tab col s3"><a [routerLink]="['/movies', 'top_rated']">Top Rated</a></li>
+    <li class="tab col s3"><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
+</ul>
+<div class="row" *ngIf="movies">
+    <div class="col s2" *ngFor="let movie of movies.results" [class.selected]="movie === selectedMovie" [routerLink]="['/movie', movie.id]">
+        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
+    </div>
+</div>

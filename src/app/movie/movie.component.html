@@ -29,10 +29,15 @@
             </div>
         </div>
         <div id="images" *ngIf="movieImages">
-            <h3>Images</h3>
+            <h3>Posters</h3>
             <div class="row">
                 <div class="col l2" *ngFor="let poster of movieImages.posters">
                     <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l12" *ngFor="let backdrop of movieImages.backdrops">
+                    <img src="https://image.tmdb.org/t/p/w500{{backdrop.file_path}}" />
                 </div>
             </div>
         </div>

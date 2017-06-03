@@ -48,10 +48,6 @@ export class MovieComponent implements OnInit {
       this.movieService.getMovieVideos(+params['id'])
       .then(movieVideo => this.movieVideo = movieVideo);
     });
-    
-    // this.route.params
-    // .switchMap((params: Params) => this.movieService.getMovieDetail(+params['id']))
-    // .subscribe(movie => this.movie = movie);
   }
   
   goBack(): void {

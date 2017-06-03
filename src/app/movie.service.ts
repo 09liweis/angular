@@ -13,13 +13,13 @@ import { MovieVideo } from './movieVideo';
 export class MovieService {
     
     private baseUrl = 'https://api.themoviedb.org/3/movie/';
-    private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19&language=en-US';
+    private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) { }
     
-    getPopularMovie(): Promise<Movies> {
-        const moviesUrl = this.baseUrl + 'now_playing' + this.apiKey + '&page=1';
+    getMovies(type: String): Promise<Movies> {
+        const moviesUrl = this.baseUrl + type + this.apiKey + '&page=1';
         const movies = this.http.get(moviesUrl)
                         .toPromise()
                         .then(response => response.json() as Movies)

@@ -1,3 +1,5 @@
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Params }   from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Movie } from '../movie';
@@ -11,15 +13,21 @@ import { MovieService } from '../movie.service';
 })
 export class MoviesComponent implements OnInit {
 
-  movieList: Array<Movie>;
   movies: Movies;
   selectedMovie: Movie;
   
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private titleService: Title,
+    private movieService: MovieService,
+    private route: ActivatedRoute,
+  ) {}
   
   ngOnInit(): void {
-    this.movieService.getPopularMovie()
-      .then(movies => this.movieList = movies.results);
+
+    this.route.params
+    // (+) converts string 'id' to a number
+    .switchMap((params: Params) => this.movieService.getMovies(params['type']))
+    .subscribe((movies: Movies) => this.movies = movies);
   }
   
   onSelect(movie: Movie): void {
