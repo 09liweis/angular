@@ -1,6 +1,6 @@
 {
-  "name": "my-cli-app",
-  "version": "0.0.0",
+  "name": "Movie Angular",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
