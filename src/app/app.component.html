@@ -1,6 +1,31 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/movies/now_playing">Movies</a></li>
+      <li><a>More Coming Soon</a></li>
+    </ul>
+  </div>
+</nav>
 <!--The whole content below can be removed with the new code.-->
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="username" name="username" type="text" class="validate" [(ngModel)]="username">
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" name="password" type="password" class="validate" [(ngModel)]="password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <a (click)="login()" class="waves-effect waves-light btn">Login</a>
+    </form>
+</div>
 <div style="text-align:center">
   <h1>Welcome to {{title}}!!</h1>
-  <a routerLink="/movies/now_playing">Movies</a>
   <router-outlet></router-outlet>
 </div>

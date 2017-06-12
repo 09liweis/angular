@@ -5,11 +5,11 @@ import { Location }                 from '@angular/common';
 //Import the switchMap operator to use later with the route parameters Observable.
 import 'rxjs/add/operator/switchMap';
 
-import { Movie } from '../movie';
-import { MovieCredits } from '../movieCredits';
-import { MovieImage } from '../movieImage';
-import { MovieVideo } from '../movieVideo';
-import { MovieService } from '../movie.service';
+import { Movie } from '../models/movie';
+import { MovieCredits } from '../models/movieCredits';
+import { MovieImage } from '../models/movieImage';
+import { MovieVideo } from '../models/movieVideo';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'movie',

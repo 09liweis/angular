@@ -2,9 +2,9 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Movie } from '../movie';
-import { Movies } from '../movies';
-import { MovieService } from '../movie.service';
+import { Movie } from '../models/movie';
+import { Movies } from '../models/movies';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'movies',

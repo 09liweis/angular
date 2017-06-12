@@ -4,26 +4,35 @@ import { RouterModule }   from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdGridListModule, MdCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 
-import { MovieService } from './movie.service';
+import { MovieService } from './services/movie.service';
+import { SessionService } from './services/session.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    LoginComponent
   ],
   imports: [
+    FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     HttpModule,
     MdGridListModule,
     MdCardModule,
     RouterModule.forRoot([
+      {
+        path: 'login',
+        component: LoginComponent
+      },
       {
         path: 'movies',
         component: MoviesComponent
@@ -40,7 +49,8 @@ import { MovieService } from './movie.service';
   ],
   providers: [
     Title,
-    MovieService
+    MovieService,
+    SessionService
   ],
   bootstrap: [AppComponent]
 })

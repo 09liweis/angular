@@ -3,11 +3,11 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Movies } from './movies';
-import { Movie } from './movie';
-import { MovieCredits } from './movieCredits';
-import { MovieImage } from './movieImage';
-import { MovieVideo } from './movieVideo';
+import { Movies } from '../models/movies';
+import { Movie } from '../models/movie';
+import { MovieCredits } from '../models/movieCredits';
+import { MovieImage } from '../models/movieImage';
+import { MovieVideo } from '../models/movieVideo';
 
 @Injectable()
 export class MovieService {
