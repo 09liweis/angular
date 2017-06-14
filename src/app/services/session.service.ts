@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Token } from '../models/token';
+import { Session } from '../models/session';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,13 +12,32 @@ export class SessionService {
     
     constructor(private http: Http) { }
     
-    getToken(): Promise<Token> {
+    getToken(username: string, password: string): Promise<Session> {
         const newTokenUrl = this.baseUrl + 'token/new' + this.apiKey;
         const newToken = this.http.get(newTokenUrl)
                         .toPromise()
-                        .then(response => response.json() as Token)
+                        .then(response => this.validateLogin(username, password, response.json()))
                         .catch(this.handleError);
         return newToken;
+    }
+    
+    validateLogin(username: string, password: string, token: Token): Promise<Token> {
+        const data = '&username=' + username + '&password=' + password + '&request_token=' + token.request_token;
+        const validateUrl = this.baseUrl + 'token/validate_with_login' + this.apiKey + data;
+        const validateToken = this.http.get(validateUrl)
+                                .toPromise()
+                                .then(response => this.getSession(response.json().request_token))
+                                .catch(this.handleError);
+        return validateToken;
+    }
+    
+    getSession(request_token: string): Promise<Token> {
+        const sessionUrl = this.baseUrl + 'session/new' + this.apiKey + '&request_token=' + request_token;
+        const session = this.http.get(sessionUrl)
+                                .toPromise()
+                                .then(response => response.json() as Token)
+                                .catch(this.handleError);
+        return session;
     }
     
     private handleError(error: any): Promise<any> {

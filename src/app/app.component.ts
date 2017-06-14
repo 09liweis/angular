@@ -9,13 +9,18 @@ import { Token } from './models/token';
 })
 export class AppComponent {
   title: string = 'Movies Paradise';
-  username: string;
-  password: string;
+  username: string = 'samliweisen';
+  password: string = 'kanamemadoka2017';
   token: Token;
+  sessionId: string = '';
   
   constructor(private sessionService: SessionService) {}
   
   login(): void {
-    this.sessionService.getToken().then(res => console.log(res));
+    this.sessionService.getToken(this.username, this.password).then(res => this.sessionId = res.session_id);
+  }
+  
+  logout(): void {
+    this.sessionId = '';
   }
 }
