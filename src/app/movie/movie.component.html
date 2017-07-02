@@ -1,33 +1,93 @@
 <button (click)="goBack()">Back</button>
 
-<div class="container">
-    <div id="movie" *ngIf="movie">
-        <div class="row">
-            <img src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" />
-        </div>
-        <div class="info row">
-            <div class="col s4">
-                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
+<div id="movie" *ngIf="movie">
+    <div id="header" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')'}">
+        <div class="container">
+            <div class="info row">
+                <div class="col s4">
+                    <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
+                </div>
+                <div class="col s8">
+                    <h2 class="movie-title">{{ movie.title }} <span class="release-date">({{movie.release_date.substr(0, 4)}})</span></h2>
+                    
+                    <h3>Overview</h3>
+                    <p>{{ movie.overview }}</p>
+                    <div class="row" *ngIf="movieCredits">
+                        <h4>Feature Crew</h4>
+                        <div *ngFor="let crew of movieCredits.crew.slice(0, 6)" class="col s4">
+                            <p>{{ crew.name }}</p>
+                            <p>{{ crew.job }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col s8">
-                <h1>{{ movie.title }} ({{movie.release_date}})</h1>
-                
-                <h3>Overview</h3>
-                <p>{{ movie.overview }}</p>
-            </div>
         </div>
+    </div>
+    <div class="container">
+        <ul class="tabs">
+            <li class="tab col s3"><a (click)="changeSection('reviews')" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a></li>
+            <li class="tab col s3"><a (click)="changeSection('videos')" [routerLink]="['/movie', movie.id, 'videos']">Videos</a></li>
+            <li class="tab col s3"><a (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a></li>
+            <li class="tab col s3"><a (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a></li>
+        </ul>
+    </div>
+    <div class="container" *ngIf="!section">
         <div id="casts" *ngIf="movieCredits">
-            <h3>Casts</h3>
+            <h3>Top Billed Casts</h3>
             <div class="row">
                 <div *ngFor="let cast of movieCredits.cast.slice(0, 6)" class="col l2">
                     <div class="card">
                         <div class="card-image">
                             <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}">
                         </div>
+                        <div class="card-content">
+                            <p class="name">{{ cast.name }}</p>
+                            <span>{{ cast.character }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
+        </div>
+        <div id="videos" *ngIf="movieVideo">
+            <h3>Videos</h3>
+            <!--<div class="row">-->
+            <!--    <div class="col l3" *ngFor="let video of movieVideo.results">-->
+            <!--        <iframe id="ytplayer" type="text/html" width="100%" height="315"-->
+            <!--            src="https://www.youtube.com/embed/{{video.key}}?autoplay=0"-->
+            <!--            frameborder="0">-->
+            <!--        </iframe>-->
+            <!--    </div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="container" *ngIf="section == 'casts'">
+        <div class="row" *ngIf="movieCredits">
+            <div class="col s6">
+                <div class="row" *ngFor="let cast of movieCredits.cast">
+                    <div class="col s4">
+                        <img *ngIf="cast.profile_path" src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}">
+                    </div>
+                    <div class="col s8">
+                        <p>{{ cast.name }}</p>
+                        <p>{{ cast.character }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="row" *ngFor="let crew of movieCredits.crew">
+                    <div class="col s4">
+                        <img *ngIf="crew.profile_path" src="https://image.tmdb.org/t/p/w500{{crew.profile_path}}">
+                    </div>
+                    <div class="col s8">
+                        <p>{{ crew.name }}</p>
+                        <p>{{ crew.job }}</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container" *ngIf="section == 'images'">
         <div id="images" *ngIf="movieImages">
             <h3>Posters</h3>
             <div class="row">
@@ -38,17 +98,6 @@
             <div class="row">
                 <div class="col l12" *ngFor="let backdrop of movieImages.backdrops">
                     <img src="https://image.tmdb.org/t/p/w500{{backdrop.file_path}}" />
-                </div>
-            </div>
-        </div>
-        <div id="videos" *ngIf="movieVideo">
-            <h3>Videos</h3>
-            <div class="row">
-                <div class="col l3" *ngFor="let video of movieVideo.results">
-                    <iframe id="ytplayer" type="text/html" width="100%" height="315"
-                        src="https://www.youtube.com/embed/{{video.key}}?autoplay=0"
-                        frameborder="0">
-                    </iframe>
                 </div>
             </div>
         </div>

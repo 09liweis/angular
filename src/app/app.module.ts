@@ -44,6 +44,10 @@ import { LoginComponent } from './login/login.component';
       {
         path: 'movie/:id',
         component: MovieComponent
+      },
+      {
+        path: 'movie/:id/:section',
+        component: MovieComponent
       }
     ]),
   ],

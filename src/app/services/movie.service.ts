@@ -29,10 +29,11 @@ export class MovieService {
     
     getMovieDetail(id: number): Promise<Movie> {
         const movieDetail = this.baseUrl + id + this.apiKey;
-        return this.http.get(movieDetail)
+        const movie = this.http.get(movieDetail)
                         .toPromise()
                         .then(response => response.json() as Movie)
                         .catch(this.handleError);
+        return movie;
     }
     
     getMovieImages(id: number): Promise<MovieImage> {

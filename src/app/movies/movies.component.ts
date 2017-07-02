@@ -27,11 +27,26 @@ export class MoviesComponent implements OnInit {
     this.route.params
     // (+) converts string 'id' to a number
     .switchMap((params: Params) => this.movieService.getMovies(params['type']))
-    .subscribe((movies: Movies) => this.movies = movies);
+    .subscribe((movies: Movies) => {
+      this.movies = movies;
+      // set Page title
+      var title = this.formateTitle(this.route.snapshot.params['type']);
+      this.titleService.setTitle(title);
+    });
   }
   
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
+  }
+  
+  //need to find out string vs String
+  formateTitle(title: string): string {
+    // format 'now_playing' to 'Now Playing'
+    const result = title.split('_').map(function(word) {
+      //make word to Capitalize
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+    return result;
   }
 
 }

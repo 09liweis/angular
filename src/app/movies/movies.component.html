@@ -1,16 +1,11 @@
 <ul class="tabs">
-    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'now_playing']">Now Playing</a></li>-->
-    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'popular']">Popular</a></li>-->
-    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'top_rated']">Top Rated</a></li>-->
-    <!--<li class="tab col s3"><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>-->
-    
     <li class="tab col s3"><a [routerLink]="['/movies', 'now_playing']">Now Playing</a></li>
     <li class="tab col s3"><a [routerLink]="['/movies', 'popular']">Popular</a></li>
     <li class="tab col s3"><a [routerLink]="['/movies', 'top_rated']">Top Rated</a></li>
     <li class="tab col s3"><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
 </ul>
 <div class="row" *ngIf="movies">
-    <div class="col s2" *ngFor="let movie of movies.results" [class.selected]="movie === selectedMovie" [routerLink]="['/movie', movie.id]">
+    <a class="movie col s6 m4 l3" *ngFor="let movie of movies.results" [routerLink]="['/movie', movie.id]">
         <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
-    </div>
+    </a>
 </div>

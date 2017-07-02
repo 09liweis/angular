@@ -21,6 +21,7 @@ export class MovieComponent implements OnInit {
   movieCredits: MovieCredits;
   movieImages: MovieImage;
   movieVideo: MovieVideo;
+  section: String;
 
   constructor(
     private movieService: MovieService,
@@ -29,9 +30,15 @@ export class MovieComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (typeof this.route.snapshot.params['section'] != 'undefined') {
+      this.section = this.route.snapshot.params['section'];
+    }
     this.route.params.subscribe(params => {
       this.movieService.getMovieDetail(+params['id'])
-      .then(movie => this.movie = movie);
+      .then(movie => {
+        this.movie = movie;
+        console.log(movie);
+      });
     });
     
     this.route.params.subscribe(params => {
@@ -52,6 +59,10 @@ export class MovieComponent implements OnInit {
   
   goBack(): void {
     this.location.back();
+  }
+  
+  changeSection(section): void {
+    this.section = section;
   }
 
 }
