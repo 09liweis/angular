@@ -32,3 +32,5 @@ ng serve --host 0.0.0.0 --port 8080
 https://embed.plnkr.co/?show=preview
 
 https://medium.com/@ryanchenkie_40935/angular-cli-deployment-host-your-angular-2-app-on-heroku-3f266f13f352
+
+https://medium.com/@ervib/deploy-angular-4-app-with-express-to-heroku-6113146915ca
