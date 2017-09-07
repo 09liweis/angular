@@ -5,7 +5,9 @@
     <li class="tab col s3"><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
 </ul>
 <div class="row" *ngIf="movies">
-    <a class="movie col s6 m4 l3" *ngFor="let movie of movies.results" [routerLink]="['/movie', movie.id]">
+    <a class="movie col s6 m4 l2" *ngFor="let movie of movies.results" [routerLink]="['/movie', movie.id]">
         <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
+        <h6>{{movie.title}}</h6>
+        <p>{{movie.vote_average}}</p>
     </a>
 </div>

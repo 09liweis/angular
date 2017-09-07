@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <div class=\"nav-wrapper\">\n    <a href=\"/\" class=\"brand-logo\">Logo</a>\n    <ul id=\"nav-mobile\" class=\"right\">\n        <li><a routerLink=\"/movies/now_playing\">Movies</a></li>\n        <li><a>More Coming Soon</a></li>\n        <li *ngIf=\"sessionId != ''\"><a>{{ username }}</a></li>\n        <li *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></li>\n    </ul>\n  </div>\n</nav>\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div>\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav>\n  <div class=\"nav-wrapper\">\n    <a href=\"/\" class=\"brand-logo\">Logo</a>\n    <ul id=\"nav-mobile\" class=\"right\">\n        <li><a routerLink=\"/movies/now_playing\">Movies</a></li>\n        <li><a>More Coming Soon</a></li>\n        <li *ngIf=\"sessionId != ''\"><a>{{ username }}</a></li>\n        <li *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></li>\n    </ul>\n  </div>\n</nav>\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"container\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -363,7 +363,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".selected {\n    background: #cccccc;\n}\n\n.movie {\n    margin-bottom: 20px;\n}\n\nimg {\n    width: 100%;\n}", ""]);
+exports.push([module.i, ".selected {\n    background: #cccccc;\n}\n\n.movie {\n    margin-bottom: 20px;\n    border-radius: 5px;\n}\n\nimg {\n    width: 100%;\n    border-radius: 5px;\n}", ""]);
 
 // exports
 
@@ -376,7 +376,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/movies/movies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"tabs\">\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'now_playing']\">Now Playing</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'popular']\">Popular</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'top_rated']\">Top Rated</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'upcoming']\">Upcoming</a></li>\n</ul>\n<div class=\"row\" *ngIf=\"movies\">\n    <a class=\"movie col s6 m4 l3\" *ngFor=\"let movie of movies.results\" [routerLink]=\"['/movie', movie.id]\">\n        <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n    </a>\n</div>"
+module.exports = "<ul class=\"tabs\">\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'now_playing']\">Now Playing</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'popular']\">Popular</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'top_rated']\">Top Rated</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'upcoming']\">Upcoming</a></li>\n</ul>\n<div class=\"row\" *ngIf=\"movies\">\n    <a class=\"movie col s6 m4 l2\" *ngFor=\"let movie of movies.results\" [routerLink]=\"['/movie', movie.id]\">\n        <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        <h6>{{movie.title}}</h6>\n        <p>{{movie.vote_average}}</p>\n    </a>\n</div>"
 
 /***/ }),
 
