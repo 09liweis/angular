@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Title } from '@angular/platform-browser';
+import { Title, DomSanitizer } from '@angular/platform-browser';
 
 //Import the switchMap operator to use later with the route parameters Observable.
 import 'rxjs/add/operator/switchMap';
@@ -31,6 +31,7 @@ export class MovieComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private titleService: Title,
+    private sanitizier: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -41,6 +42,7 @@ export class MovieComponent implements OnInit {
       this.movieService.getMovieDetail(+params['id'])
       .then(movie => {
         this.movie = movie;
+        console.log(movie);
         this.titleService.setTitle(movie.title);
       });
     });
@@ -57,7 +59,7 @@ export class MovieComponent implements OnInit {
     
     this.route.params.subscribe(params => {
       this.movieService.getMovieVideos(+params['id'])
-      .then(movieVideo => this.movieVideo = movieVideo);
+      .then(movieVideo => {this.movieVideo = movieVideo;console.log(movieVideo);});
     });
     
     this.route.params.subscribe(params => {
@@ -75,6 +77,10 @@ export class MovieComponent implements OnInit {
   
   changeSection(section): void {
     this.section = section;
+  }
+  
+  getYoutubeEmbed(key) {
+    return this.sanitizier.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key + '?autoplay=0');
   }
 
 }

@@ -6,9 +6,42 @@ img {
     padding-top: 40px;
     color: #ffffff;
     position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+}
+
+.backdrop-poster {
+    position: relative;
+    box-shadow: 0px -66px 5px 5px #000 inset;
+}
+
+.basic-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.bg-black {
+    background: #06131a;
+    color: #ffffff;
+}
+
+.data {
+    margin-bottom: 50px;
+}
+
+.label {
+    color: #116f8c;
+}
+
+.genre {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px 5px 0;
+    font-size: 11px;
 }
 
 .release-date {
