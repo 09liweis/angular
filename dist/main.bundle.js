@@ -21,7 +21,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body {\n    background: rgb(245, 247, 246);\n}", ""]);
 
 // exports
 
@@ -363,7 +363,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".selected {\n    background: #cccccc;\n}\n\n.movie {\n    margin-bottom: 20px;\n    border-radius: 5px;\n}\n\nimg {\n    width: 100%;\n    border-radius: 5px;\n}", ""]);
+exports.push([module.i, ".selected {\n    background: #cccccc;\n}\n\n.movie {\n    margin-bottom: 20px;\n    border-radius: 5px;\n    position: relative;\n}\n\n.rating {\n    border: 1px solid;\n    border-radius: 5px;\n    padding: 5px;\n    background: rgb(255, 255, 255);\n}\n\n.movie .rating {\n    position: absolute;\n    top: 0;\n    right: 0;\n}\n\nimg {\n    width: 100%;\n    border-radius: 5px;\n}\n\na.active {\n    text-decoration: underline;\n}", ""]);
 
 // exports
 
@@ -376,7 +376,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/movies/movies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"tabs\">\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'now_playing']\">Now Playing</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'popular']\">Popular</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'top_rated']\">Top Rated</a></li>\n    <li class=\"tab col s3\"><a [routerLink]=\"['/movies', 'upcoming']\">Upcoming</a></li>\n</ul>\n<div class=\"row\" *ngIf=\"movies\">\n    <a class=\"movie col s6 m4 l2\" *ngFor=\"let movie of movies.results\" [routerLink]=\"['/movie', movie.id]\">\n        <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        <h6>{{movie.title}}</h6>\n        <p>{{movie.vote_average}}</p>\n    </a>\n</div>"
+module.exports = "<ul class=\"tabs\">\n    <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.active]=\"selectedLink == link\" [routerLink]=\"['/movies', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n</ul>\n<div class=\"row\" *ngIf=\"movies\">\n    <a class=\"movie-wrapper col s6 m4 l3\" *ngFor=\"let movie of movies.results\" [routerLink]=\"['/movie', movie.id]\">\n        <div class=\"movie\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n            <span class=\"rating\">{{movie.vote_average}}</span>\n        </div>\n    </a>\n</div>"
 
 /***/ }),
 
@@ -410,6 +410,13 @@ var MoviesComponent = (function () {
     }
     MoviesComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.links = [
+            'now_playing',
+            'popular',
+            'top_rated',
+            'upcoming'
+        ];
+        this.selectedLink = 'now_playing';
         this.route.params
             .switchMap(function (params) { return _this.movieService.getMovies(params['type']); })
             .subscribe(function (movies) {

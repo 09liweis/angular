@@ -13,6 +13,8 @@ import { MovieService } from '../services/movie.service';
 })
 export class MoviesComponent implements OnInit {
 
+  selectedLink: String;
+  links: Array<String>;
   movies: Movies;
   selectedMovie: Movie;
   
@@ -23,6 +25,13 @@ export class MoviesComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
+    this.links = [
+      'now_playing',
+      'popular',
+      'top_rated',
+      'upcoming'
+    ];
+    this.selectedLink = 'now_playing';
 
     this.route.params
     // (+) converts string 'id' to a number
