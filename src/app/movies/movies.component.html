@@ -2,10 +2,5 @@
     <li class="tab col s3" *ngFor="let link of links"><a [class.active]="selectedLink == link" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a></li>
 </ul>
 <div class="row" *ngIf="movies">
-    <a class="movie-wrapper col s6 m4 l3" *ngFor="let movie of movies.results" [routerLink]="['/movie', movie.id]">
-        <div class="movie">
-            <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
-            <span class="rating">{{movie.vote_average}}</span>
-        </div>
-    </a>
+    <single-movie *ngFor="let movie of movies.results" [movie]=movie></single-movie>
 </div>

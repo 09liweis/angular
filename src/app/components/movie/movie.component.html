@@ -1,0 +1,6 @@
+<a class="movie-wrapper col s6 m4 l3" [routerLink]="['/movie', movie.id]">
+    <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
+        <span class="rating">{{movie.vote_average}}</span>
+    </div>
+</a>

@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
+import { SingleMovieComponent } from './components/movie/movie.component';
 
 import { MovieService } from './services/movie.service';
 import { SessionService } from './services/session.service';
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     MoviesComponent,
     MovieComponent,
+    SingleMovieComponent,
     LoginComponent
   ],
   imports: [

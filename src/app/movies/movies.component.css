@@ -2,30 +2,6 @@
     background: #cccccc;
 }
 
-.movie {
-    margin-bottom: 20px;
-    border-radius: 5px;
-    position: relative;
-}
-
-.rating {
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 5px;
-    background: rgb(255, 255, 255);
-}
-
-.movie .rating {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-img {
-    width: 100%;
-    border-radius: 5px;
-}
-
 a.active {
     text-decoration: underline;
 }
