@@ -106,7 +106,21 @@
                         </div>
                     </div>
                 </div>
-                
+                <div id="similar-movies" *ngIf="similarMovies">
+                    <div class="row">
+                        <h5 class="left">Similar Movies</h5>
+                        <a class="right" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let movie of similarMovies.results.slice(0, 6)" class="col s2 m2 l2">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

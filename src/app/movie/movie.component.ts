@@ -7,6 +7,7 @@ import { Title, DomSanitizer } from '@angular/platform-browser';
 import 'rxjs/add/operator/switchMap';
 
 import { Movie } from '../models/movie';
+import { Movies } from '../models/movies';
 import { MovieCredits } from '../models/movieCredits';
 import { MovieImage } from '../models/movieImage';
 import { MovieVideo } from '../models/movieVideo';
@@ -25,6 +26,7 @@ export class MovieComponent implements OnInit {
   movieVideo: MovieVideo;
   movieReviews: MovieReviews;
   section: String;
+  similarMovies: Movies;
 
   constructor(
     private movieService: MovieService,
@@ -59,16 +61,23 @@ export class MovieComponent implements OnInit {
     
     this.route.params.subscribe(params => {
       this.movieService.getMovieVideos(+params['id'])
-      .then(movieVideo => {this.movieVideo = movieVideo;console.log(movieVideo);});
+      .then(movieVideo => this.movieVideo = movieVideo);
     });
     
     this.route.params.subscribe(params => {
       this.movieService.getMovieReviews(+params['id'])
       .then(movieReviews => {
         this.movieReviews = movieReviews;
-        console.log(movieReviews);
       });
-    })
+    });
+    
+    this.route.params.subscribe(params => {
+      this.movieService.getSimilarMovies(+params['id'])
+      .then(similarMovies => {
+        this.similarMovies = similarMovies;
+        console.log(similarMovies);
+      });
+    });
   }
   
   goBack(): void {
