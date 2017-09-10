@@ -105,6 +105,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_movie_service__ = __webpack_require__("../../../../../src/app/services/movie.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_session_service__ = __webpack_require__("../../../../../src/app/services/session.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -112,6 +113,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -138,7 +140,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__movies_movies_component__["a" /* MoviesComponent */],
             __WEBPACK_IMPORTED_MODULE_9__movie_movie_component__["a" /* MovieComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__["a" /* SingleMovieComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__["a" /* PersonComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
@@ -204,7 +207,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/movie/movie.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"movie-wrapper col s6 m4 l3\" [routerLink]=\"['/movie', movie.id]\">\n    <div class=\"movie\">\n        <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </div>\n</a>"
+module.exports = "<a class=\"movie-wrapper col s2 m2 l2\" [routerLink]=\"['/movie', movie.id]\">\n    <div class=\"movie\">\n        <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </div>\n</a>"
 
 /***/ }),
 
@@ -248,6 +251,74 @@ SingleMovieComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=movie.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/person/person.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/person/person.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col s2 m2 l2\">\n    <div class=\"card\">\n        <div class=\"card-image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{cast.profile_path}}\">\n        </div>\n        <div class=\"card-content\">\n            <span class=\"label\">{{ cast.name }}</span>\n            <span>{{ cast.character }}</span>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/person/person.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_cast__ = __webpack_require__("../../../../../src/app/models/cast.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PersonComponent = (function () {
+    function PersonComponent() {
+    }
+    PersonComponent.prototype.ngOnInit = function () {
+    };
+    return PersonComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__models_cast__["a" /* Cast */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__models_cast__["a" /* Cast */]) === "function" && _a || Object)
+], PersonComponent.prototype, "cast", void 0);
+PersonComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'person',
+        template: __webpack_require__("../../../../../src/app/components/person/person.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/person/person.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PersonComponent);
+
+var _a;
+//# sourceMappingURL=person.component.js.map
 
 /***/ }),
 
@@ -312,6 +383,21 @@ LoginComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/models/cast.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Cast; });
+var Cast = (function () {
+    function Cast() {
+    }
+    return Cast;
+}());
+
+//# sourceMappingURL=cast.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/models/movie.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -348,7 +434,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/movie/movie.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button (click)=\"goBack()\">Back</button>\n\n<div id=\"movie\" *ngIf=\"movie\">\n    <div id=\"header\">\n        <div class=\"backdrop-poster\">\n            <img src=\"https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}\" />\n            <div class=\"basic-info\">\n                <h5 class=\"movie-title\">{{ movie.title }}</h5>\n                <span class=\"release-date\">{{movie.release_date.substr(0, 4)}}</span>\n                <span class=\"rating\">{{movie.vote_average}}</span>\n            </div>\n        </div>\n        <div class=\"info row\">\n            <div class=\"bg-black row col s6\">\n                <div class=\"col s4\">\n                    <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" />\n                </div>\n                <div class=\"col s8\">\n                    <p>{{movie.tagline}}</p>\n                    <p>{{ movie.overview }}</p>\n                    <div class=\"genres\">\n                        <span class=\"label\">Genres: </span>\n                        <span *ngFor=\"let genre of movie.genres\" class=\"genre\">{{genre.name}}</span>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col s6\">\n                <div id=\"videos\" *ngIf=\"movieVideo\">\n                    <iframe id=\"ytplayer\" type=\"text/html\" width=\"100%\" height=\"315\"\n                        [src]=\"getYoutubeEmbed(movieVideo.results[0].key)\"\n                        frameborder=\"0\">\n                    </iframe>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"bg-black col s2\">\n            <h5>Movie Data</h5>\n            <div class=\"data\">\n                <h6 class=\"label\">Status:</h6>\n                <p>{{movie.status}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Release Information:</h6>\n                <p>{{movie.release_date}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Original Language:</h6>\n                <p>{{movie.original_language}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Runtime:</h6>\n                <p>{{movie.runtime}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Revenue:</h6>\n                <p>{{movie.revenue}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Homepage:</h6>\n                <p><a href=\"{{movie.homepage}}\" target=\"_blank\">{{movie.homepage}}</a></p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Production Companies:</h6>\n                <p *ngFor=\"let company of movie.production_companies\">{{company.name}}</p>\n            </div>\n        </div>\n        <div class=\"col s10\">\n            <div class=\"\" *ngIf=\"!section\">\n                <div id=\"casts\" *ngIf=\"movieCredits\">\n                    <div class=\"row\">\n                        <h5 class=\"left\">Feature Casts</h5>\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full casts</a>\n                    </div>\n                    <div class=\"row\">\n                        <div *ngFor=\"let cast of movieCredits.cast.slice(0, 6)\" class=\"col s2 m2 l2\">\n                            <div class=\"card\">\n                                <div class=\"card-image\">\n                                    <img src=\"https://image.tmdb.org/t/p/w500{{cast.profile_path}}\">\n                                </div>\n                                <div class=\"card-content\">\n                                    <span class=\"label\">{{ cast.name }}</span>\n                                    <span>{{ cast.character }}</span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div id=\"crews\" *ngIf=\"movieCredits\">\n                    <div class=\"row\">\n                        <h5 class=\"left\">Feature Crews</h5>\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full crews</a>\n                    </div>\n                    <div class=\"row\">\n                        <div *ngFor=\"let crew of movieCredits.crew.slice(0, 6)\" class=\"col s2 m2 l2\">\n                            <div class=\"card\">\n                                <div class=\"card-image\">\n                                    <img src=\"https://image.tmdb.org/t/p/w500{{crew.profile_path}}\">\n                                </div>\n                                <div class=\"card-content\">\n                                    <span class=\"label\">{{ crew.name }}</span>\n                                    <span>{{ crew.character }}</span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div id=\"similar-movies\" *ngIf=\"similarMovies\">\n                    <div class=\"row\">\n                        <h5 class=\"left\">Similar Movies</h5>\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'similar']\">View All Similar Movies</a>\n                    </div>\n                    <div class=\"row\">\n                        <single-movie *ngFor=\"let movie of similarMovies.results.slice(0, 6)\" [movie]=movie></single-movie>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a (click)=\"changeSection('reviews')\" [routerLink]=\"['/movie', movie.id, 'reviews']\">Reviews</a></li>\n            <li class=\"tab col s3\"><a (click)=\"changeSection('videos')\" [routerLink]=\"['/movie', movie.id, 'videos']\">Videos</a></li>\n            <li class=\"tab col s3\"><a (click)=\"changeSection('images')\" [routerLink]=\"['/movie', movie.id, 'images']\">Images</a></li>\n            <li class=\"tab col s3\"><a (click)=\"changeSection('casts')\" [routerLink]=\"['/movie', movie.id, 'casts']\">Casts</a></li>\n        </ul>\n    </div>\n    <div class=\"container\" *ngIf=\"section == 'reviews'\">\n        <div id=\"reviews\" *ngIf=\"movieReviews\">\n            <h3>Reviews</h3>\n            <div class=\"row card\" *ngFor=\"let review of movieReviews.results\">\n                <div class=\"col s2\">\n                    <p>{{ review.author }}</p>\n                </div>\n                <div class=\"col s10\">\n                    <p>{{ review.content }}</p>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"container\" *ngIf=\"section == 'casts'\">\n        <div class=\"row\" *ngIf=\"movieCredits\">\n            <div class=\"col s6\">\n                <div class=\"row\" *ngFor=\"let cast of movieCredits.cast\">\n                    <div class=\"col s4\">\n                        <img *ngIf=\"cast.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{cast.profile_path}}\">\n                    </div>\n                    <div class=\"col s8\">\n                        <p>{{ cast.name }}</p>\n                        <p>{{ cast.character }}</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col s6\">\n                <div class=\"row\" *ngFor=\"let crew of movieCredits.crew\">\n                    <div class=\"col s4\">\n                        <img *ngIf=\"crew.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{crew.profile_path}}\">\n                    </div>\n                    <div class=\"col s8\">\n                        <p>{{ crew.name }}</p>\n                        <p>{{ crew.job }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"container\" *ngIf=\"section == 'images'\">\n        <div id=\"images\" *ngIf=\"movieImages\">\n            <h3>Posters</h3>\n            <div class=\"row\">\n                <div class=\"col l2\" *ngFor=\"let poster of movieImages.posters\">\n                    <img src=\"https://image.tmdb.org/t/p/w500{{poster.file_path}}\" />\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col l12\" *ngFor=\"let backdrop of movieImages.backdrops\">\n                    <img src=\"https://image.tmdb.org/t/p/w500{{backdrop.file_path}}\" />\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<button (click)=\"goBack()\">Back</button>\n\n<div id=\"movie\" *ngIf=\"movie\">\n    <div id=\"header\">\n        <div class=\"backdrop-poster\">\n            <img src=\"https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}\" />\n            <div class=\"basic-info\">\n                <h5 class=\"movie-title\">{{ movie.title }}</h5>\n                <span class=\"release-date\">{{movie.release_date.substr(0, 4)}}</span>\n                <span class=\"rating\">{{movie.vote_average}}</span>\n            </div>\n        </div>\n        <div class=\"info row\">\n            <div class=\"bg-black row col s6\">\n                <div class=\"col s4\">\n                    <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" />\n                </div>\n                <div class=\"col s8\">\n                    <p>{{movie.tagline}}</p>\n                    <p>{{ movie.overview }}</p>\n                    <div class=\"genres\">\n                        <span class=\"label\">Genres: </span>\n                        <span *ngFor=\"let genre of movie.genres\" class=\"genre\">{{genre.name}}</span>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col s6\">\n                <div id=\"videos\" *ngIf=\"movieVideo\">\n                    <iframe id=\"ytplayer\" type=\"text/html\" width=\"100%\" height=\"315\"\n                        [src]=\"getYoutubeEmbed(movieVideo.results[0].key)\"\n                        frameborder=\"0\">\n                    </iframe>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"bg-black col s2\">\n            <h5>Movie Data</h5>\n            <div class=\"data\">\n                <h6 class=\"label\">Status:</h6>\n                <p>{{movie.status}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Release Information:</h6>\n                <p>{{movie.release_date}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Original Language:</h6>\n                <p>{{movie.original_language}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Runtime:</h6>\n                <p>{{movie.runtime}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Revenue:</h6>\n                <p>{{movie.revenue}}</p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Homepage:</h6>\n                <p><a href=\"{{movie.homepage}}\" target=\"_blank\">{{movie.homepage}}</a></p>\n            </div>\n            <div class=\"data\">\n                <h6 class=\"label\">Production Companies:</h6>\n                <p *ngFor=\"let company of movie.production_companies\">{{company.name}}</p>\n            </div>\n        </div>\n        <div class=\"col s10\">\n            <div class=\"\" *ngIf=\"!section\">\n                <div id=\"casts\" *ngIf=\"movieCredits\">\n                    <div class=\"row\">\n                        <h5 class=\"left\">Feature Casts</h5>\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full casts</a>\n                    </div>\n                    <div class=\"row\">\n                        <person *ngFor=\"let cast of movieCredits.cast.slice(0, 6)\" [cast]=cast></person>\n                    </div>\n                </div>\n                <div id=\"crews\" *ngIf=\"movieCredits\">\n                    <div class=\"row\">\n                        <h5 class=\"left\">Feature Crews</h5>\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full crews</a>\n                    </div>\n                    <div class=\"row\">\n                        <person *ngFor=\"let cast of movieCredits.crew.slice(0, 6)\" [cast]=cast></person>\n                    </div>\n                </div>\n                <div id=\"similar-movies\" *ngIf=\"similarMovies\">\n                    <div class=\"row\">\n                        <h5 class=\"left\">Similar Movies</h5>\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'similar']\">View All Similar Movies</a>\n                    </div>\n                    <div class=\"row\">\n                        <single-movie *ngFor=\"let movie of similarMovies.results.slice(0, 6)\" [movie]=movie></single-movie>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a (click)=\"changeSection('reviews')\" [routerLink]=\"['/movie', movie.id, 'reviews']\">Reviews</a></li>\n            <li class=\"tab col s3\"><a (click)=\"changeSection('videos')\" [routerLink]=\"['/movie', movie.id, 'videos']\">Videos</a></li>\n            <li class=\"tab col s3\"><a (click)=\"changeSection('images')\" [routerLink]=\"['/movie', movie.id, 'images']\">Images</a></li>\n            <li class=\"tab col s3\"><a (click)=\"changeSection('casts')\" [routerLink]=\"['/movie', movie.id, 'casts']\">Casts</a></li>\n        </ul>\n    </div>\n    <div class=\"container\" *ngIf=\"section == 'reviews'\">\n        <div id=\"reviews\" *ngIf=\"movieReviews\">\n            <h3>Reviews</h3>\n            <div class=\"row card\" *ngFor=\"let review of movieReviews.results\">\n                <div class=\"col s2\">\n                    <p>{{ review.author }}</p>\n                </div>\n                <div class=\"col s10\">\n                    <p>{{ review.content }}</p>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"container\" *ngIf=\"section == 'casts'\">\n        <div class=\"row\" *ngIf=\"movieCredits\">\n            <div class=\"col s6\">\n                <div class=\"row\" *ngFor=\"let cast of movieCredits.cast\">\n                    <div class=\"col s4\">\n                        <img *ngIf=\"cast.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{cast.profile_path}}\">\n                    </div>\n                    <div class=\"col s8\">\n                        <p>{{ cast.name }}</p>\n                        <p>{{ cast.character }}</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col s6\">\n                <div class=\"row\" *ngFor=\"let crew of movieCredits.crew\">\n                    <div class=\"col s4\">\n                        <img *ngIf=\"crew.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{crew.profile_path}}\">\n                    </div>\n                    <div class=\"col s8\">\n                        <p>{{ crew.name }}</p>\n                        <p>{{ crew.job }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"container\" *ngIf=\"section == 'images'\">\n        <div id=\"images\" *ngIf=\"movieImages\">\n            <h3>Posters</h3>\n            <div class=\"row\">\n                <div class=\"col l2\" *ngFor=\"let poster of movieImages.posters\">\n                    <img src=\"https://image.tmdb.org/t/p/w500{{poster.file_path}}\" />\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col l12\" *ngFor=\"let backdrop of movieImages.backdrops\">\n                    <img src=\"https://image.tmdb.org/t/p/w500{{backdrop.file_path}}\" />\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -397,7 +483,6 @@ var MovieComponent = (function () {
             _this.movieService.getMovieDetail(+params['id'])
                 .then(function (movie) {
                 _this.movie = movie;
-                console.log(movie);
                 _this.titleService.setTitle(movie.title);
             });
         });
@@ -423,7 +508,6 @@ var MovieComponent = (function () {
             _this.movieService.getSimilarMovies(+params['id'])
                 .then(function (similarMovies) {
                 _this.similarMovies = similarMovies;
-                console.log(similarMovies);
             });
         });
     };

@@ -44,7 +44,6 @@ export class MovieComponent implements OnInit {
       this.movieService.getMovieDetail(+params['id'])
       .then(movie => {
         this.movie = movie;
-        console.log(movie);
         this.titleService.setTitle(movie.title);
       });
     });
@@ -75,7 +74,6 @@ export class MovieComponent implements OnInit {
       this.movieService.getSimilarMovies(+params['id'])
       .then(similarMovies => {
         this.similarMovies = similarMovies;
-        console.log(similarMovies);
       });
     });
   }

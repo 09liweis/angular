@@ -74,17 +74,7 @@
                         <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
                     </div>
                     <div class="row">
-                        <div *ngFor="let cast of movieCredits.cast.slice(0, 6)" class="col s2 m2 l2">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="label">{{ cast.name }}</span>
-                                    <span>{{ cast.character }}</span>
-                                </div>
-                            </div>
-                        </div>
+                        <person *ngFor="let cast of movieCredits.cast.slice(0, 6)" [cast]=cast></person>
                     </div>
                 </div>
                 <div id="crews" *ngIf="movieCredits">
@@ -93,17 +83,7 @@
                         <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full crews</a>
                     </div>
                     <div class="row">
-                        <div *ngFor="let crew of movieCredits.crew.slice(0, 6)" class="col s2 m2 l2">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="https://image.tmdb.org/t/p/w500{{crew.profile_path}}">
-                                </div>
-                                <div class="card-content">
-                                    <span class="label">{{ crew.name }}</span>
-                                    <span>{{ crew.character }}</span>
-                                </div>
-                            </div>
-                        </div>
+                        <person *ngFor="let cast of movieCredits.crew.slice(0, 6)" [cast]=cast></person>
                     </div>
                 </div>
                 <div id="similar-movies" *ngIf="similarMovies">
