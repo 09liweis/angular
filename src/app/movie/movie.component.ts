@@ -46,31 +46,21 @@ export class MovieComponent implements OnInit {
         this.movie = movie;
         this.titleService.setTitle(movie.title);
       });
-    });
-    
-    this.route.params.subscribe(params => {
+      
       this.movieService.getMovieImages(+params['id'])
       .then(movieImages => this.movieImages = movieImages);
-    });
-    
-    this.route.params.subscribe(params => {
+      
       this.movieService.getMovieCredits(+params['id'])
       .then(movieCredits => this.movieCredits = movieCredits);
-    });
-    
-    this.route.params.subscribe(params => {
+      
       this.movieService.getMovieVideos(+params['id'])
       .then(movieVideo => this.movieVideo = movieVideo);
-    });
-    
-    this.route.params.subscribe(params => {
+      
       this.movieService.getMovieReviews(+params['id'])
       .then(movieReviews => {
         this.movieReviews = movieReviews;
       });
-    });
-    
-    this.route.params.subscribe(params => {
+      
       this.movieService.getSimilarMovies(+params['id'])
       .then(similarMovies => {
         this.similarMovies = similarMovies;

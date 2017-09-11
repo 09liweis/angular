@@ -485,26 +485,16 @@ var MovieComponent = (function () {
                 _this.movie = movie;
                 _this.titleService.setTitle(movie.title);
             });
-        });
-        this.route.params.subscribe(function (params) {
             _this.movieService.getMovieImages(+params['id'])
                 .then(function (movieImages) { return _this.movieImages = movieImages; });
-        });
-        this.route.params.subscribe(function (params) {
             _this.movieService.getMovieCredits(+params['id'])
                 .then(function (movieCredits) { return _this.movieCredits = movieCredits; });
-        });
-        this.route.params.subscribe(function (params) {
             _this.movieService.getMovieVideos(+params['id'])
                 .then(function (movieVideo) { return _this.movieVideo = movieVideo; });
-        });
-        this.route.params.subscribe(function (params) {
             _this.movieService.getMovieReviews(+params['id'])
                 .then(function (movieReviews) {
                 _this.movieReviews = movieReviews;
             });
-        });
-        this.route.params.subscribe(function (params) {
             _this.movieService.getSimilarMovies(+params['id'])
                 .then(function (similarMovies) {
                 _this.similarMovies = similarMovies;
