@@ -41,6 +41,9 @@ export class MovieComponent implements OnInit {
       this.section = this.route.snapshot.params['section'];
     }
     this.route.params.subscribe(params => {
+      //scroll page to top
+      window.scrollTo(0, 0);
+      
       this.movieService.getMovieDetail(+params['id'])
       .then(movie => {
         this.movie = movie;

@@ -480,6 +480,8 @@ var MovieComponent = (function () {
             this.section = this.route.snapshot.params['section'];
         }
         this.route.params.subscribe(function (params) {
+            //scroll page to top
+            window.scrollTo(0, 0);
             _this.movieService.getMovieDetail(+params['id'])
                 .then(function (movie) {
                 _this.movie = movie;
