@@ -10,12 +10,12 @@
                 <span class="rating">{{movie.vote_average}}</span>
             </div>
         </div>
-        <div class="info row">
-            <div class="bg-black row col s6">
-                <div class="col s4">
+        <div class="info columns">
+            <div class="bg-black columns column s6">
+                <div class="column s4">
                     <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
                 </div>
-                <div class="col s8">
+                <div class="column s8">
                     <p>{{movie.tagline}}</p>
                     <p>{{ movie.overview }}</p>
                     <div class="genres">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s6">
+            <div class="column s6">
                 <div id="videos" *ngIf="movieVideo">
                     <iframe id="ytplayer" type="text/html" width="100%" height="315"
                         [src]="getYoutubeEmbed(movieVideo.results[0].key)"
@@ -34,8 +34,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="bg-black col s2">
+    <div class="columns">
+        <div class="bg-black column is-2">
             <h5>Movie Data</h5>
             <div class="data">
                 <h6 class="label">Status:</h6>
@@ -66,33 +66,33 @@
                 <p *ngFor="let company of movie.production_companies">{{company.name}}</p>
             </div>
         </div>
-        <div class="col s10">
+        <div class="column is-10">
             <div class="" *ngIf="!section">
                 <div id="casts" *ngIf="movieCredits">
-                    <div class="row">
+                    <div class="columns">
                         <h5 class="left">Feature Casts</h5>
                         <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
                     </div>
-                    <div class="row">
+                    <div class="columns">
                         <person *ngFor="let cast of movieCredits.cast.slice(0, 6)" [cast]=cast></person>
                     </div>
                 </div>
                 <div id="crews" *ngIf="movieCredits">
-                    <div class="row">
+                    <div class="columns">
                         <h5 class="left">Feature Crews</h5>
                         <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full crews</a>
                     </div>
-                    <div class="row">
+                    <div class="columns">
                         <person *ngFor="let cast of movieCredits.crew.slice(0, 6)" [cast]=cast></person>
                     </div>
                 </div>
                 <div id="similar-movies" *ngIf="similarMovies">
-                    <div class="row">
+                    <div class="columns">
                         <h5 class="left">Similar Movies</h5>
                         <a class="right" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
                     </div>
-                    <div class="row">
-                        <single-movie *ngFor="let movie of similarMovies.results.slice(0, 6)" [movie]=movie></single-movie>
+                    <div class="columns">
+                        <movie-list [movies]=(similarMovies)></movie-list>
                     </div>
                 </div>
             </div>

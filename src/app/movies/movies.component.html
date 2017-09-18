@@ -1,6 +1,8 @@
-<ul class="tabs">
-    <li class="tab col s3" *ngFor="let link of links"><a [class.active]="selectedLink == link" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a></li>
-</ul>
-<div class="row" *ngIf="movies">
-    <single-movie *ngFor="let movie of movies.results" [movie]=movie></single-movie>
+<div class="tabs is-centered">
+    <ul>
+        <li class="tab col s3" *ngFor="let link of links"><a [class.is-active]="selectedLink == link" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a></li>
+    </ul>
+</div>
+<div class="container fluid">
+    <movie-list [movies]=movies></movie-list>
 </div>

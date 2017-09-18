@@ -15,6 +15,7 @@ import { MovieService } from './services/movie.service';
 import { SessionService } from './services/session.service';
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PersonComponent } from './components/person/person.component';
     MovieComponent,
     SingleMovieComponent,
     LoginComponent,
-    PersonComponent
+    PersonComponent,
+    MovieListComponent
   ],
   imports: [
     FormsModule,
