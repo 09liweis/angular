@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\r\n    <div class=\"navbar-brand\">\r\n        <a class=\"navbar-item\" href=\"/\">\r\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\r\n        </a>\r\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\r\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\r\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\r\n    \r\n        <button class=\"button navbar-burger\">\r\n            <span></span>\r\n            <span></span>\r\n            <span></span>\r\n        </button>\r\n    </div>\r\n</nav>\r\n\r\n<!--The whole content below can be removed with the new code.-->\r\n<div class=\"row\" *ngIf=\"sessionId == ''\">\r\n    <form class=\"col s12\">\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\r\n                <label for=\"username\">Username</label>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\r\n                <label for=\"password\">Password</label>\r\n            </div>\r\n        </div>\r\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\r\n    </form>\r\n</div>\r\n<div class=\"\">\r\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\r\n  <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\r\n    <div class=\"navbar-brand\">\r\n        <a class=\"navbar-item\" href=\"/\">\r\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\r\n        </a>\r\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\r\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\r\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\r\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\r\n    \r\n        <button class=\"button navbar-burger\">\r\n            <span></span>\r\n            <span></span>\r\n            <span></span>\r\n        </button>\r\n    </div>\r\n</nav>\r\n\r\n<!--The whole content below can be removed with the new code.-->\r\n<div class=\"row\" *ngIf=\"sessionId == ''\">\r\n    <form class=\"col s12\">\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\r\n                <label for=\"username\">Username</label>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\r\n                <label for=\"password\">Password</label>\r\n            </div>\r\n        </div>\r\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\r\n    </form>\r\n</div>\r\n<div class=\"\">\r\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\r\n  <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -104,11 +104,13 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__ = __webpack_require__("../../../../../src/app/components/movie/movie.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_movie_service__ = __webpack_require__("../../../../../src/app/services/movie.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_session_service__ = __webpack_require__("../../../../../src/app/services/session.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__ = __webpack_require__("../../../../../src/app/components/movie-list/movie-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__ = __webpack_require__("../../../../../src/app/pages/persons/persons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_person_service__ = __webpack_require__("../../../../../src/app/services/person.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_news_service__ = __webpack_require__("../../../../../src/app/services/news.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_movie_list_movie_list_component__ = __webpack_require__("../../../../../src/app/components/movie-list/movie-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_persons_persons_component__ = __webpack_require__("../../../../../src/app/pages/persons/persons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_person_service__ = __webpack_require__("../../../../../src/app/services/person.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_news_news_component__ = __webpack_require__("../../../../../src/app/pages/news/news.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -116,6 +118,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -146,10 +150,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__["a" /* SingleMovieComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__["a" /* PersonComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__["a" /* MovieListComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__["a" /* PersonsComponent */]
+            __WEBPACK_IMPORTED_MODULE_14__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_person_person_component__["a" /* PersonComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_movie_list_movie_list_component__["a" /* MovieListComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_persons_persons_component__["a" /* PersonsComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_news_news_component__["a" /* NewsComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
@@ -161,7 +166,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot([
                 {
                     path: 'login',
-                    component: __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_14__login_login_component__["a" /* LoginComponent */]
+                },
+                {
+                    path: 'news',
+                    component: __WEBPACK_IMPORTED_MODULE_19__pages_news_news_component__["a" /* NewsComponent */]
                 },
                 {
                     path: 'movies',
@@ -181,15 +190,16 @@ AppModule = __decorate([
                 },
                 {
                     path: 'persons/:type',
-                    component: __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__["a" /* PersonsComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_17__pages_persons_persons_component__["a" /* PersonsComponent */]
                 }
             ]),
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */],
             __WEBPACK_IMPORTED_MODULE_11__services_movie_service__["a" /* MovieService */],
-            __WEBPACK_IMPORTED_MODULE_12__services_session_service__["a" /* SessionService */],
-            __WEBPACK_IMPORTED_MODULE_17__services_person_service__["a" /* PersonService */]
+            __WEBPACK_IMPORTED_MODULE_18__services_person_service__["a" /* PersonService */],
+            __WEBPACK_IMPORTED_MODULE_13__services_news_service__["a" /* NewsService */],
+            __WEBPACK_IMPORTED_MODULE_12__services_session_service__["a" /* SessionService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
@@ -723,6 +733,80 @@ var _a, _b, _c;
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/news/news.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/news/news.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"columns is-multiline\">\r\n    <a class=\"column is-3\" *ngFor=\"let item of news\" href=\"{{item.link}}\" target=\"_blank\">\r\n        <div class=\"card\">\r\n            <div class=\"card-image\">\r\n                <figure class=\"image\">\r\n                    <img src=\"{{item.featured_image.source}}\" alt=\"Placeholder image\">\r\n                </figure>\r\n            </div>\r\n            <div class=\"card-content\">\r\n                <div class=\"content\">\r\n                    <p [innerHTML]=item.title></p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </a>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/news/news.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_news_service__ = __webpack_require__("../../../../../src/app/services/news.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NewsComponent = (function () {
+    function NewsComponent(newsService, titleService) {
+        this.newsService = newsService;
+        this.titleService = titleService;
+    }
+    NewsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.newsService.getNewsFromRottentomatoes()
+            .then(function (news) {
+            _this.news = news;
+            _this.titleService.setTitle('Movie Paradise - News');
+        });
+    };
+    return NewsComponent;
+}());
+NewsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'news',
+        template: __webpack_require__("../../../../../src/app/pages/news/news.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/news/news.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_news_service__["a" /* NewsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_news_service__["a" /* NewsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */]) === "function" && _b || Object])
+], NewsComponent);
+
+var _a, _b;
+//# sourceMappingURL=news.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/persons/persons.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -744,7 +828,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/persons/persons.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tabs is-centered\" *ngIf=\"persons\">\n  <ul>\n      <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/persons', link]\" (click)=\"selectedLink=link\">{{link}}</a></li>\n  </ul>\n</div>\n<div class=\"container fluid\">\n    <div class=\"columns is-mobile is-multiline\">\n  <a *ngFor=\"let p of persons.results\" class=\"column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen\">\n    <figure class=\"image\">\n      <img src=\"https://image.tmdb.org/t/p/w500{{p.profile_path}}\" alt=\"{{ p.name }}\" />\n  </figure>\n  </a>\n  </div>\n</div>\n"
+module.exports = "<div class=\"tabs is-centered\">\r\n  <ul>\r\n      <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/persons', link]\" (click)=\"selectedLink=link\">{{link}}</a></li>\r\n  </ul>\r\n</div>\r\n<div class=\"container fluid\">\r\n    <div class=\"columns is-mobile is-multiline\" *ngIf=\"persons\">\r\n  <a *ngFor=\"let p of persons.results\" class=\"column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen\">\r\n    <figure class=\"image\">\r\n      <img src=\"https://image.tmdb.org/t/p/w500{{p.profile_path}}\" alt=\"{{ p.name }}\" />\r\n  </figure>\r\n  </a>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -830,7 +914,7 @@ var MovieService = (function () {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/movie/';
         this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
     }
     MovieService.prototype.getMovies = function (type) {
         var moviesUrl = this.baseUrl + type + this.apiKey + '&page=1';
@@ -891,11 +975,61 @@ var MovieService = (function () {
 }());
 MovieService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], MovieService);
 
 var _a;
 //# sourceMappingURL=movie.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/news.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("../../../../rxjs/add/operator/toPromise.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewsService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NewsService = (function () {
+    function NewsService(http) {
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+    }
+    NewsService.prototype.getNewsFromRottentomatoes = function () {
+        var url = 'https://editorial.rottentomatoes.com/wp-json/articles/';
+        var news = this.http.get(url)
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
+        return news;
+    };
+    NewsService.prototype.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    };
+    return NewsService;
+}());
+NewsService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], NewsService);
+
+var _a;
+//# sourceMappingURL=news.service.js.map
 
 /***/ }),
 
@@ -925,7 +1059,7 @@ var PersonService = (function () {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/person/';
         this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
     }
     PersonService.prototype.getPopular = function (type) {
         var personsUrl = this.baseUrl + type + this.apiKey + '&page=1';
@@ -943,7 +1077,7 @@ var PersonService = (function () {
 }());
 PersonService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], PersonService);
 
 var _a;
@@ -1013,7 +1147,7 @@ var SessionService = (function () {
 }());
 SessionService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], SessionService);
 
 var _a;

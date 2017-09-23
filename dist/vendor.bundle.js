@@ -72117,8 +72117,8 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /* unused harmony export RequestMethod */
 /* unused harmony export ResponseContentType */
 /* unused harmony export ResponseType */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Headers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Http; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Headers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Http; });
 /* unused harmony export Jsonp */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpModule; });
 /* unused harmony export JsonpModule */
@@ -86031,7 +86031,7 @@ MdIconRegistry.decorators = [
  * @nocollapse
  */
 MdIconRegistry.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_20__angular_http__["c" /* Http */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_20__angular_http__["b" /* Http */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */] },] },
     { type: __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__["g" /* DomSanitizer */], },
 ]; };
 /**
@@ -86050,7 +86050,7 @@ function ICON_REGISTRY_PROVIDER_FACTORY(parentRegistry, http, sanitizer) {
 var ICON_REGISTRY_PROVIDER = {
     // If there is already an MdIconRegistry available, use that. Otherwise, provide a new one.
     provide: MdIconRegistry,
-    deps: [[new __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* SkipSelf */](), MdIconRegistry], [new __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */](), __WEBPACK_IMPORTED_MODULE_20__angular_http__["c" /* Http */]], __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__["g" /* DomSanitizer */]],
+    deps: [[new __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* SkipSelf */](), MdIconRegistry], [new __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Optional */](), __WEBPACK_IMPORTED_MODULE_20__angular_http__["b" /* Http */]], __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__["g" /* DomSanitizer */]],
     useFactory: ICON_REGISTRY_PROVIDER_FACTORY
 };
 /**
