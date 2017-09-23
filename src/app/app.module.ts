@@ -18,6 +18,8 @@ import { NewsService } from './services/news.service';
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { PersonsComponent } from './pages/persons/persons.component';
+import {PersonService} from './services/person.service';
 import { NewsComponent } from './pages/news/news.component';
 
 @NgModule({
@@ -29,6 +31,7 @@ import { NewsComponent } from './pages/news/news.component';
     LoginComponent,
     PersonComponent,
     MovieListComponent,
+    PersonsComponent,
     NewsComponent
   ],
   imports: [
@@ -62,12 +65,18 @@ import { NewsComponent } from './pages/news/news.component';
       {
         path: 'movie/:id/:section',
         component: MovieComponent
+      },
+      {
+        path:'persons/:type',
+        component:PersonsComponent
       }
+      
     ]),
   ],
   providers: [
     Title,
     MovieService,
+    PersonService,
     NewsService,
     SessionService
   ],
