@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" href=\"/\">\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n        </a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" href=\"/\">\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n        </a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -104,9 +104,11 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__ = __webpack_require__("../../../../../src/app/components/movie/movie.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_movie_service__ = __webpack_require__("../../../../../src/app/services/movie.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_session_service__ = __webpack_require__("../../../../../src/app/services/session.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__ = __webpack_require__("../../../../../src/app/components/movie-list/movie-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_news_service__ = __webpack_require__("../../../../../src/app/services/news.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_movie_list_movie_list_component__ = __webpack_require__("../../../../../src/app/components/movie-list/movie-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_news_news_component__ = __webpack_require__("../../../../../src/app/pages/news/news.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -114,6 +116,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -142,9 +146,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__["a" /* SingleMovieComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__["a" /* PersonComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__["a" /* MovieListComponent */]
+            __WEBPACK_IMPORTED_MODULE_14__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_person_person_component__["a" /* PersonComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_movie_list_movie_list_component__["a" /* MovieListComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_news_news_component__["a" /* NewsComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
@@ -156,7 +161,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot([
                 {
                     path: 'login',
-                    component: __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_14__login_login_component__["a" /* LoginComponent */]
+                },
+                {
+                    path: 'news',
+                    component: __WEBPACK_IMPORTED_MODULE_17__pages_news_news_component__["a" /* NewsComponent */]
                 },
                 {
                     path: 'movies',
@@ -179,6 +188,7 @@ AppModule = __decorate([
         providers: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */],
             __WEBPACK_IMPORTED_MODULE_11__services_movie_service__["a" /* MovieService */],
+            __WEBPACK_IMPORTED_MODULE_13__services_news_service__["a" /* NewsService */],
             __WEBPACK_IMPORTED_MODULE_12__services_session_service__["a" /* SessionService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -713,6 +723,80 @@ var _a, _b, _c;
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/news/news.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/news/news.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"columns is-multiline\">\n    <a class=\"column is-3\" *ngFor=\"let item of news\" href=\"{{item.link}}\" target=\"_blank\">\n        <div class=\"card\">\n            <div class=\"card-image\">\n                <figure class=\"image\">\n                    <img src=\"{{item.featured_image.source}}\" alt=\"Placeholder image\">\n                </figure>\n            </div>\n            <div class=\"card-content\">\n                <div class=\"content\">\n                    <p [innerHTML]=item.title></p>\n                </div>\n            </div>\n        </div>\n    </a>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/news/news.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_news_service__ = __webpack_require__("../../../../../src/app/services/news.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NewsComponent = (function () {
+    function NewsComponent(newsService, titleService) {
+        this.newsService = newsService;
+        this.titleService = titleService;
+    }
+    NewsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.newsService.getNewsFromRottentomatoes()
+            .then(function (news) {
+            _this.news = news;
+            _this.titleService.setTitle('Movie Paradise - News');
+        });
+    };
+    return NewsComponent;
+}());
+NewsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'news',
+        template: __webpack_require__("../../../../../src/app/pages/news/news.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/news/news.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_news_service__["a" /* NewsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_news_service__["a" /* NewsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */]) === "function" && _b || Object])
+], NewsComponent);
+
+var _a, _b;
+//# sourceMappingURL=news.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/movie.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -805,6 +889,56 @@ MovieService = __decorate([
 
 var _a;
 //# sourceMappingURL=movie.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/news.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("../../../../rxjs/add/operator/toPromise.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewsService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NewsService = (function () {
+    function NewsService(http) {
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+    }
+    NewsService.prototype.getNewsFromRottentomatoes = function () {
+        var url = 'https://editorial.rottentomatoes.com/wp-json/articles/';
+        var news = this.http.get(url)
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
+        return news;
+    };
+    NewsService.prototype.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    };
+    return NewsService;
+}());
+NewsService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], NewsService);
+
+var _a;
+//# sourceMappingURL=news.service.js.map
 
 /***/ }),
 

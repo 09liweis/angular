@@ -13,9 +13,12 @@ import { SingleMovieComponent } from './components/movie/movie.component';
 
 import { MovieService } from './services/movie.service';
 import { SessionService } from './services/session.service';
+import { NewsService } from './services/news.service';
+
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { NewsComponent } from './pages/news/news.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     SingleMovieComponent,
     LoginComponent,
     PersonComponent,
-    MovieListComponent
+    MovieListComponent,
+    NewsComponent
   ],
   imports: [
     FormsModule,
@@ -38,6 +42,10 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'news',
+        component: NewsComponent
       },
       {
         path: 'movies',
@@ -60,6 +68,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
   providers: [
     Title,
     MovieService,
+    NewsService,
     SessionService
   ],
   bootstrap: [AppComponent]
