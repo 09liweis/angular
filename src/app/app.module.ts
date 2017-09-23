@@ -59,9 +59,10 @@ import {PersonService} from './services/person.service';
         component: MovieComponent
       },
       {
-        path:'persons',
+        path:'persons/:type',
         component:PersonsComponent
       }
+      
     ]),
   ],
   providers: [

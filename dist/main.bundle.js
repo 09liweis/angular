@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\r\n    <div class=\"navbar-brand\">\r\n        <a class=\"navbar-item\" href=\"/\">\r\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\r\n        </a>\r\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\r\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\r\n        <div class=\"navbar-item\"><a routerLink=\"/persons\">People</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\r\n    \r\n        <button class=\"button navbar-burger\">\r\n            <span></span>\r\n            <span></span>\r\n            <span></span>\r\n        </button>\r\n    </div>\r\n</nav>\r\n\r\n<!--The whole content below can be removed with the new code.-->\r\n<div class=\"row\" *ngIf=\"sessionId == ''\">\r\n    <form class=\"col s12\">\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\r\n                <label for=\"username\">Username</label>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\r\n                <label for=\"password\">Password</label>\r\n            </div>\r\n        </div>\r\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\r\n    </form>\r\n</div>\r\n<div class=\"\">\r\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\r\n  <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\r\n    <div class=\"navbar-brand\">\r\n        <a class=\"navbar-item\" href=\"/\">\r\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\r\n        </a>\r\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\r\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\r\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\r\n    \r\n        <button class=\"button navbar-burger\">\r\n            <span></span>\r\n            <span></span>\r\n            <span></span>\r\n        </button>\r\n    </div>\r\n</nav>\r\n\r\n<!--The whole content below can be removed with the new code.-->\r\n<div class=\"row\" *ngIf=\"sessionId == ''\">\r\n    <form class=\"col s12\">\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\r\n                <label for=\"username\">Username</label>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\r\n                <label for=\"password\">Password</label>\r\n            </div>\r\n        </div>\r\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\r\n    </form>\r\n</div>\r\n<div class=\"\">\r\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\r\n  <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -180,7 +180,7 @@ AppModule = __decorate([
                     component: __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */]
                 },
                 {
-                    path: 'persons',
+                    path: 'persons/:type',
                     component: __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__["a" /* PersonsComponent */]
                 }
             ]),
@@ -779,14 +779,13 @@ var PersonsComponent = (function () {
     PersonsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.links = [
-            'popular',
-            'latest'
+            'popular'
         ];
         this.selectedLink = 'popular';
-        this.personService.getPopular(this.selectedLink)
-            .then(function (person) {
-            _this.persons = person;
-            //this.titleService.setTitle(person.title);
+        this.route.params
+            .switchMap(function (params) { return _this.personService.getPopular(params['type']); })
+            .subscribe(function (persons) {
+            _this.persons = persons;
         });
     };
     return PersonsComponent;

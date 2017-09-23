@@ -25,17 +25,18 @@ export class PersonsComponent implements OnInit {
 
   ngOnInit() :void{
     this.links=[
-      'popular',
-      'latest'
+      'popular'
     ];
     this.selectedLink = 'popular';
-    this.personService.getPopular(this.selectedLink)
-    .then(person => {
-      this.persons = person;
-      //this.titleService.setTitle(person.title);
-    });
+
+    this.route.params
+    .switchMap((params: Params) => this.personService.getPopular(params['type']))
+    .subscribe((persons: Persons) =>{
+      this.persons = persons;
+    })
   
   }
+
 
   
 }
