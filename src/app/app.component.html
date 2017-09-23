@@ -7,6 +7,7 @@
         <div class="navbar-item"><a routerLink="/tvs/airing_today">Tv Show</a></div>
         <div class="navbar-item"><a routerLink="/news">News</a></div>
         <div class="navbar-item"><a>More Coming Soon</a></div>
+        <div class="navbar-item"><a routerLink="/persons/popular">People</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
     

@@ -19,6 +19,8 @@ import { TvService } from './services/tv.service';
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { PersonsComponent } from './pages/persons/persons.component';
+import {PersonService} from './services/person.service';
 import { NewsComponent } from './pages/news/news.component';
 import { TvsComponent } from './pages/tvs/tvs.component';
 
@@ -32,7 +34,8 @@ import { TvsComponent } from './pages/tvs/tvs.component';
     PersonComponent,
     MovieListComponent,
     NewsComponent,
-    TvsComponent
+    TvsComponent,
+    PersonsComponent,
   ],
   imports: [
     FormsModule,
@@ -69,12 +72,18 @@ import { TvsComponent } from './pages/tvs/tvs.component';
       {
         path: 'movie/:id/:section',
         component: MovieComponent
+      },
+      {
+        path:'persons/:type',
+        component:PersonsComponent
       }
+      
     ]),
   ],
   providers: [
     Title,
     MovieService,
+    PersonService,
     NewsService,
     TvService,
     SessionService

@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" href=\"/\">\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n        </a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/tvs/airing_today\">Tv Show</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" href=\"/\">\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n        </a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/tvs/airing_today\">Tv Show</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -109,8 +109,10 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_movie_list_movie_list_component__ = __webpack_require__("../../../../../src/app/components/movie-list/movie-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_news_news_component__ = __webpack_require__("../../../../../src/app/pages/news/news.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tvs_tvs_component__ = __webpack_require__("../../../../../src/app/pages/tvs/tvs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_persons_persons_component__ = __webpack_require__("../../../../../src/app/pages/persons/persons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_person_service__ = __webpack_require__("../../../../../src/app/services/person.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_news_news_component__ = __webpack_require__("../../../../../src/app/pages/news/news.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_tvs_tvs_component__ = __webpack_require__("../../../../../src/app/pages/tvs/tvs.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -118,6 +120,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -153,8 +157,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__login_login_component__["a" /* LoginComponent */],
             __WEBPACK_IMPORTED_MODULE_16__components_person_person_component__["a" /* PersonComponent */],
             __WEBPACK_IMPORTED_MODULE_17__components_movie_list_movie_list_component__["a" /* MovieListComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_news_news_component__["a" /* NewsComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_tvs_tvs_component__["a" /* TvsComponent */]
+            __WEBPACK_IMPORTED_MODULE_20__pages_news_news_component__["a" /* NewsComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_tvs_tvs_component__["a" /* TvsComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_persons_persons_component__["a" /* PersonsComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
@@ -170,11 +175,11 @@ AppModule = __decorate([
                 },
                 {
                     path: 'news',
-                    component: __WEBPACK_IMPORTED_MODULE_18__pages_news_news_component__["a" /* NewsComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_20__pages_news_news_component__["a" /* NewsComponent */]
                 },
                 {
                     path: 'tvs/:type',
-                    component: __WEBPACK_IMPORTED_MODULE_19__pages_tvs_tvs_component__["a" /* TvsComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_21__pages_tvs_tvs_component__["a" /* TvsComponent */]
                 },
                 {
                     path: 'movies',
@@ -191,12 +196,17 @@ AppModule = __decorate([
                 {
                     path: 'movie/:id/:section',
                     component: __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */]
+                },
+                {
+                    path: 'persons/:type',
+                    component: __WEBPACK_IMPORTED_MODULE_18__pages_persons_persons_component__["a" /* PersonsComponent */]
                 }
             ]),
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */],
             __WEBPACK_IMPORTED_MODULE_11__services_movie_service__["a" /* MovieService */],
+            __WEBPACK_IMPORTED_MODULE_19__services_person_service__["a" /* PersonService */],
             __WEBPACK_IMPORTED_MODULE_13__services_news_service__["a" /* NewsService */],
             __WEBPACK_IMPORTED_MODULE_14__services_tv_service__["a" /* TvService */],
             __WEBPACK_IMPORTED_MODULE_12__services_session_service__["a" /* SessionService */]
@@ -807,6 +817,87 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/persons/persons.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/persons/persons.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tabs is-centered\">\n  <ul>\n      <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/persons', link]\" (click)=\"selectedLink=link\">{{link}}</a></li>\n  </ul>\n</div>\n<div class=\"container fluid\">\n    <div class=\"columns is-mobile is-multiline\" *ngIf=\"persons\">\n  <a *ngFor=\"let p of persons.results\" class=\"column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen\">\n    <figure class=\"image\">\n      <img src=\"https://image.tmdb.org/t/p/w500{{p.profile_path}}\" alt=\"{{ p.name }}\" />\n  </figure>\n  </a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/persons/persons.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_person_service__ = __webpack_require__("../../../../../src/app/services/person.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var PersonsComponent = (function () {
+    function PersonsComponent(titleService, personService, route) {
+        this.titleService = titleService;
+        this.personService = personService;
+        this.route = route;
+    }
+    PersonsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.links = [
+            'popular'
+        ];
+        this.selectedLink = 'popular';
+        this.route.params
+            .switchMap(function (params) { return _this.personService.getPopular(params['type']); })
+            .subscribe(function (persons) {
+            _this.persons = persons;
+        });
+    };
+    return PersonsComponent;
+}());
+PersonsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_11" /* Component */])({
+        selector: 'app-persons',
+        template: __webpack_require__("../../../../../src/app/pages/persons/persons.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/persons/persons.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_person_service__["a" /* PersonService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_person_service__["a" /* PersonService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object])
+], PersonsComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=persons.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/tvs/tvs.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1045,6 +1136,58 @@ NewsService = __decorate([
 
 var _a;
 //# sourceMappingURL=news.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/person.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("../../../../rxjs/add/operator/toPromise.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PersonService = (function () {
+    function PersonService(http) {
+        this.http = http;
+        this.baseUrl = 'https://api.themoviedb.org/3/person/';
+        this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+    }
+    PersonService.prototype.getPopular = function (type) {
+        var personsUrl = this.baseUrl + type + this.apiKey + '&page=1';
+        var persons = this.http.get(personsUrl)
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
+        return persons;
+    };
+    PersonService.prototype.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    };
+    return PersonService;
+}());
+PersonService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], PersonService);
+
+var _a;
+//# sourceMappingURL=person.service.js.map
 
 /***/ }),
 
