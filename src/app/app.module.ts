@@ -7,8 +7,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MoviesComponent } from './movies/movies.component';
-import { MovieComponent } from './movie/movie.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { MovieComponent } from './pages/movie/movie.component';
 import { SingleMovieComponent } from './components/movie/movie.component';
 
 import { MovieService } from './services/movie.service';
@@ -16,6 +16,8 @@ import { SessionService } from './services/session.service';
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { PersonsComponent } from './pages/persons/persons.component';
+import {PersonService} from './services/person.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     SingleMovieComponent,
     LoginComponent,
     PersonComponent,
-    MovieListComponent
+    MovieListComponent,
+    PersonsComponent
   ],
   imports: [
     FormsModule,
@@ -54,13 +57,18 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
       {
         path: 'movie/:id/:section',
         component: MovieComponent
+      },
+      {
+        path:'persons',
+        component:PersonsComponent
       }
     ]),
   ],
   providers: [
     Title,
     MovieService,
-    SessionService
+    SessionService,
+    PersonService
   ],
   bootstrap: [AppComponent]
 })

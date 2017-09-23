@@ -6,13 +6,13 @@ import { Title, DomSanitizer } from '@angular/platform-browser';
 //Import the switchMap operator to use later with the route parameters Observable.
 import 'rxjs/add/operator/switchMap';
 
-import { Movie } from '../models/movie';
-import { Movies } from '../models/movies';
-import { MovieCredits } from '../models/movieCredits';
-import { MovieImage } from '../models/movieImage';
-import { MovieVideo } from '../models/movieVideo';
-import { MovieReviews } from '../models/movieReviews';
-import { MovieService } from '../services/movie.service';
+import { Movie } from '../../models/movie';
+import { Movies } from '../../models/movies';
+import { MovieCredits } from '../../models/movieCredits';
+import { MovieImage } from '../../models/movieImage';
+import { MovieVideo } from '../../models/movieVideo';
+import { MovieReviews } from '../../models/movieReviews';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'movie',

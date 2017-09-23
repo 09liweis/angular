@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\r\n    <div class=\"navbar-brand\">\r\n        <a class=\"navbar-item\" href=\"/\">\r\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\r\n        </a>\r\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\r\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\r\n    \r\n        <button class=\"button navbar-burger\">\r\n            <span></span>\r\n            <span></span>\r\n            <span></span>\r\n        </button>\r\n    </div>\r\n</nav>\r\n\r\n<!--The whole content below can be removed with the new code.-->\r\n<div class=\"row\" *ngIf=\"sessionId == ''\">\r\n    <form class=\"col s12\">\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\r\n                <label for=\"username\">Username</label>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\r\n                <label for=\"password\">Password</label>\r\n            </div>\r\n        </div>\r\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\r\n    </form>\r\n</div>\r\n<div class=\"\">\r\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\r\n  <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\r\n    <div class=\"navbar-brand\">\r\n        <a class=\"navbar-item\" href=\"/\">\r\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\r\n        </a>\r\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\r\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\r\n        <div class=\"navbar-item\"><a routerLink=\"/persons\">People</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\r\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\r\n    \r\n        <button class=\"button navbar-burger\">\r\n            <span></span>\r\n            <span></span>\r\n            <span></span>\r\n        </button>\r\n    </div>\r\n</nav>\r\n\r\n<!--The whole content below can be removed with the new code.-->\r\n<div class=\"row\" *ngIf=\"sessionId == ''\">\r\n    <form class=\"col s12\">\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\r\n                <label for=\"username\">Username</label>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"input-field col s12\">\r\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\r\n                <label for=\"password\">Password</label>\r\n            </div>\r\n        </div>\r\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\r\n    </form>\r\n</div>\r\n<div class=\"\">\r\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\r\n  <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -99,14 +99,16 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__movies_movies_component__ = __webpack_require__("../../../../../src/app/movies/movies.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__movie_movie_component__ = __webpack_require__("../../../../../src/app/movie/movie.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__ = __webpack_require__("../../../../../src/app/pages/movies/movies.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__ = __webpack_require__("../../../../../src/app/pages/movie/movie.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__ = __webpack_require__("../../../../../src/app/components/movie/movie.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_movie_service__ = __webpack_require__("../../../../../src/app/services/movie.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_session_service__ = __webpack_require__("../../../../../src/app/services/session.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__ = __webpack_require__("../../../../../src/app/components/person/person.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__ = __webpack_require__("../../../../../src/app/components/movie-list/movie-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__ = __webpack_require__("../../../../../src/app/pages/persons/persons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_person_service__ = __webpack_require__("../../../../../src/app/services/person.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -114,6 +116,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -139,12 +143,13 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__movies_movies_component__["a" /* MoviesComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__movie_movie_component__["a" /* MovieComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */],
             __WEBPACK_IMPORTED_MODULE_10__components_movie_movie_component__["a" /* SingleMovieComponent */],
             __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */],
             __WEBPACK_IMPORTED_MODULE_14__components_person_person_component__["a" /* PersonComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__["a" /* MovieListComponent */]
+            __WEBPACK_IMPORTED_MODULE_15__components_movie_list_movie_list_component__["a" /* MovieListComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__["a" /* PersonsComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
@@ -160,26 +165,31 @@ AppModule = __decorate([
                 },
                 {
                     path: 'movies',
-                    component: __WEBPACK_IMPORTED_MODULE_8__movies_movies_component__["a" /* MoviesComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */]
                 },
                 {
                     path: 'movies/:type',
-                    component: __WEBPACK_IMPORTED_MODULE_8__movies_movies_component__["a" /* MoviesComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */]
                 },
                 {
                     path: 'movie/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_9__movie_movie_component__["a" /* MovieComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */]
                 },
                 {
                     path: 'movie/:id/:section',
-                    component: __WEBPACK_IMPORTED_MODULE_9__movie_movie_component__["a" /* MovieComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */]
+                },
+                {
+                    path: 'persons',
+                    component: __WEBPACK_IMPORTED_MODULE_16__pages_persons_persons_component__["a" /* PersonsComponent */]
                 }
             ]),
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */],
             __WEBPACK_IMPORTED_MODULE_11__services_movie_service__["a" /* MovieService */],
-            __WEBPACK_IMPORTED_MODULE_12__services_session_service__["a" /* SessionService */]
+            __WEBPACK_IMPORTED_MODULE_12__services_session_service__["a" /* SessionService */],
+            __WEBPACK_IMPORTED_MODULE_17__services_person_service__["a" /* PersonService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
@@ -499,7 +509,7 @@ var Movies = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/movie/movie.component.css":
+/***/ "../../../../../src/app/pages/movie/movie.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -517,14 +527,14 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/movie/movie.component.html":
+/***/ "../../../../../src/app/pages/movie/movie.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button (click)=\"goBack()\">Back</button>\r\n\r\n<div id=\"movie\" *ngIf=\"movie\">\r\n    <div id=\"header\">\r\n        <div class=\"backdrop-poster\">\r\n            <img src=\"https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}\" />\r\n            <div class=\"basic-info\">\r\n                <h5 class=\"movie-title\">{{ movie.title }}</h5>\r\n                <span class=\"release-date\">{{movie.release_date.substr(0, 4)}}</span>\r\n                <span class=\"rating\">{{movie.vote_average}}</span>\r\n            </div>\r\n        </div>\r\n        <div class=\"info columns\">\r\n            <div class=\"bg-black columns column s6\">\r\n                <div class=\"column s4\">\r\n                    <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" />\r\n                </div>\r\n                <div class=\"column s8\">\r\n                    <p>{{movie.tagline}}</p>\r\n                    <p>{{ movie.overview }}</p>\r\n                    <div class=\"genres\">\r\n                        <span class=\"label\">Genres: </span>\r\n                        <span *ngFor=\"let genre of movie.genres\" class=\"genre\">{{genre.name}}</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"column s6\">\r\n                <div id=\"videos\" *ngIf=\"movieVideo\">\r\n                    <iframe id=\"ytplayer\" type=\"text/html\" width=\"100%\" height=\"315\"\r\n                        [src]=\"getYoutubeEmbed(movieVideo.results[0].key)\"\r\n                        frameborder=\"0\">\r\n                    </iframe>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"columns\">\r\n        <div class=\"bg-black column is-2\">\r\n            <h5>Movie Data</h5>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Status:</h6>\r\n                <p>{{movie.status}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Release Information:</h6>\r\n                <p>{{movie.release_date}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Original Language:</h6>\r\n                <p>{{movie.original_language}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Runtime:</h6>\r\n                <p>{{movie.runtime}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Revenue:</h6>\r\n                <p>{{movie.revenue}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Homepage:</h6>\r\n                <p><a href=\"{{movie.homepage}}\" target=\"_blank\">{{movie.homepage}}</a></p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Production Companies:</h6>\r\n                <p *ngFor=\"let company of movie.production_companies\">{{company.name}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"column is-10\">\r\n            <div class=\"\" *ngIf=\"!section\">\r\n                <div id=\"casts\" *ngIf=\"movieCredits\">\r\n                    <div class=\"columns\">\r\n                        <h5 class=\"left\">Feature Casts</h5>\r\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full casts</a>\r\n                    </div>\r\n                    <div class=\"columns\">\r\n                        <person *ngFor=\"let cast of movieCredits.cast.slice(0, 6)\" [cast]=cast></person>\r\n                    </div>\r\n                </div>\r\n                <div id=\"crews\" *ngIf=\"movieCredits\">\r\n                    <div class=\"columns\">\r\n                        <h5 class=\"left\">Feature Crews</h5>\r\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full crews</a>\r\n                    </div>\r\n                    <div class=\"columns\">\r\n                        <person *ngFor=\"let cast of movieCredits.crew.slice(0, 6)\" [cast]=cast></person>\r\n                    </div>\r\n                </div>\r\n                <div id=\"similar-movies\" *ngIf=\"similarMovies\">\r\n                    <div class=\"columns\">\r\n                        <h5 class=\"left\">Similar Movies</h5>\r\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'similar']\">View All Similar Movies</a>\r\n                    </div>\r\n                    <div class=\"columns\">\r\n                        <movie-list [movies]=(similarMovies)></movie-list>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"\">\r\n        <ul class=\"tabs\">\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('reviews')\" [routerLink]=\"['/movie', movie.id, 'reviews']\">Reviews</a></li>\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('videos')\" [routerLink]=\"['/movie', movie.id, 'videos']\">Videos</a></li>\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('images')\" [routerLink]=\"['/movie', movie.id, 'images']\">Images</a></li>\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('casts')\" [routerLink]=\"['/movie', movie.id, 'casts']\">Casts</a></li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"container\" *ngIf=\"section == 'reviews'\">\r\n        <div id=\"reviews\" *ngIf=\"movieReviews\">\r\n            <h3>Reviews</h3>\r\n            <div class=\"row card\" *ngFor=\"let review of movieReviews.results\">\r\n                <div class=\"col s2\">\r\n                    <p>{{ review.author }}</p>\r\n                </div>\r\n                <div class=\"col s10\">\r\n                    <p>{{ review.content }}</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\" *ngIf=\"section == 'casts'\">\r\n        <div class=\"row\" *ngIf=\"movieCredits\">\r\n            <div class=\"col s6\">\r\n                <div class=\"row\" *ngFor=\"let cast of movieCredits.cast\">\r\n                    <div class=\"col s4\">\r\n                        <img *ngIf=\"cast.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{cast.profile_path}}\">\r\n                    </div>\r\n                    <div class=\"col s8\">\r\n                        <p>{{ cast.name }}</p>\r\n                        <p>{{ cast.character }}</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"col s6\">\r\n                <div class=\"row\" *ngFor=\"let crew of movieCredits.crew\">\r\n                    <div class=\"col s4\">\r\n                        <img *ngIf=\"crew.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{crew.profile_path}}\">\r\n                    </div>\r\n                    <div class=\"col s8\">\r\n                        <p>{{ crew.name }}</p>\r\n                        <p>{{ crew.job }}</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\" *ngIf=\"section == 'images'\">\r\n        <div id=\"images\" *ngIf=\"movieImages\">\r\n            <h3>Posters</h3>\r\n            <div class=\"row\">\r\n                <div class=\"col l2\" *ngFor=\"let poster of movieImages.posters\">\r\n                    <img src=\"https://image.tmdb.org/t/p/w500{{poster.file_path}}\" />\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col l12\" *ngFor=\"let backdrop of movieImages.backdrops\">\r\n                    <img src=\"https://image.tmdb.org/t/p/w500{{backdrop.file_path}}\" />\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<button (click)=\"goBack()\">Back</button>\r\n\r\n<div id=\"movie\" *ngIf=\"movie\">\r\n    <div id=\"header\">\r\n        <div class=\"backdrop-poster\">\r\n            <img src=\"https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}\" />\r\n            <div class=\"basic-info\">\r\n                <h5 class=\"movie-title\">{{ movie.title }}</h5>\r\n                <span class=\"release-date\">{{movie.release_date.substr(0, 4)}}</span>\r\n                <span class=\"rating\">{{movie.vote_average}}</span>\r\n            </div>\r\n        </div>\r\n        <div class=\"info columns section\">\r\n            <div class=\"bg-black columns column s6\">\r\n                <div class=\"column is-4\">\r\n                    <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" />\r\n                </div>\r\n                <div class=\"column is-8\">\r\n                    <p>{{movie.tagline}}</p>\r\n                    <p>{{ movie.overview }}</p>\r\n                    <div class=\"genres\">\r\n                        <span class=\"label\">Genres: </span>\r\n                        <span *ngFor=\"let genre of movie.genres\" class=\"genre\">{{genre.name}}</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"column s6\">\r\n                <div id=\"videos\" *ngIf=\"movieVideo\">\r\n                    <iframe id=\"ytplayer\" type=\"text/html\" width=\"100%\" height=\"315\"\r\n                        [src]=\"getYoutubeEmbed(movieVideo.results[0].key)\"\r\n                        frameborder=\"0\">\r\n                    </iframe>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"columns\">\r\n        <div class=\"bg-black column is-2\">\r\n            <h5>Movie Data</h5>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Status:</h6>\r\n                <p>{{movie.status}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Release Information:</h6>\r\n                <p>{{movie.release_date}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Original Language:</h6>\r\n                <p>{{movie.original_language}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Runtime:</h6>\r\n                <p>{{movie.runtime}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Revenue:</h6>\r\n                <p>{{movie.revenue}}</p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Homepage:</h6>\r\n                <p><a href=\"{{movie.homepage}}\" target=\"_blank\">{{movie.homepage}}</a></p>\r\n            </div>\r\n            <div class=\"data\">\r\n                <h6 class=\"label\">Production Companies:</h6>\r\n                <p *ngFor=\"let company of movie.production_companies\">{{company.name}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"column is-10\">\r\n            <div class=\"\" *ngIf=\"!section\">\r\n                <div id=\"casts\" *ngIf=\"movieCredits\">\r\n                    <div class=\"columns\">\r\n                        <h5 class=\"left\">Feature Casts</h5>\r\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full casts</a>\r\n                    </div>\r\n                    <div class=\"columns\">\r\n                        <person *ngFor=\"let cast of movieCredits.cast.slice(0, 6)\" [cast]=cast></person>\r\n                    </div>\r\n                </div>\r\n                <div id=\"crews\" *ngIf=\"movieCredits\">\r\n                    <div class=\"columns\">\r\n                        <h5 class=\"left\">Feature Crews</h5>\r\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'casts']\">View full crews</a>\r\n                    </div>\r\n                    <div class=\"columns\">\r\n                        <person *ngFor=\"let cast of movieCredits.crew.slice(0, 6)\" [cast]=cast></person>\r\n                    </div>\r\n                </div>\r\n                <div id=\"similar-movies\" *ngIf=\"similarMovies\">\r\n                    <div class=\"columns\">\r\n                        <h5 class=\"left\">Similar Movies</h5>\r\n                        <a class=\"right\" [routerLink]=\"['/movie', movie.id, 'similar']\">View All Similar Movies</a>\r\n                    </div>\r\n                    <div class=\"columns\">\r\n                        <movie-list [movies]=(similarMovies)></movie-list>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"\">\r\n        <ul class=\"tabs\">\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('reviews')\" [routerLink]=\"['/movie', movie.id, 'reviews']\">Reviews</a></li>\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('videos')\" [routerLink]=\"['/movie', movie.id, 'videos']\">Videos</a></li>\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('images')\" [routerLink]=\"['/movie', movie.id, 'images']\">Images</a></li>\r\n            <li class=\"tab col s3\"><a (click)=\"changeSection('casts')\" [routerLink]=\"['/movie', movie.id, 'casts']\">Casts</a></li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"container\" *ngIf=\"section == 'reviews'\">\r\n        <div id=\"reviews\" *ngIf=\"movieReviews\">\r\n            <h3>Reviews</h3>\r\n            <div class=\"row card\" *ngFor=\"let review of movieReviews.results\">\r\n                <div class=\"col s2\">\r\n                    <p>{{ review.author }}</p>\r\n                </div>\r\n                <div class=\"col s10\">\r\n                    <p>{{ review.content }}</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\" *ngIf=\"section == 'casts'\">\r\n        <div class=\"row\" *ngIf=\"movieCredits\">\r\n            <div class=\"col s6\">\r\n                <div class=\"row\" *ngFor=\"let cast of movieCredits.cast\">\r\n                    <div class=\"col s4\">\r\n                        <img *ngIf=\"cast.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{cast.profile_path}}\">\r\n                    </div>\r\n                    <div class=\"col s8\">\r\n                        <p>{{ cast.name }}</p>\r\n                        <p>{{ cast.character }}</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"col s6\">\r\n                <div class=\"row\" *ngFor=\"let crew of movieCredits.crew\">\r\n                    <div class=\"col s4\">\r\n                        <img *ngIf=\"crew.profile_path\" src=\"https://image.tmdb.org/t/p/w500{{crew.profile_path}}\">\r\n                    </div>\r\n                    <div class=\"col s8\">\r\n                        <p>{{ crew.name }}</p>\r\n                        <p>{{ crew.job }}</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\" *ngIf=\"section == 'images'\">\r\n        <div id=\"images\" *ngIf=\"movieImages\">\r\n            <h3>Posters</h3>\r\n            <div class=\"row\">\r\n                <div class=\"col l2\" *ngFor=\"let poster of movieImages.posters\">\r\n                    <img src=\"https://image.tmdb.org/t/p/w500{{poster.file_path}}\" />\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col l12\" *ngFor=\"let backdrop of movieImages.backdrops\">\r\n                    <img src=\"https://image.tmdb.org/t/p/w500{{backdrop.file_path}}\" />\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/movie/movie.component.ts":
+/***/ "../../../../../src/app/pages/movie/movie.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -603,8 +613,8 @@ var MovieComponent = (function () {
 MovieComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'movie',
-        template: __webpack_require__("../../../../../src/app/movie/movie.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/movie/movie.component.css")]
+        template: __webpack_require__("../../../../../src/app/pages/movie/movie.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/movie/movie.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_movie_service__["a" /* MovieService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_movie_service__["a" /* MovieService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["g" /* Location */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["g" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["g" /* DomSanitizer */]) === "function" && _e || Object])
 ], MovieComponent);
@@ -614,7 +624,7 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ "../../../../../src/app/movies/movies.component.css":
+/***/ "../../../../../src/app/pages/movies/movies.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -632,14 +642,14 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/movies/movies.component.html":
+/***/ "../../../../../src/app/pages/movies/movies.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"tabs is-centered\">\r\n    <ul>\r\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/movies', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\r\n    </ul>\r\n</div>\r\n<div class=\"container fluid\">\r\n    <movie-list [movies]=movies></movie-list>\r\n</div>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/movies/movies.component.ts":
+/***/ "../../../../../src/app/pages/movies/movies.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -702,14 +712,96 @@ var MoviesComponent = (function () {
 MoviesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_11" /* Component */])({
         selector: 'movies',
-        template: __webpack_require__("../../../../../src/app/movies/movies.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/movies/movies.component.css")]
+        template: __webpack_require__("../../../../../src/app/pages/movies/movies.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/movies/movies.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_movie_service__["a" /* MovieService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_movie_service__["a" /* MovieService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object])
 ], MoviesComponent);
 
 var _a, _b, _c;
 //# sourceMappingURL=movies.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/persons/persons.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/persons/persons.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tabs is-centered\" *ngIf=\"persons\">\n  <ul>\n      <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/persons', link]\" (click)=\"selectedLink=link\">{{link}}</a></li>\n  </ul>\n</div>\n<div class=\"container fluid\">\n    <div class=\"columns is-mobile is-multiline\">\n  <a *ngFor=\"let p of persons.results\" class=\"column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen\">\n    <figure class=\"image\">\n      <img src=\"https://image.tmdb.org/t/p/w500{{p.profile_path}}\" alt=\"{{ p.name }}\" />\n  </figure>\n  </a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/persons/persons.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_person_service__ = __webpack_require__("../../../../../src/app/services/person.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var PersonsComponent = (function () {
+    function PersonsComponent(titleService, personService, route) {
+        this.titleService = titleService;
+        this.personService = personService;
+        this.route = route;
+    }
+    PersonsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.links = [
+            'popular',
+            'latest'
+        ];
+        this.selectedLink = 'popular';
+        this.personService.getPopular(this.selectedLink)
+            .then(function (person) {
+            _this.persons = person;
+            //this.titleService.setTitle(person.title);
+        });
+    };
+    return PersonsComponent;
+}());
+PersonsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_11" /* Component */])({
+        selector: 'app-persons',
+        template: __webpack_require__("../../../../../src/app/pages/persons/persons.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/persons/persons.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_person_service__["a" /* PersonService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_person_service__["a" /* PersonService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object])
+], PersonsComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=persons.component.js.map
 
 /***/ }),
 
@@ -739,7 +831,7 @@ var MovieService = (function () {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/movie/';
         this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
     }
     MovieService.prototype.getMovies = function (type) {
         var moviesUrl = this.baseUrl + type + this.apiKey + '&page=1';
@@ -800,11 +892,63 @@ var MovieService = (function () {
 }());
 MovieService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], MovieService);
 
 var _a;
 //# sourceMappingURL=movie.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/person.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("../../../../rxjs/add/operator/toPromise.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PersonService = (function () {
+    function PersonService(http) {
+        this.http = http;
+        this.baseUrl = 'https://api.themoviedb.org/3/person/';
+        this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+    }
+    PersonService.prototype.getPopular = function (type) {
+        var personsUrl = this.baseUrl + type + this.apiKey + '&page=1';
+        var persons = this.http.get(personsUrl)
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
+        return persons;
+    };
+    PersonService.prototype.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    };
+    return PersonService;
+}());
+PersonService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+], PersonService);
+
+var _a;
+//# sourceMappingURL=person.service.js.map
 
 /***/ }),
 
@@ -870,7 +1014,7 @@ var SessionService = (function () {
 }());
 SessionService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], SessionService);
 
 var _a;
