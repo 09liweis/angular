@@ -7,8 +7,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MoviesComponent } from './movies/movies.component';
-import { MovieComponent } from './movie/movie.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { MovieComponent } from './pages/movie/movie.component';
 import { SingleMovieComponent } from './components/movie/movie.component';
 
 import { MovieService } from './services/movie.service';
