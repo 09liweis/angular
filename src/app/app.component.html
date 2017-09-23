@@ -1,14 +1,21 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="/" class="brand-logo">Logo</a>
-    <ul id="nav-mobile" class="right">
-        <li><a routerLink="/movies/now_playing">Movies</a></li>
-        <li><a>More Coming Soon</a></li>
-        <li *ngIf="sessionId != ''"><a>{{ username }}</a></li>
-        <li *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></li>
-    </ul>
-  </div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+        </a>
+        <div class="navbar-item"><a routerLink="/movies/now_playing">Movies</a></div>
+        <div class="navbar-item"><a>More Coming Soon</a></div>
+        <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
+        <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
+    
+        <button class="button navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 </nav>
+
 <!--The whole content below can be removed with the new code.-->
 <div class="row" *ngIf="sessionId == ''">
     <form class="col s12">
@@ -27,7 +34,7 @@
         <a (click)="login()" class="waves-effect waves-light btn">Login</a>
     </form>
 </div>
-<div>
+<div class="">
   <h1 class="text-center">Welcome to {{title}}!!</h1>
   <router-outlet></router-outlet>
 </div>

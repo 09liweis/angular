@@ -1,65 +1,110 @@
 <button (click)="goBack()">Back</button>
 
 <div id="movie" *ngIf="movie">
-    <div id="header" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')'}">
-        <div class="container">
-            <div class="info row">
-                <div class="col s4">
+    <div id="header">
+        <div class="backdrop-poster">
+            <img src="https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}" />
+            <div class="basic-info">
+                <h5 class="movie-title">{{ movie.title }}</h5>
+                <span class="release-date">{{movie.release_date.substr(0, 4)}}</span>
+                <span class="rating">{{movie.vote_average}}</span>
+            </div>
+        </div>
+        <div class="info columns">
+            <div class="bg-black columns column s6">
+                <div class="column s4">
                     <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
                 </div>
-                <div class="col s8">
-                    <h2 class="movie-title">{{ movie.title }} <span class="release-date">({{movie.release_date.substr(0, 4)}})</span></h2>
-                    
-                    <h3>Overview</h3>
+                <div class="column s8">
+                    <p>{{movie.tagline}}</p>
                     <p>{{ movie.overview }}</p>
-                    <div class="row" *ngIf="movieCredits">
-                        <h4>Feature Crew</h4>
-                        <div *ngFor="let crew of movieCredits.crew.slice(0, 6)" class="col s4">
-                            <p>{{ crew.name }}</p>
-                            <p>{{ crew.job }}</p>
-                        </div>
+                    <div class="genres">
+                        <span class="label">Genres: </span>
+                        <span *ngFor="let genre of movie.genres" class="genre">{{genre.name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="column s6">
+                <div id="videos" *ngIf="movieVideo">
+                    <iframe id="ytplayer" type="text/html" width="100%" height="315"
+                        [src]="getYoutubeEmbed(movieVideo.results[0].key)"
+                        frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="bg-black column is-2">
+            <h5>Movie Data</h5>
+            <div class="data">
+                <h6 class="label">Status:</h6>
+                <p>{{movie.status}}</p>
+            </div>
+            <div class="data">
+                <h6 class="label">Release Information:</h6>
+                <p>{{movie.release_date}}</p>
+            </div>
+            <div class="data">
+                <h6 class="label">Original Language:</h6>
+                <p>{{movie.original_language}}</p>
+            </div>
+            <div class="data">
+                <h6 class="label">Runtime:</h6>
+                <p>{{movie.runtime}}</p>
+            </div>
+            <div class="data">
+                <h6 class="label">Revenue:</h6>
+                <p>{{movie.revenue}}</p>
+            </div>
+            <div class="data">
+                <h6 class="label">Homepage:</h6>
+                <p><a href="{{movie.homepage}}" target="_blank">{{movie.homepage}}</a></p>
+            </div>
+            <div class="data">
+                <h6 class="label">Production Companies:</h6>
+                <p *ngFor="let company of movie.production_companies">{{company.name}}</p>
+            </div>
+        </div>
+        <div class="column is-10">
+            <div class="" *ngIf="!section">
+                <div id="casts" *ngIf="movieCredits">
+                    <div class="columns">
+                        <h5 class="left">Feature Casts</h5>
+                        <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
+                    </div>
+                    <div class="columns">
+                        <person *ngFor="let cast of movieCredits.cast.slice(0, 6)" [cast]=cast></person>
+                    </div>
+                </div>
+                <div id="crews" *ngIf="movieCredits">
+                    <div class="columns">
+                        <h5 class="left">Feature Crews</h5>
+                        <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full crews</a>
+                    </div>
+                    <div class="columns">
+                        <person *ngFor="let cast of movieCredits.crew.slice(0, 6)" [cast]=cast></person>
+                    </div>
+                </div>
+                <div id="similar-movies" *ngIf="similarMovies">
+                    <div class="columns">
+                        <h5 class="left">Similar Movies</h5>
+                        <a class="right" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
+                    </div>
+                    <div class="columns">
+                        <movie-list [movies]=(similarMovies)></movie-list>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="">
         <ul class="tabs">
             <li class="tab col s3"><a (click)="changeSection('reviews')" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a></li>
             <li class="tab col s3"><a (click)="changeSection('videos')" [routerLink]="['/movie', movie.id, 'videos']">Videos</a></li>
             <li class="tab col s3"><a (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a></li>
             <li class="tab col s3"><a (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a></li>
         </ul>
-    </div>
-    <div class="container" *ngIf="!section">
-        <div id="casts" *ngIf="movieCredits">
-            <h3>Top Billed Casts</h3>
-            <div class="row">
-                <div *ngFor="let cast of movieCredits.cast.slice(0, 6)" class="col l2">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}">
-                        </div>
-                        <div class="card-content">
-                            <p class="name">{{ cast.name }}</p>
-                            <span>{{ cast.character }}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
-        </div>
-        <div id="videos" *ngIf="movieVideo">
-            <h3>Videos</h3>
-            <!--<div class="row">-->
-            <!--    <div class="col l3" *ngFor="let video of movieVideo.results">-->
-            <!--        <iframe id="ytplayer" type="text/html" width="100%" height="315"-->
-            <!--            src="https://www.youtube.com/embed/{{video.key}}?autoplay=0"-->
-            <!--            frameborder="0">-->
-            <!--        </iframe>-->
-            <!--    </div>-->
-            <!--</div>-->
-        </div>
     </div>
     <div class="container" *ngIf="section == 'reviews'">
         <div id="reviews" *ngIf="movieReviews">

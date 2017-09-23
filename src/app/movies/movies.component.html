@@ -1,11 +1,8 @@
-<ul class="tabs">
-    <li class="tab col s3"><a [routerLink]="['/movies', 'now_playing']">Now Playing</a></li>
-    <li class="tab col s3"><a [routerLink]="['/movies', 'popular']">Popular</a></li>
-    <li class="tab col s3"><a [routerLink]="['/movies', 'top_rated']">Top Rated</a></li>
-    <li class="tab col s3"><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
-</ul>
-<div class="row" *ngIf="movies">
-    <a class="movie col s6 m4 l3" *ngFor="let movie of movies.results" [routerLink]="['/movie', movie.id]">
-        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
-    </a>
+<div class="tabs is-centered">
+    <ul>
+        <li class="tab col s3" *ngFor="let link of links"><a [class.is-active]="selectedLink == link" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a></li>
+    </ul>
+</div>
+<div class="container fluid">
+    <movie-list [movies]=movies></movie-list>
 </div>

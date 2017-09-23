@@ -9,17 +9,23 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
+import { SingleMovieComponent } from './components/movie/movie.component';
 
 import { MovieService } from './services/movie.service';
 import { SessionService } from './services/session.service';
 import { LoginComponent } from './login/login.component';
+import { PersonComponent } from './components/person/person.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     MovieComponent,
-    LoginComponent
+    SingleMovieComponent,
+    LoginComponent,
+    PersonComponent,
+    MovieListComponent
   ],
   imports: [
     FormsModule,

@@ -69,6 +69,14 @@ export class MovieService {
                     .catch(this.handleError);
     }
     
+    getSimilarMovies(id: number): Promise<Movies> {
+        const similarMovies = this.baseUrl + id + '/similar' + this.apiKey;
+        return this.http.get(similarMovies)
+                    .toPromise()
+                    .then(res => res.json() as Movies)
+                    .catch(this.handleError);
+    }
+    
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
