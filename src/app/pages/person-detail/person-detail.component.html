@@ -1,0 +1,17 @@
+<div id="person-detail" *ngIf="personDetail" class="columns">
+  
+  <div class="column is-narrow is-offset-2">
+    <figure class="image" style="width:200px">
+        <img src="https://image.tmdb.org/t/p/w500{{personDetail.profile_path}}" alt="{{ personDetail.name }}" />
+    </figure>
+<h5 class="person-name">{{ personDetail.name }}</h5>
+<p>Born: {{personDetail.birthday}}</p>
+<p>Place of Birth: {{personDetail.place_of_birth}}</p>
+  </div>
+  <div class="column is-half">
+    <h2 class="heading-bio">Biography</h2>
+    <p>{{personDetail.biography}}</p>
+  </div>
+ 
+
+</div>

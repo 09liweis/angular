@@ -21,6 +21,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 import { PersonsComponent } from './pages/persons/persons.component';
 import {PersonService} from './services/person.service';
 import { NewsComponent } from './pages/news/news.component';
+import { PersonDetailComponent } from './pages/person-detail/person-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewsComponent } from './pages/news/news.component';
     PersonComponent,
     MovieListComponent,
     PersonsComponent,
-    NewsComponent
+    NewsComponent,
+    PersonDetailComponent
   ],
   imports: [
     FormsModule,
@@ -69,6 +71,10 @@ import { NewsComponent } from './pages/news/news.component';
       {
         path:'persons/:type',
         component:PersonsComponent
+      },
+      {
+        path: 'person-detail/:id',
+        component:PersonDetailComponent
       }
       
     ]),

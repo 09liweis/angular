@@ -21,7 +21,7 @@ export class PersonsComponent implements OnInit {
   constructor( 
     private titleService: Title,
     private personService: PersonService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit() :void{
     this.links=[
