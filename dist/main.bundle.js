@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" href=\"/\">\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n        </a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/tvs/airing_today\">Tv Show</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" href=\"/\">\n            <img src=\"http://bulma.io/images/bulma-logo.png\" alt=\"Bulma: a modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n        </a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/tvs/airing_today/page/1\">Tv Show</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<div class=\"row\" *ngIf=\"sessionId == ''\">\n    <form class=\"col s12\">\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">\n                <label for=\"username\">Username</label>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"input-field col s12\">\n                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">\n                <label for=\"password\">Password</label>\n            </div>\n        </div>\n        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>\n    </form>\n</div>\n<div class=\"\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -182,6 +182,10 @@ AppModule = __decorate([
                     component: __WEBPACK_IMPORTED_MODULE_21__pages_tvs_tvs_component__["a" /* TvsComponent */]
                 },
                 {
+                    path: 'tvs/:type/page/:page',
+                    component: __WEBPACK_IMPORTED_MODULE_21__pages_tvs_tvs_component__["a" /* TvsComponent */]
+                },
+                {
                     path: 'movies',
                     component: __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */]
                 },
@@ -240,7 +244,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/movie-list/movie-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"columns is-mobile is-multiline\" *ngIf=\"movies\">\n    <!--<single-movie *ngFor=\"let movie of movies.results\" [movie]=movie></single-movie>-->\n    <a *ngFor=\"let movie of movies.results\" class=\"movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd\" [routerLink]=\"['/movie', movie.id]\">\n        <figure class=\"image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        </figure>\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </a>\n</div>"
+module.exports = "<div class=\"columns is-mobile is-multiline\" *ngIf=\"movies\">\n    <!--<single-movie *ngFor=\"let movie of movies.results\" [movie]=movie></single-movie>-->\n    <a *ngFor=\"let movie of movies.results\" class=\"movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd\" [routerLink]=\"['/movie', movie.id]\">\n        <figure class=\"image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        </figure>\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </a>\n</div>\n<nav class=\"pagination is-centered\" role=\"navigation\" aria-label=\"pagination\">\n    <a class=\"pagination-previous\">Previous</a>\n    <a class=\"pagination-next\">Next page</a>\n    <ul class=\"pagination-list\">\n        <li *ngFor=\"let page of totalPages\"><a class=\"pagination-link is-current\" aria-label=\"Page 46\" aria-current=\"page\">{{page}}</a></li>\n    </ul>\n</nav>"
 
 /***/ }),
 
@@ -961,9 +965,11 @@ var TvsComponent = (function () {
         ];
         this.selectedLink = 'latest';
         this.route.params
-            .switchMap(function (params) { return _this.tvService.getTvs(params['type']); })
+            .switchMap(function (params) { return _this.tvService.getTvs(params['type'], params['page']); })
             .subscribe(function (tvs) {
             _this.tvs = tvs;
+            _this.currentPage = tvs.page;
+            _this.totalPages = Array(tvs.total_pages).fill(0).map(function (x, i) { return i; });
             // set Page title
             var title = _this.formateTitle(_this.route.snapshot.params['type']);
             _this.titleService.setTitle(title);
@@ -1289,8 +1295,8 @@ var TvService = (function () {
         this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
     }
-    TvService.prototype.getTvs = function (type) {
-        var url = this.baseUrl + type + this.apiKey + '&page=1';
+    TvService.prototype.getTvs = function (type, page) {
+        var url = this.baseUrl + type + this.apiKey + '&page=' + page;
         var tvs = this.http.get(url)
             .toPromise()
             .then(function (response) { return response.json(); })

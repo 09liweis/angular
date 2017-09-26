@@ -15,8 +15,8 @@ export class TvService {
 
     constructor(private http: Http) { }
   
-    getTvs(type: String): Promise<Movies> {
-        const url = this.baseUrl + type + this.apiKey + '&page=1';
+    getTvs(type: String, page: number): Promise<Movies> {
+        const url = this.baseUrl + type + this.apiKey + '&page=' + page;
         const tvs = this.http.get(url)
                         .toPromise()
                         .then(response => response.json() as Movies)

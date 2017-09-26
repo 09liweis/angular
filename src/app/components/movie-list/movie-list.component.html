@@ -7,3 +7,10 @@
         <span class="rating">{{movie.vote_average}}</span>
     </a>
 </div>
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <a class="pagination-previous">Previous</a>
+    <a class="pagination-next">Next page</a>
+    <ul class="pagination-list">
+        <li *ngFor="let page of totalPages"><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{page}}</a></li>
+    </ul>
+</nav>

@@ -58,6 +58,10 @@ import { TvsComponent } from './pages/tvs/tvs.component';
         component: TvsComponent
       },
       {
+        path: 'tvs/:type/page/:page',
+        component: TvsComponent
+      },
+      {
         path: 'movies',
         component: MoviesComponent
       },

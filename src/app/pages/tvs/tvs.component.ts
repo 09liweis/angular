@@ -16,6 +16,8 @@ export class TvsComponent implements OnInit {
   tvs: Movies;
   selectedLink: String;
   links: Array<String>;
+  currentPage: Number;
+  totalPages: Array<Number>;
   
   constructor(
     private titleService: Title,
@@ -34,9 +36,11 @@ export class TvsComponent implements OnInit {
 
     this.route.params
     // (+) converts string 'id' to a number
-    .switchMap((params: Params) => this.tvService.getTvs(params['type']))
+    .switchMap((params: Params) => this.tvService.getTvs(params['type'], params['page']))
     .subscribe((tvs: Movies) => {
       this.tvs = tvs;
+      this.currentPage = tvs.page;
+      this.totalPages = Array(tvs.total_pages).fill(0).map((x,i)=>i)
       // set Page title
       var title = this.formateTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle(title);
