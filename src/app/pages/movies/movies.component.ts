@@ -17,6 +17,10 @@ export class MoviesComponent implements OnInit {
   links: Array<String>;
   movies: Movies;
   selectedMovie: Movie;
+  list: String;
+  type: string;
+  currentPage: Number;
+  totalPages: Array<Number>;
   
   constructor(
     private titleService: Title,
@@ -25,6 +29,7 @@ export class MoviesComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
+    this.list = 'movie';
     this.links = [
       'now_playing',
       'popular',
@@ -35,9 +40,12 @@ export class MoviesComponent implements OnInit {
 
     this.route.params
     // (+) converts string 'id' to a number
-    .switchMap((params: Params) => this.movieService.getMovies(params['type']))
+    .switchMap((params: Params) => this.movieService.getMovies(params['type'], params['page']))
     .subscribe((movies: Movies) => {
+      this.type = this.route.snapshot.params['type'];
       this.movies = movies;
+      this.currentPage = movies.page;
+      this.totalPages = Array(movies.total_pages).fill(1).map((x,i)=>i)
       // set Page title
       var title = this.formateTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle(title);

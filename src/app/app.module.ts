@@ -70,6 +70,10 @@ import { TvsComponent } from './pages/tvs/tvs.component';
         component: MoviesComponent
       },
       {
+        path: 'movies/:type/page/:page',
+        component: MoviesComponent
+      },
+      {
         path: 'movie/:id',
         component: MovieComponent
       },

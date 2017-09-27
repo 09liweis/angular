@@ -194,6 +194,10 @@ AppModule = __decorate([
                     component: __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */]
                 },
                 {
+                    path: 'movies/:type/page/:page',
+                    component: __WEBPACK_IMPORTED_MODULE_8__pages_movies_movies_component__["a" /* MoviesComponent */]
+                },
+                {
                     path: 'movie/:id',
                     component: __WEBPACK_IMPORTED_MODULE_9__pages_movie_movie_component__["a" /* MovieComponent */]
                 },
@@ -244,7 +248,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/movie-list/movie-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"columns is-mobile is-multiline\" *ngIf=\"movies\">\n    <!--<single-movie *ngFor=\"let movie of movies.results\" [movie]=movie></single-movie>-->\n    <a *ngFor=\"let movie of movies.results\" class=\"movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd\" [routerLink]=\"['/movie', movie.id]\">\n        <figure class=\"image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        </figure>\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </a>\n</div>\n<nav class=\"pagination is-centered\" role=\"navigation\" aria-label=\"pagination\" *ngIf=\"totalPages\">\n    <a class=\"pagination-previous\">Previous</a>\n    <a class=\"pagination-next\">Next page</a>\n    <ul class=\"pagination-list\">\n        <li *ngFor=\"let page of totalPages\">\n            <a [routerLink]=\"['/tvs/airing_today/page', (page+1)]\" class=\"pagination-link is-current\"  aria-current=\"page\">{{page+1}}</a>\n        </li>\n    </ul>\n</nav>"
+module.exports = "<div class=\"columns is-mobile is-multiline\" *ngIf=\"movies\">\n    <!--<single-movie *ngFor=\"let movie of movies.results\" [movie]=movie></single-movie>-->\n    <a *ngFor=\"let movie of movies.results\" class=\"movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd\" [routerLink]=\"['/', list, movie.id]\">\n        <figure class=\"image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        </figure>\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </a>\n</div>\n<nav class=\"pagination is-centered\" role=\"navigation\" aria-label=\"pagination\" *ngIf=\"totalPages\">\n    <a class=\"pagination-previous\">Previous</a>\n    <a class=\"pagination-next\">Next page</a>\n    <ul class=\"pagination-list\">\n        <li *ngFor=\"let page of totalPages\">\n            <a [routerLink]=\"['/',list + 's', type, 'page', (page+1)]\" class=\"pagination-link is-current\"  aria-current=\"page\">{{page+1}}</a>\n        </li>\n    </ul>\n</nav>"
 
 /***/ }),
 
@@ -273,6 +277,14 @@ var MovieListComponent = (function () {
     };
     return MovieListComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", String)
+], MovieListComponent.prototype, "type", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", String)
+], MovieListComponent.prototype, "list", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", Number)
@@ -677,7 +689,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/movies/movies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tabs is-centered\">\n    <ul>\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/movies', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n    </ul>\n</div>\n<div class=\"container fluid\">\n    <movie-list [movies]=movies></movie-list>\n</div>"
+module.exports = "<div class=\"tabs is-centered\">\n    <ul>\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/movies', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n    </ul>\n</div>\n<div class=\"container fluid\">\n    <movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>\n</div>"
 
 /***/ }),
 
@@ -711,6 +723,7 @@ var MoviesComponent = (function () {
     }
     MoviesComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.list = 'movie';
         this.links = [
             'now_playing',
             'popular',
@@ -719,9 +732,12 @@ var MoviesComponent = (function () {
         ];
         this.selectedLink = 'now_playing';
         this.route.params
-            .switchMap(function (params) { return _this.movieService.getMovies(params['type']); })
+            .switchMap(function (params) { return _this.movieService.getMovies(params['type'], params['page']); })
             .subscribe(function (movies) {
+            _this.type = _this.route.snapshot.params['type'];
             _this.movies = movies;
+            _this.currentPage = movies.page;
+            _this.totalPages = Array(movies.total_pages).fill(1).map(function (x, i) { return i; });
             // set Page title
             var title = _this.formateTitle(_this.route.snapshot.params['type']);
             _this.titleService.setTitle(title);
@@ -931,7 +947,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/tvs/tvs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tabs is-centered\">\n    <ul>\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/tvs', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n    </ul>\n</div>\n<div class=\"container fluid\">\n    <movie-list [movies]=tvs [totalPages]=totalPages [currentPage]=currentPage></movie-list>\n</div>"
+module.exports = "<div class=\"tabs is-centered\">\n    <ul>\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/tvs', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n    </ul>\n</div>\n<div class=\"container fluid\">\n    <movie-list [movies]=tvs [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>\n</div>"
 
 /***/ }),
 
@@ -965,6 +981,7 @@ var TvsComponent = (function () {
     }
     TvsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.list = 'tv';
         this.links = [
             'airing_today',
             'on_the_air',
@@ -975,6 +992,7 @@ var TvsComponent = (function () {
         this.route.params
             .switchMap(function (params) { return _this.tvService.getTvs(params['type'], params['page']); })
             .subscribe(function (tvs) {
+            _this.type = _this.route.snapshot.params['type'];
             _this.tvs = tvs;
             _this.currentPage = tvs.page;
             _this.totalPages = Array(tvs.total_pages).fill(1).map(function (x, i) { return i; });
@@ -1036,8 +1054,8 @@ var MovieService = (function () {
         this.apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Content-Type': 'application/json' });
     }
-    MovieService.prototype.getMovies = function (type) {
-        var moviesUrl = this.baseUrl + type + this.apiKey + '&page=1';
+    MovieService.prototype.getMovies = function (type, page) {
+        var moviesUrl = this.baseUrl + type + this.apiKey + '&page=' + page;
         var movies = this.http.get(moviesUrl)
             .toPromise()
             .then(function (response) { return response.json(); })

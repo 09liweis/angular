@@ -1,6 +1,6 @@
 <div class="columns is-mobile is-multiline" *ngIf="movies">
     <!--<single-movie *ngFor="let movie of movies.results" [movie]=movie></single-movie>-->
-    <a *ngFor="let movie of movies.results" class="movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd" [routerLink]="['/movie', movie.id]">
+    <a *ngFor="let movie of movies.results" class="movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd" [routerLink]="['/', list, movie.id]">
         <figure class="image">
             <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
         </figure>
@@ -12,7 +12,7 @@
     <a class="pagination-next">Next page</a>
     <ul class="pagination-list">
         <li *ngFor="let page of totalPages">
-            <a [routerLink]="['/tvs/airing_today/page', (page+1)]" class="pagination-link is-current"  aria-current="page">{{page+1}}</a>
+            <a [routerLink]="['/',list + 's', type, 'page', (page+1)]" class="pagination-link is-current"  aria-current="page">{{page+1}}</a>
         </li>
     </ul>
 </nav>

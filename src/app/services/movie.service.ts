@@ -19,8 +19,8 @@ export class MovieService {
 
     constructor(private http: Http) { }
     
-    getMovies(type: String): Promise<Movies> {
-        const moviesUrl = this.baseUrl + type + this.apiKey + '&page=1';
+    getMovies(type: String, page: number): Promise<Movies> {
+        const moviesUrl = this.baseUrl + type + this.apiKey + '&page=' + page;
         const movies = this.http.get(moviesUrl)
                         .toPromise()
                         .then(response => response.json() as Movies)
