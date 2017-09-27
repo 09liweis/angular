@@ -7,6 +7,8 @@ import { Movies } from '../../models/movies';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
+  @Input() totalPages: number;
+  @Input() currentPage: number;
   @Input() movies: Movies;
   constructor() {
   }

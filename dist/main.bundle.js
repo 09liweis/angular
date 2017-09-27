@@ -244,7 +244,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/movie-list/movie-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"columns is-mobile is-multiline\" *ngIf=\"movies\">\n    <!--<single-movie *ngFor=\"let movie of movies.results\" [movie]=movie></single-movie>-->\n    <a *ngFor=\"let movie of movies.results\" class=\"movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd\" [routerLink]=\"['/movie', movie.id]\">\n        <figure class=\"image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        </figure>\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </a>\n</div>\n<nav class=\"pagination is-centered\" role=\"navigation\" aria-label=\"pagination\">\n    <a class=\"pagination-previous\">Previous</a>\n    <a class=\"pagination-next\">Next page</a>\n    <ul class=\"pagination-list\">\n        <li *ngFor=\"let page of totalPages\"><a class=\"pagination-link is-current\" aria-label=\"Page 46\" aria-current=\"page\">{{page}}</a></li>\n    </ul>\n</nav>"
+module.exports = "<div class=\"columns is-mobile is-multiline\" *ngIf=\"movies\">\n    <!--<single-movie *ngFor=\"let movie of movies.results\" [movie]=movie></single-movie>-->\n    <a *ngFor=\"let movie of movies.results\" class=\"movie column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-one-quarter-fullhd\" [routerLink]=\"['/movie', movie.id]\">\n        <figure class=\"image\">\n            <img src=\"https://image.tmdb.org/t/p/w500{{movie.poster_path}}\" alt=\"{{ movie.title }}\" />\n        </figure>\n        <span class=\"rating\">{{movie.vote_average}}</span>\n    </a>\n</div>\n<nav class=\"pagination is-centered\" role=\"navigation\" aria-label=\"pagination\" *ngIf=\"totalPages\">\n    <a class=\"pagination-previous\">Previous</a>\n    <a class=\"pagination-next\">Next page</a>\n    <ul class=\"pagination-list\">\n        <li *ngFor=\"let page of totalPages\">\n            <a [routerLink]=\"['/tvs/airing_today/page', (page+1)]\" class=\"pagination-link is-current\"  aria-current=\"page\">{{page+1}}</a>\n        </li>\n    </ul>\n</nav>"
 
 /***/ }),
 
@@ -273,6 +273,14 @@ var MovieListComponent = (function () {
     };
     return MovieListComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", Number)
+], MovieListComponent.prototype, "totalPages", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", Number)
+], MovieListComponent.prototype, "currentPage", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__models_movies__["a" /* Movies */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__models_movies__["a" /* Movies */]) === "function" && _a || Object)
@@ -923,7 +931,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/tvs/tvs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tabs is-centered\">\n    <ul>\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/tvs', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n    </ul>\n</div>\n<div class=\"container fluid\">\n    <movie-list [movies]=tvs></movie-list>\n</div>"
+module.exports = "<div class=\"tabs is-centered\">\n    <ul>\n        <li class=\"tab col s3\" *ngFor=\"let link of links\"><a [class.is-active]=\"selectedLink == link\" [routerLink]=\"['/tvs', link]\" (click)=\"selectedLink=link\">{{formateTitle(link)}}</a></li>\n    </ul>\n</div>\n<div class=\"container fluid\">\n    <movie-list [movies]=tvs [totalPages]=totalPages [currentPage]=currentPage></movie-list>\n</div>"
 
 /***/ }),
 
@@ -969,7 +977,7 @@ var TvsComponent = (function () {
             .subscribe(function (tvs) {
             _this.tvs = tvs;
             _this.currentPage = tvs.page;
-            _this.totalPages = Array(tvs.total_pages).fill(0).map(function (x, i) { return i; });
+            _this.totalPages = Array(tvs.total_pages).fill(1).map(function (x, i) { return i; });
             // set Page title
             var title = _this.formateTitle(_this.route.snapshot.params['type']);
             _this.titleService.setTitle(title);

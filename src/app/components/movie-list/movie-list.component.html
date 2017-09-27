@@ -7,10 +7,12 @@
         <span class="rating">{{movie.vote_average}}</span>
     </a>
 </div>
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+<nav class="pagination is-centered" role="navigation" aria-label="pagination" *ngIf="totalPages">
     <a class="pagination-previous">Previous</a>
     <a class="pagination-next">Next page</a>
     <ul class="pagination-list">
-        <li *ngFor="let page of totalPages"><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{page}}</a></li>
+        <li *ngFor="let page of totalPages">
+            <a [routerLink]="['/tvs/airing_today/page', (page+1)]" class="pagination-link is-current"  aria-current="page">{{page+1}}</a>
+        </li>
     </ul>
 </nav>

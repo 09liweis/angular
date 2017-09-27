@@ -40,7 +40,7 @@ export class TvsComponent implements OnInit {
     .subscribe((tvs: Movies) => {
       this.tvs = tvs;
       this.currentPage = tvs.page;
-      this.totalPages = Array(tvs.total_pages).fill(0).map((x,i)=>i)
+      this.totalPages = Array(tvs.total_pages).fill(1).map((x,i)=>i)
       // set Page title
       var title = this.formateTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle(title);
