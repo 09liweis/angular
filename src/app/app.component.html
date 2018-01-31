@@ -1,8 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-            <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-        </a>
+        <a class="navbar-item" routerLink="/">Movie Paradise</a>
         <div class="navbar-item"><a routerLink="/movies/now_playing">Movies</a></div>
         <div class="navbar-item"><a routerLink="/tvs/airing_today/page/1">Tv Show</a></div>
         <div class="navbar-item"><a routerLink="/news">News</a></div>
@@ -20,23 +18,23 @@
 </nav>
 
 <!--The whole content below can be removed with the new code.-->
-<div class="row" *ngIf="sessionId == ''">
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="username" name="username" type="text" class="validate" [(ngModel)]="username">
-                <label for="username">Username</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="password" name="password" type="password" class="validate" [(ngModel)]="password">
-                <label for="password">Password</label>
-            </div>
-        </div>
-        <a (click)="login()" class="waves-effect waves-light btn">Login</a>
-    </form>
-</div>
+<!--<div class="row" *ngIf="sessionId == ''">-->
+<!--    <form class="col s12">-->
+<!--        <div class="row">-->
+<!--            <div class="input-field col s12">-->
+<!--                <input id="username" name="username" type="text" class="validate" [(ngModel)]="username">-->
+<!--                <label for="username">Username</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="input-field col s12">-->
+<!--                <input id="password" name="password" type="password" class="validate" [(ngModel)]="password">-->
+<!--                <label for="password">Password</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <a (click)="login()" class="waves-effect waves-light btn">Login</a>-->
+<!--    </form>-->
+<!--</div>-->
 <div class="">
   <h1 class="text-center">Welcome to {{title}}!!</h1>
   <router-outlet></router-outlet>
