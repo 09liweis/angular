@@ -92,7 +92,7 @@
                         <a class="right" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
                     </div>
                     <div class="columns">
-                        <movie-list [movies]=(similarMovies)></movie-list>
+                        <movie-list type="movie" list="movie" [movies]=(similarMovies)></movie-list>
                     </div>
                 </div>
             </div>
