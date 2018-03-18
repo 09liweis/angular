@@ -12,7 +12,7 @@
     <a class="pagination-next">Next page</a>
     <ul class="pagination-list">
         <li *ngFor="let page of totalPages">
-            <a [routerLink]="['/',list + 's', type, 'page', (page+1)]" class="pagination-link is-current"  aria-current="page">{{page+1}}</a>
+            <a [routerLink]="['/',list + 's', type, 'page', (page+1)]" class="pagination-link" [class.is-current]="currentPage == (page+1)"  aria-current="page">{{page+1}}</a>
         </li>
     </ul>
 </nav>

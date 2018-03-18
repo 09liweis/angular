@@ -42,6 +42,7 @@ export class TvsComponent implements OnInit {
     .switchMap((params: Params) => this.tvService.getTvs(params['type'], params['page']))
     .subscribe((tvs: Movies) => {
       this.type = this.route.snapshot.params['type'];
+      this.selectedLink = this.route.snapshot.params['type'];
       this.tvs = tvs;
       this.currentPage = tvs.page;
       this.totalPages = Array(tvs.total_pages).fill(1).map((x,i)=>i)
