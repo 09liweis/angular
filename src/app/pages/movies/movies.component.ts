@@ -43,6 +43,7 @@ export class MoviesComponent implements OnInit {
     .switchMap((params: Params) => this.movieService.getMovies(params['type'], params['page']))
     .subscribe((movies: Movies) => {
       this.type = this.route.snapshot.params['type'];
+      this.selectedLink = this.route.snapshot.params['type'];
       this.movies = movies;
       this.currentPage = movies.page;
       this.totalPages = Array(movies.total_pages).fill(1).map((x,i)=>i)
