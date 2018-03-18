@@ -5,16 +5,16 @@
 }
 
 .rating {
-    border: 1px solid;
     border-radius: 5px;
     padding: 5px;
-    background: rgb(255, 255, 255);
+    background-color: #ffb207;
+    color: #ffffff;
 }
 
 .movie .rating {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 12px;
+    left: 12px;
 }
 
 img {

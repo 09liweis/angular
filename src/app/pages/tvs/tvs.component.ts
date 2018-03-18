@@ -35,7 +35,7 @@ export class TvsComponent implements OnInit {
       'popular',
       'top_rated'
     ];
-    this.selectedLink = 'latest';
+    this.selectedLink = 'airing_today';
 
     this.route.params
     // (+) converts string 'id' to a number

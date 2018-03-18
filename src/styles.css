@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #232b31;
+}
+
+.tabs a {
+    color: #ffffff;
+}
+
+.tabs a:hover {
+    border-bottom-color: #dbdbdb;
+    color: #4a4a4a;
+}

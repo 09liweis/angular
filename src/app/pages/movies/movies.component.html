@@ -3,6 +3,5 @@
         <li class="tab col s3" [class.is-active]="selectedLink == link" *ngFor="let link of links"><a [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a></li>
     </ul>
 </div>
-<div class="container fluid">
-    <movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>
-</div>
+
+<movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>
