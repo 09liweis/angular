@@ -74,7 +74,7 @@
                         <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
                     </div>
                     <div class="columns">
-                        <person *ngFor="let cast of movieCredits.cast.slice(0, 6)" [cast]=cast></person>
+                        <person class="column 6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.cast.slice(0, 6)" [cast]=cast></person>
                     </div>
                 </div>
                 <div id="crews" *ngIf="movieCredits">
@@ -83,7 +83,7 @@
                         <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full crews</a>
                     </div>
                     <div class="columns">
-                        <person *ngFor="let cast of movieCredits.crew.slice(0, 6)" [cast]=cast></person>
+                        <person class="column 6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.crew.slice(0, 6)" [cast]=cast></person>
                     </div>
                 </div>
                 <div id="similar-movies" *ngIf="similarMovies">
