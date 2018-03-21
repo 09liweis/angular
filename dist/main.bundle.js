@@ -218,7 +218,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/components/movie-list/movie-list.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".movie {\n    border-radius: 5px;\n    position: relative;\n}\n\n.rating {\n    border-radius: 5px;\n    padding: 5px;\n    background-color: #ffb207;\n    color: #ffffff;\n}\n\n.movie .rating {\n    position: absolute;\n    top: 12px;\n    left: 12px;\n}\n\nimg {\n    border-radius: 5px;\n}"
+module.exports = ".movie {\n    border-radius: 5px;\n    position: relative;\n}\n\n.rating {\n    border-radius: 5px;\n    padding: 5px;\n    background-color: #ffb207;\n    color: #ffffff;\n}\n\n.movie .rating {\n    position: absolute;\n    top: 12px;\n    left: 12px;\n}\n\n.movie img {\n    border-radius: 5px;\n}"
 
 /***/ }),
 
