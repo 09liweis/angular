@@ -2,20 +2,21 @@
     border-radius: 5px;
     position: relative;
 }
-
 .rating {
     border-radius: 5px;
     padding: 5px;
     background-color: #ffb207;
     color: #ffffff;
 }
-
+.movie_title {
+    color: #cac1c1;
+    font-size: 1rem;
+}
 .movie .rating {
     position: absolute;
     top: 12px;
     left: 12px;
 }
-
 .movie img {
     border-radius: 5px;
 }
