@@ -4,6 +4,7 @@
     </div>
     <div class="cast__info">
         <span class="cast__name">{{ cast.name }}</span>
-        <span>{{ cast.character }}</span>
+        <span *ngIf="cast.character">{{ cast.character }}</span>
+        <span *ngIf="cast.job">{{cast.job}}</span>
     </div>
 </div>
