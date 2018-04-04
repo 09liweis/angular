@@ -1,6 +1,7 @@
-<div class="movie column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd" [routerLink]="['/movie', movie.id]">
+<a class="movie" [routerLink]="['/movie', movie.id]">
     <figure class="image">
         <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
     </figure>
+    <div class="movie_title">{{movie.title}}</div>
     <span class="rating">{{movie.vote_average}}</span>
-</div>
+</a>
