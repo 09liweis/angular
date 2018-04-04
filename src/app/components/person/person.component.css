@@ -1,3 +1,10 @@
+.cast__image img {
+    border-radius: 5px;
+}
 .cast__info {
+    background-color: #ffffff;
     padding: 10px;
+}
+.cast__name {
+    font-weight: bold;
 }
