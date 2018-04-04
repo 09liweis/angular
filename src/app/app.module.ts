@@ -22,6 +22,7 @@ import { PersonsComponent } from './pages/persons/persons.component';
 import {PersonService} from './services/person.service';
 import { NewsComponent } from './pages/news/news.component';
 import { TvsComponent } from './pages/tvs/tvs.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TvsComponent } from './pages/tvs/tvs.component';
     NewsComponent,
     TvsComponent,
     PersonsComponent,
+    HomeComponent,
   ],
   imports: [
     FormsModule,
@@ -42,6 +44,10 @@ import { TvsComponent } from './pages/tvs/tvs.component';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent
+      },
       {
         path: 'login',
         component: LoginComponent
