@@ -4,6 +4,11 @@ html, body {
     background-color: #232b31;
 }
 
+.title {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
 .tabs a {
     color: #ffffff;
 }

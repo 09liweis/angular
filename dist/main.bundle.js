@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" routerLink=\"/\">Movie Paradise</a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/tvs/airing_today/page/1\">Tv Show</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<!--<div class=\"row\" *ngIf=\"sessionId == ''\">-->\n<!--    <form class=\"col s12\">-->\n<!--        <div class=\"row\">-->\n<!--            <div class=\"input-field col s12\">-->\n<!--                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">-->\n<!--                <label for=\"username\">Username</label>-->\n<!--            </div>-->\n<!--        </div>-->\n<!--        <div class=\"row\">-->\n<!--            <div class=\"input-field col s12\">-->\n<!--                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">-->\n<!--                <label for=\"password\">Password</label>-->\n<!--            </div>-->\n<!--        </div>-->\n<!--        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>-->\n<!--    </form>-->\n<!--</div>-->\n<div class=\"container fluid\">\n  <h1 class=\"text-center\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n    <div class=\"navbar-brand\">\n        <a class=\"navbar-item\" routerLink=\"/\">Movie Paradise</a>\n        <div class=\"navbar-item\"><a routerLink=\"/movies/now_playing\">Movies</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/tvs/airing_today/page/1\">Tv Show</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/persons/popular\">People</a></div>\n        <div class=\"navbar-item\"><a routerLink=\"/news\">News</a></div>\n        <div class=\"navbar-item\"><a>More Coming Soon</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a>{{ username }}</a></div>\n        <div class=\"navbar-item\" *ngIf=\"sessionId != ''\"><a (click)=\"logout()\">Logout</a></div>\n    \n        <button class=\"button navbar-burger\">\n            <span></span>\n            <span></span>\n            <span></span>\n        </button>\n    </div>\n</nav>\n\n<!--The whole content below can be removed with the new code.-->\n<!--<div class=\"row\" *ngIf=\"sessionId == ''\">-->\n<!--    <form class=\"col s12\">-->\n<!--        <div class=\"row\">-->\n<!--            <div class=\"input-field col s12\">-->\n<!--                <input id=\"username\" name=\"username\" type=\"text\" class=\"validate\" [(ngModel)]=\"username\">-->\n<!--                <label for=\"username\">Username</label>-->\n<!--            </div>-->\n<!--        </div>-->\n<!--        <div class=\"row\">-->\n<!--            <div class=\"input-field col s12\">-->\n<!--                <input id=\"password\" name=\"password\" type=\"password\" class=\"validate\" [(ngModel)]=\"password\">-->\n<!--                <label for=\"password\">Password</label>-->\n<!--            </div>-->\n<!--        </div>-->\n<!--        <a (click)=\"login()\" class=\"waves-effect waves-light btn\">Login</a>-->\n<!--    </form>-->\n<!--</div>-->\n<div class=\"container fluid\">\n  <h1 class=\"title\">Welcome to {{title}}!!</h1>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -49,7 +49,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var AppComponent = /** @class */ (function () {
+var AppComponent = (function () {
     function AppComponent(sessionService) {
         this.sessionService = sessionService;
         this.title = 'Movies Paradise';
@@ -134,7 +134,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AppModule = /** @class */ (function () {
+var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
@@ -254,7 +254,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var MovieListComponent = /** @class */ (function () {
+var MovieListComponent = (function () {
     function MovieListComponent() {
     }
     MovieListComponent.prototype.ngOnInit = function () {
@@ -326,7 +326,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var SingleMovieComponent = /** @class */ (function () {
+var SingleMovieComponent = (function () {
     function SingleMovieComponent() {
     }
     SingleMovieComponent.prototype.ngOnInit = function () {
@@ -382,7 +382,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var PersonComponent = /** @class */ (function () {
+var PersonComponent = (function () {
     function PersonComponent() {
     }
     PersonComponent.prototype.ngOnInit = function () {
@@ -436,7 +436,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var LoginComponent = /** @class */ (function () {
+var LoginComponent = (function () {
     function LoginComponent() {
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -461,7 +461,7 @@ var LoginComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Cast; });
-var Cast = /** @class */ (function () {
+var Cast = (function () {
     function Cast() {
     }
     return Cast;
@@ -476,7 +476,7 @@ var Cast = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Movie; });
-var Movie = /** @class */ (function () {
+var Movie = (function () {
     function Movie() {
     }
     return Movie;
@@ -491,7 +491,7 @@ var Movie = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Movies; });
-var Movies = /** @class */ (function () {
+var Movies = (function () {
     function Movies() {
     }
     return Movies;
@@ -511,7 +511,7 @@ module.exports = ""
 /***/ "./src/app/pages/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>\n\n<movie-list [movies]=tvs [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>"
+module.exports = "<h2 class=\"title\">Movies</h2>\n<movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>\n\n<h2 class=\"title\">Tvs</h2>\n<movie-list [movies]=tvs [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>"
 
 /***/ }),
 
@@ -535,7 +535,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HomeComponent = /** @class */ (function () {
+var HomeComponent = (function () {
     function HomeComponent(movieService, tvService) {
         this.movieService = movieService;
         this.tvService = tvService;
@@ -610,7 +610,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //Import the switchMap operator to use later with the route parameters Observable.
 
 
-var MovieComponent = /** @class */ (function () {
+var MovieComponent = (function () {
     function MovieComponent(movieService, route, location, titleService, sanitizier) {
         this.movieService = movieService;
         this.route = route;
@@ -711,7 +711,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var MoviesComponent = /** @class */ (function () {
+var MoviesComponent = (function () {
     function MoviesComponent(titleService, movieService, route) {
         this.titleService = titleService;
         this.movieService = movieService;
@@ -803,7 +803,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var NewsComponent = /** @class */ (function () {
+var NewsComponent = (function () {
     function NewsComponent(newsService, titleService) {
         this.newsService = newsService;
         this.titleService = titleService;
@@ -868,7 +868,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var PersonsComponent = /** @class */ (function () {
+var PersonsComponent = (function () {
     function PersonsComponent(titleService, personService, route) {
         this.titleService = titleService;
         this.personService = personService;
@@ -939,7 +939,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TvsComponent = /** @class */ (function () {
+var TvsComponent = (function () {
     function TvsComponent(titleService, tvService, route) {
         this.titleService = titleService;
         this.tvService = tvService;
@@ -1015,7 +1015,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var MovieService = /** @class */ (function () {
+var MovieService = (function () {
     function MovieService(http) {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/movie/';
@@ -1109,7 +1109,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var NewsService = /** @class */ (function () {
+var NewsService = (function () {
     function NewsService(http) {
         this.http = http;
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
@@ -1158,7 +1158,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var PersonService = /** @class */ (function () {
+var PersonService = (function () {
     function PersonService(http) {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/person/';
@@ -1209,7 +1209,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SessionService = /** @class */ (function () {
+var SessionService = (function () {
     function SessionService(http) {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/authentication/';
@@ -1278,7 +1278,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TvService = /** @class */ (function () {
+var TvService = (function () {
     function TvService(http) {
         this.http = http;
         this.baseUrl = 'https://api.themoviedb.org/3/tv/';
