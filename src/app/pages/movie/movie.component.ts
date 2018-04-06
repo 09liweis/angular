@@ -70,11 +70,7 @@ export class MovieComponent implements OnInit {
       });
     });
   }
-  
-  goBack(): void {
-    this.location.back();
-  }
-  
+
   changeSection(section): void {
     this.section = section;
   }
