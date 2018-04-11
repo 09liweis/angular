@@ -1,0 +1,32 @@
+#nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(51,51,51,.95);
+    z-index: 11;
+    padding-bottom: 10px;
+}
+.nav__link {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    color: #fcb208;
+    transition: color 0.3s;
+    position: relative;
+}
+.nav__link:before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fcb208;
+    transition: width 0.4s ease;
+}
+.nav__link:hover:before {
+    width: 100%;
+}
+#mainContainer {
+    margin-top: 65px;
+}
