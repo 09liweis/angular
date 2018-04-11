@@ -3,7 +3,7 @@
 </div>
 <nav class="pagination is-centered" role="navigation" aria-label="pagination" *ngIf="totalPages">
     <a class="pagination-previous">Previous</a>
-    <a class="pagination-next">Next page</a>
+    <a class="pagination-next">Next</a>
     <ul class="pagination-list">
         <li *ngFor="let page of totalPages">
             <a [routerLink]="['/',list + 's', type, 'page', (page+1)]" class="pagination-link" [class.is-current]="currentPage == (page+1)"  aria-current="page">{{page+1}}</a>
