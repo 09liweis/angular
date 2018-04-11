@@ -6,11 +6,6 @@
     z-index: 11;
     padding: 10px 0;
 }
-.nav__container {
-    max-width: 1152px;
-    width: 100%;
-    margin: auto;
-}
 #logo {
     display: inline-block;
     color: #ffffff;
