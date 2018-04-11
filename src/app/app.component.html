@@ -8,12 +8,6 @@
         <div class="navbar-item"><a>More Coming Soon</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
-    
-        <button class="button navbar-burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </div>
 </nav>
 
