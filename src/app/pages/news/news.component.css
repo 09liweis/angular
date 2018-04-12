@@ -1,5 +1,11 @@
 .news {
-    background-color: #ffffff;
+    color: #fcb208;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+.news:hover {
+    color: #fcb208;
+    border: 1px solid #fcb208;
 }
 .news__content {
     padding: 20px;

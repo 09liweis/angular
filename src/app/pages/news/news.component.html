@@ -1,10 +1,12 @@
 <div class="columns is-multiline">
-    <a class="column is-3 news" *ngFor="let item of news" href="{{item.link}}" target="_blank">
-        <figure class="image">
-            <img src="{{item.featured_image.source}}" alt="Placeholder image">
-        </figure>
-        <div class="news__content">
-            <p [innerHTML]=item.title></p>
+    <a class="column is-12-mobile is-4-tablet is-3-desktop is-3-widescreen is-3-fullhd" *ngFor="let item of news" href="{{item.link}}" target="_blank">
+        <div class="news">
+            <figure class="image">
+                <img src="{{item.featured_image.source}}" alt="Placeholder image">
+            </figure>
+            <div class="news__content">
+                <p [innerHTML]=item.title></p>
+            </div>
         </div>
     </a>
 </div>
