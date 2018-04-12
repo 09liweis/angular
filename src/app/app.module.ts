@@ -67,6 +67,10 @@ import { TvComponent } from './pages/tv/tv.component';
         component: TvsComponent
       },
       {
+        path: 'tv/:id',
+        component: TvComponent
+      },
+      {
         path: 'movies',
         component: MoviesComponent
       },
