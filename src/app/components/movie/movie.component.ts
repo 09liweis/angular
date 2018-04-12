@@ -8,6 +8,7 @@ import { Movie } from '../../models/movie';
 })
 export class SingleMovieComponent implements OnInit {
   @Input() movie: Movie;
+  @Input() list: String;
 
   constructor() { }
 

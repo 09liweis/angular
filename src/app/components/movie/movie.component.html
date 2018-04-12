@@ -1,4 +1,4 @@
-<a class="movie" [routerLink]="['/movie', movie.id]">
+<a class="movie" [routerLink]="['/', list, movie.id]">
     <figure class="movie__poster">
         <img class="movie__image" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
     </figure>
