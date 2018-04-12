@@ -1,7 +1,5 @@
 <div class="tabs is-centered">
-    <ul>
-        <li class="tab col s3" [class.is-active]="selectedLink == link" *ngFor="let link of links"><a class="tab__link" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a></li>
-    </ul>
+    <a class="tab__link" [class.is-active]="selectedLink == link" *ngFor="let link of links" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a>
 </div>
 
 <movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>
