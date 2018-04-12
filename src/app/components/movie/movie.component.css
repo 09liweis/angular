@@ -7,12 +7,13 @@
 .movie:hover {
     
 }
+
 .movie__image {
     transform: scale(1);
     transition: transform 0.4s ease;
 }
 .movie__image:hover {
-    transform: scale(1.1);
+    transform: rotate3d(1, 2, 1, 15deg);
 }
 .rating {
     border-radius: 5px;

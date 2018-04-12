@@ -1,6 +1,6 @@
 <a class="movie" [routerLink]="['/movie', movie.id]">
-    <figure class="movie__image">
-        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
+    <figure class="movie__poster">
+        <img class="movie__image" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{ movie.title }}" />
     </figure>
     <div class="movie_title">{{movie.title}}</div>
     <span class="rating">{{movie.vote_average}}</span>
