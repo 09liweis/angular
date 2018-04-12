@@ -1,4 +1,4 @@
-<div class="tabs is-centered">
+<div class="tabs">
     <a class="tab__link" [class.is-active]="selectedLink == link" *ngFor="let link of links" [routerLink]="['/movies', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a>
 </div>
 
