@@ -3,12 +3,14 @@
     text-align: center;
 }
 .tab__link {
+    padding: 10px;
+    display: inline-block;
+    margin: 0 10px;
     color: #fcb208;
     transition: all 0.2s ease-out;
 }
+.tab__link.is-active,
 .tab__link:hover {
-    color: #fcb208;
-}
-a.active {
-    text-decoration: underline;
+    color: #ffffff;
+    background-color: #fcb209;
 }
