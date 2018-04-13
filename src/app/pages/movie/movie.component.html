@@ -83,9 +83,7 @@
                         <h5 class="left">Similar Movies</h5>
                         <a class="right" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
                     </div>
-                    <div class="columns">
-                        <movie-list type="movie" list="movie" [movies]=(similarMovies)></movie-list>
-                    </div>
+                    <movie-list type="movie" list="movie" [movies]=(similarMovies)></movie-list>
                 </div>
             </div>
         </div>

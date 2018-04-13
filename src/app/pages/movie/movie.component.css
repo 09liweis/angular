@@ -12,7 +12,7 @@ img {
     position: relative;
 }
 .movie__info {
-    
+    padding: 5%;
 }
 .bg-black {
     background: #06131a;
