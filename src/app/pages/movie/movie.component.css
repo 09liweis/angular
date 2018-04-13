@@ -1,15 +1,18 @@
 img {
     width: 100%;
 }
-
+#movie {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
 #movie__header {
     color: #ffffff;
     position: relative;
 }
 .movie__info {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+    
 }
 .bg-black {
     background: #06131a;
