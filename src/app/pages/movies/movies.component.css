@@ -7,7 +7,7 @@
     display: inline-block;
     margin: 0 10px;
     color: #fcb208;
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease;
 }
 .tab__link.is-active,
 .tab__link:hover {
