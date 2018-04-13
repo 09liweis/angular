@@ -15,34 +15,42 @@
                     <span class="label">Genres: </span>
                     <span *ngFor="let genre of movie.genres" class="genre">{{genre.name}}</span>
                 </div>
-                <div class="data">
-                    <h6 class="label">Status:</h6>
-                    <p>{{movie.status}}</p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="data">
+                            <h6 class="label">Status:</h6>
+                            <p>{{movie.status}}</p>
+                        </div>
+                        <div class="data">
+                            <h6 class="label">Release Information:</h6>
+                            <p>{{movie.release_date}}</p>
+                        </div>
+                        <div class="data">
+                            <h6 class="label">Original Language:</h6>
+                            <p>{{movie.original_language}}</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="data">
+                            <h6 class="label">Runtime:</h6>
+                            <p>{{movie.runtime}}</p>
+                        </div>
+                        <div class="data">
+                            <h6 class="label">Revenue:</h6>
+                            <p>{{movie.revenue}}</p>
+                        </div>
+                        <div class="data">
+                            <h6 class="label">Homepage:</h6>
+                            <p><a href="{{movie.homepage}}" target="_blank">{{movie.homepage}}</a></p>
+                        </div>
+                        <div class="data">
+                            <h6 class="label">Production Companies:</h6>
+                            <p *ngFor="let company of movie.production_companies">{{company.name}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="data">
-                    <h6 class="label">Release Information:</h6>
-                    <p>{{movie.release_date}}</p>
-                </div>
-                <div class="data">
-                    <h6 class="label">Original Language:</h6>
-                    <p>{{movie.original_language}}</p>
-                </div>
-                <div class="data">
-                    <h6 class="label">Runtime:</h6>
-                    <p>{{movie.runtime}}</p>
-                </div>
-                <div class="data">
-                    <h6 class="label">Revenue:</h6>
-                    <p>{{movie.revenue}}</p>
-                </div>
-                <div class="data">
-                    <h6 class="label">Homepage:</h6>
-                    <p><a href="{{movie.homepage}}" target="_blank">{{movie.homepage}}</a></p>
-                </div>
-                <div class="data">
-                    <h6 class="label">Production Companies:</h6>
-                    <p *ngFor="let company of movie.production_companies">{{company.name}}</p>
-                </div>
+                
+                
             </div>
         </div>
     </div>
