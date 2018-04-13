@@ -6,6 +6,9 @@
                 <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
             </div>
             <div class="column is-8">
+                <h1>{{movie.title}}</h1>
+                <div class="movie__date">{{movie.release_date}}</div>
+                <div class="movie__rating">{{movie.vote_average}}</div>
                 <p>{{movie.tagline}}</p>
                 <p>{{ movie.overview }}</p>
                 <div class="genres">
@@ -13,11 +16,6 @@
                     <span *ngFor="let genre of movie.genres" class="genre">{{genre.name}}</span>
                 </div>
             </div>
-        </div>
-        <div class="basic-info">
-            <h5 class="movie-title">{{ movie.title }}</h5>
-            <span class="release-date">{{movie.release_date.substr(0, 4)}}</span>
-            <span class="rating">{{movie.vote_average}}</span>
         </div>
     </div>
     <div class="" *ngIf="movieVideo">

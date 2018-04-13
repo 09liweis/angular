@@ -11,15 +11,6 @@ img {
     background-size: cover;
     background-position: 50% 50%;
 }
-
-.basic-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-}
-
 .bg-black {
     background: #06131a;
     color: #ffffff;
