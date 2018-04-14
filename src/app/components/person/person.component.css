@@ -1,6 +1,7 @@
 .cast__image img {
     border-radius: 5px;
     display: block;
+    width: 100%;
 }
 .cast__info {
     background-color: #ffffff;
