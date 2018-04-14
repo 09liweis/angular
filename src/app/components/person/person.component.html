@@ -3,7 +3,7 @@
         <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}">
     </figure>
     <div class="cast__info">
-        <span class="cast__name">{{ cast.name }}</span>
+        <div class="cast__name">{{ cast.name }}</div>
         <span *ngIf="cast.character">{{ cast.character }}</span>
         <span *ngIf="cast.job">{{cast.job}}</span>
     </div>
