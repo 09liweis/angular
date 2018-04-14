@@ -1,3 +1,9 @@
+.cast {
+    transition: transform 0.3s ease;
+}
+.cast:hover {
+    transform: translateY(10px);
+}
 .cast__image img {
     border-radius: 5px;
     display: block;
