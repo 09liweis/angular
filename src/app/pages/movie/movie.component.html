@@ -81,8 +81,8 @@
         </div>
         <div id="similar-movies" *ngIf="similarMovies">
             <div class="columns">
-                <h5 class="left">Similar Movies</h5>
-                <a class="right" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
+                <h5 class="column">Similar Movies</h5>
+                <a class="column" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
             </div>
             <movie-list type="movie" list="movie" [movies]=(similarMovies)></movie-list>
         </div>
