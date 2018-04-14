@@ -1,6 +1,6 @@
 <div class="cast">
     <figure class="cast__image">
-        <img src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}" onError="this.src='https://netbranding.co.nz/wp-content/uploads/2014/04/avatar-2.png';">
+        <img [src]=getCastImage(cast.profile_path) onError="this.src='https://netbranding.co.nz/wp-content/uploads/2014/04/avatar-2.png';">
     </figure>
     <div class="cast__info">
         <div class="cast__name">{{ cast.name }}</div>
