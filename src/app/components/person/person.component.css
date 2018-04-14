@@ -6,6 +6,8 @@
 .cast__info {
     background-color: #ffffff;
     padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .cast__name {
     font-weight: bold;
