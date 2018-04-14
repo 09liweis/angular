@@ -63,8 +63,8 @@
     <div class="" *ngIf="!section">
         <div id="casts" *ngIf="movieCredits">
             <div class="columns">
-                <h5 class="left">Feature Casts</h5>
-                <a class="right" [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
+                <h5 class="column">Feature Casts</h5>
+                <a class="column" [routerLink]="['/movie', movie.id, 'casts']">View full casts</a>
             </div>
             <div class="columns">
                 <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.cast.slice(0, 6)" [cast]=cast></person>
