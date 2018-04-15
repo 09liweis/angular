@@ -1,10 +1,10 @@
 <div class="cast">
     <figure class="cast__image">
         <img [src]=getCastImage(cast.profile_path) alt="{{cast.name}}">
+        <div class="cast__info">
+            <div class="cast__name">{{ cast.name }}</div>
+            <span *ngIf="cast.character">{{ cast.character }}</span>
+            <span *ngIf="cast.job">{{cast.job}}</span>
+        </div>
     </figure>
-    <div class="cast__info">
-        <div class="cast__name">{{ cast.name }}</div>
-        <span *ngIf="cast.character">{{ cast.character }}</span>
-        <span *ngIf="cast.job">{{cast.job}}</span>
-    </div>
 </div>
