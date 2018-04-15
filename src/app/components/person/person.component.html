@@ -2,7 +2,7 @@
     <figure class="cast__image">
         <img [src]=getCastImage(cast.profile_path) alt="{{cast.name}}">
         <figcaption class="cast__info">
-            <div class="cast__name">{{ cast.name }}</div>
+            <span class="cast__name">{{ cast.name }}</span>
             <span *ngIf="cast.character">{{ cast.character }}</span>
             <span *ngIf="cast.job">{{cast.job}}</span>
         </figcaption>
