@@ -1,0 +1,3 @@
+.movie__container:nth-last-of-type(-n+2) {
+    font-size: 1.5em;
+}
