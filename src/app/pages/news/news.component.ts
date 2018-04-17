@@ -13,7 +13,7 @@ import { NewsService } from '../../services/news.service';
     trigger('newsAnimation', [
       transition('* => *', [
         query(':enter', style({opacity: 0}), {optional: true}),
-        query(':enter', stagger('100ms', [
+        query(':enter', stagger('200ms', [
           animate('0.3s ease', keyframes([
             style({opacity: 0, transform: 'translateX(-20%)', offset: 0}),
             style({opacity: 0.5, transform: 'translateX(20px)', offset: 0.5}),
