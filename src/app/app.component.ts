@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from './services/session.service';
+import { SearchService } from './services/search.service';
 import { Token } from './models/token';
 
 @Component({
@@ -13,8 +14,12 @@ export class AppComponent {
   password: string = 'kanamemadoka2017';
   token: Token;
   sessionId: string = '';
+  search: string;
   
-  constructor(private sessionService: SessionService) {}
+  constructor(
+    private sessionService: SessionService,
+    private searchService: SearchService
+  ) {}
   
   login(): void {
     this.sessionService.getToken(this.username, this.password).then(res => this.sessionId = res.session_id);
@@ -25,6 +30,7 @@ export class AppComponent {
   }
   
   onKey(event: any) {
-    
+    this.search = event.target.value;
+    console.log(this.search);
   }
 }

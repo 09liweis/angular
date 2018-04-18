@@ -14,7 +14,7 @@ export class SearchService {
     constructor(private http: Http) { }
     
     getResults(search: String): Promise<Movies> {
-        const searchUrl = this.baseUrl + this.apiKey;
+        const searchUrl = this.baseUrl + search + this.apiKey;
         const results = this.http.get(searchUrl).toPromise().then(res => res.json() as Movies).catch(this.handleError);
         return results;
     }
