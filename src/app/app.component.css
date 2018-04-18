@@ -34,5 +34,13 @@
     width: 100%;
 }
 #mainContainer {
-    margin-top: 90px;
+    margin-top: 125px;
+}
+#search {
+    position: relative;
+}
+#search__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.4em;
 }

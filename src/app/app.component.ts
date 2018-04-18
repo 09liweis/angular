@@ -14,7 +14,7 @@ export class AppComponent {
   password: string = 'kanamemadoka2017';
   token: Token;
   sessionId: string = '';
-  search: string;
+  results: Array<any> = [];
   
   constructor(
     private sessionService: SessionService,
@@ -30,9 +30,9 @@ export class AppComponent {
   }
   
   onKey(event: any) {
-    this.search = event.target.value;
-    this.searchService.getResults(this.search).then(res => {
-      console.log(res);
+    const search = event.target.value;
+    this.searchService.getResults(search).then(res => {
+      this.results = res.results;
     });
   }
 }

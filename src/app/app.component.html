@@ -5,9 +5,11 @@
         <a class="nav__link" routerLink="/tvs/airing_today/page/1">Tv Show</a>
         <a class="nav__link" routerLink="/persons/popular">People</a>
         <a class="nav__link" routerLink="/news">News</a>
-        <input type="text" (keyup)="onKey($event)" />
         <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
+    </div>
+    <div class="container" id="search">
+        <input id="search__input" type="text" (keyup)="onKey($event)" />
     </div>
 </nav>
 
