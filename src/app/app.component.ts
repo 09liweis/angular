@@ -23,4 +23,8 @@ export class AppComponent {
   logout(): void {
     this.sessionId = '';
   }
+  
+  onKey(event: any) {
+    
+  }
 }
