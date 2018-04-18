@@ -39,6 +39,20 @@
 #search {
     position: relative;
 }
+#search__results {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+}
+.search__result {
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.2s ease;
+    background-color: rgba(255,255,255,0.5);
+}
+.search__result:hover {
+}
 #search__input {
     width: 100%;
     padding: 10px;
