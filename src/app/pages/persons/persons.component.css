@@ -4,6 +4,9 @@
 .person:hover {
     transform: translateY(10px);
 }
+.person__image {
+    border-radius: 5px;
+}
 .person__name {
     color: #cac1c1;
 }

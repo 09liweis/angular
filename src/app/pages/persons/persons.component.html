@@ -6,7 +6,7 @@
 <div class="columns is-mobile is-multiline" *ngIf="persons" [@personsAnimation]="persons.results.length">
   <a *ngFor="let p of persons.results" class="person column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen">
     <figure class="image">
-      <img src="https://image.tmdb.org/t/p/w500{{p.profile_path}}" alt="{{ p.name }}" />
+      <img class="person__image" src="https://image.tmdb.org/t/p/w500{{p.profile_path}}" alt="{{ p.name }}" />
       <figcaption class="person__name">{{p.name}}</figcaption>
     </figure>
   </a>
