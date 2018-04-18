@@ -10,6 +10,9 @@
     </div>
     <div class="container" id="search">
         <input id="search__input" type="text" (keyup)="onKey($event)" />
+        <div id="search__results" *ngIf="results">
+            <div class="search__result" *ngFor="let result of results">{{result.title ? result.title : result.name}}</div>
+        </div>
     </div>
 </nav>
 
