@@ -31,6 +31,8 @@ export class AppComponent {
   
   onKey(event: any) {
     this.search = event.target.value;
-    console.log(this.search);
+    this.searchService.getResults(this.search).then(res => {
+      console.log(res);
+    });
   }
 }
