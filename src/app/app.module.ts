@@ -14,6 +14,7 @@ import { MovieService } from './services/movie.service';
 import { SessionService } from './services/session.service';
 import { NewsService } from './services/news.service';
 import { TvService } from './services/tv.service';
+import { SearchService } from './services/search.service';
 
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
@@ -103,7 +104,8 @@ import { TvComponent } from './pages/tv/tv.component';
     PersonService,
     NewsService,
     TvService,
-    SessionService
+    SessionService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
