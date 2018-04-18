@@ -11,6 +11,9 @@ export class SearchService {
     private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
     private headers = new Headers({'Content-Type': 'application/json'});
     
-    constructor() { }
-
+    constructor(private http: Http) { }
+    
+    getResults(search: String): Promise<Movies> {
+        
+    }
 }
