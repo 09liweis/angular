@@ -1,3 +1,9 @@
+.person {
+    transition: transform 0.3s ease;
+}
+.person:hover {
+    transform: translateY(10px);
+}
 .person__name {
     color: #cac1c1;
 }
