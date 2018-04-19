@@ -14,17 +14,17 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
     trigger('searchAnimation', [
       transition('* => *', [
         query(':enter', style({ opacity: 0 }), {optional: true}),
-        query(':enter', stagger('200ms', [
-          animate('0.5s ease-in', keyframes([
-            style({opacity: 0, transform: 'translateY(-35%)', offset: 0}),
-            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-            style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
+        query(':enter', stagger('100ms', [
+          animate('0.3s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateX(-15%)', offset: 0}),
+            style({opacity: .5, transform: 'translateX(15px)',  offset: 0.3}),
+            style({opacity: 1, transform: 'translateX(0)',     offset: 1.0}),
           ]))]), {optional: true}),
-        query(':leave', stagger('300ms', [
-          animate('1s ease-in', keyframes([
-            style({opacity: 1, transform: 'translateY(0)', offset: 0}),
-            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-            style({opacity: 0, transform: 'translateY(-35%)',     offset: 1.0}),
+        query(':leave', stagger('100ms', [
+          animate('0.3s ease-in', keyframes([
+            style({opacity: 1, transform: 'translateX(0)', offset: 0}),
+            style({opacity: .5, transform: 'translateX(15px)',  offset: 0.3}),
+            style({opacity: 0, transform: 'translateX(-15%)',     offset: 1.0}),
           ]))]), {optional: true})
       ])
     ])
@@ -65,6 +65,8 @@ export class AppComponent {
   gotoDetail(result: any) {
     this.results = [];
     this.search = '';
-    this.router.navigate([result.media_type + '/' + result.id]);
+    if (result.media_type == 'movie') {
+      this.router.navigate([result.media_type + '/' + result.id]); 
+    }
   }
 }
