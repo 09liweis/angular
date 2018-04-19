@@ -11,7 +11,9 @@
     <div class="container" id="search">
         <input id="search__input" placeholder="Search Something" type="text" (keyup)="onKey($event)" [(ngModel)]="search" />
         <div id="search__results" *ngIf="results" [@searchAnimation]="results.length">
-            <a class="search__result" *ngFor="let result of results" (click)="gotoDetail(result)">{{result.title ? result.title : result.name}}</a>
+            <a class="search__result" *ngFor="let result of results" (click)="gotoDetail(result)">
+                {{result.title ? result.title : result.name}}
+            </a>
         </div>
     </div>
 </nav>
