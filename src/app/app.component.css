@@ -14,7 +14,6 @@
 }
 .nav__link {
     display: inline-block;
-    margin-right: 10px;
     padding: 10px;
     color: #fcb208;
     transition: color 0.3s;
