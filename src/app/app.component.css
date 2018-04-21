@@ -36,7 +36,9 @@
     margin-top: 125px;
 }
 #search {
+    display: inline-block;
     position: relative;
+    width: 300px;
 }
 #search__results {
     position: absolute;
@@ -58,5 +60,4 @@
 #search__input {
     width: 100%;
     padding: 10px;
-    font-size: 1.4em;
 }
