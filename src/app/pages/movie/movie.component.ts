@@ -39,6 +39,8 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     if (typeof this.route.snapshot.params['section'] != 'undefined') {
       this.section = this.route.snapshot.params['section'];
+    } else {
+      this.section = 'home';
     }
     this.route.params.subscribe(params => {
       //scroll page to top

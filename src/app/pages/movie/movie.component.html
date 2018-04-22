@@ -1,12 +1,12 @@
 <div class="tab" *ngIf="movie">
-    <a class="tab__link" [routerLink]="['/movie', movie.id]">Home</a>
+    <a class="tab__link" (click)="changeSection('home')" [routerLink]="['/movie', movie.id]">Home</a>
     <a class="tab__link" (click)="changeSection('reviews')" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a>
     <a class="tab__link" (click)="changeSection('videos')" [routerLink]="['/movie', movie.id, 'videos']">Videos</a>
     <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a>
     <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
 </div>
 <div id="movie" *ngIf="movie" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'">
-    <div id="movie__header">
+    <div id="movie__header" *ngIf="section == 'home'">
         <!--<img class="movie__backdrop" src="https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}" />-->
         <div class="movie__info columns">
             <figure class="column is-4">
@@ -67,7 +67,7 @@
     <!--        </iframe>-->
     <!--    </div>-->
     <!--</div>-->
-    <div class="" *ngIf="!section">
+    <div class="" *ngIf="section == 'home'">
         <div id="casts" *ngIf="movieCredits">
             <div class="columns">
                 <h5 class="column">Feature Casts</h5>
