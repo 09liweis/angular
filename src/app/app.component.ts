@@ -56,6 +56,7 @@ export class AppComponent {
   onKey(event: any) {
     const search = event.target.value;
     if (search != '') {
+      this.results = [];
       this.searchService.getResults(search).then(res => {
         this.results = res.results;
       });
