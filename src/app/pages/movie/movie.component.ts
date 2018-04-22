@@ -29,7 +29,7 @@ export class MovieComponent implements OnInit {
   similarMovies: Movies;
   
   modalOpen: boolean = false;
-  currentImage: Number;
+  currentImage: any = 0;
 
   constructor(
     private movieService: MovieService,
