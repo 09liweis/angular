@@ -5,11 +5,19 @@
     margin-top: 20px;
 }
 
-.tabs a {
-    color: #ffffff;
+.tab {
+    margin: 20px auto;
+    text-align: center;
 }
-
-.tabs a:hover {
-    border-bottom-color: #dbdbdb;
-    color: #4a4a4a;
+.tab__link {
+    padding: 10px;
+    display: inline-block;
+    margin: 0 10px;
+    color: #fcb208;
+    transition: all 0.3s ease;
+}
+.tab__link.is-active,
+.tab__link:hover {
+    color: #ffffff;
+    background-color: #fcb209;
 }
