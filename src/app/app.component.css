@@ -57,6 +57,10 @@
 .search__result:hover {
     color: #fcb208;
 }
+.search__result-poster {
+    display: inline-block;
+    width: 20%;
+}
 #search__input {
     width: 100%;
     padding: 10px;
