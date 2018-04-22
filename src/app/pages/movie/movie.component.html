@@ -136,8 +136,8 @@
     <div class="container" *ngIf="section == 'images'">
         <div id="images" *ngIf="movieImages">
             <div class="columns is-mobile is-multiline">
-                <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let poster of movieImages.posters">
-                    <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" (click)="previewImage(poster)" />
+                <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let poster of movieImages.posters; let i = index">
+                    <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" (click)="previewImage(poster, i)" />
                 </div>
             </div>
             <div class="columns is-mobile is-multiline">
@@ -146,8 +146,8 @@
                 </div>
             </div>
         </div>
-        <section class="movie__imagesModal {{modalOpen ? 'open' : ''}}" (click)="closeModal()">
-            
+        <section *ngIf="modalOpen" class="movie__imagesModal {{modalOpen ? 'open' : ''}}" (click)="closeModal()">
+            <img class="movie__currentImage" src="https://image.tmdb.org/t/p/w500{{movieImages.posters[currentImage].file_path}}" />
         </section>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { Title, DomSanitizer } from '@angular/platform-browser';
@@ -27,7 +27,9 @@ export class MovieComponent implements OnInit {
   movieReviews: MovieReviews;
   section: String;
   similarMovies: Movies;
+  
   modalOpen: boolean = false;
+  currentImage: Number;
 
   constructor(
     private movieService: MovieService,
@@ -83,12 +85,22 @@ export class MovieComponent implements OnInit {
   getYoutubeEmbed(key) {
     return this.sanitizier.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key + '?autoplay=0');
   }
-  previewImage(image) {
-    console.log(image);
+  previewImage(image, index) {
+    console.log(index);
+    this.currentImage = index;
     this.modalOpen = true;
   }
   closeModal() {
     this.modalOpen = false;
+  }
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) { 
+    if (event.key == 'ArrowRight') {
+      this.currentImage += 1;
+    }
+    if (event.key == 'ArrowLeft') {
+      this.currentImage -= 1;
+    }
   }
 
 }
