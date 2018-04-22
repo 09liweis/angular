@@ -36,4 +36,8 @@ img {
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
     transition: all 0.3 ease;
+    transform: scale(0);
+}
+.movie__imagesModal.open {
+    transform: scale(1);
 }

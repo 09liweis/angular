@@ -27,6 +27,7 @@ export class MovieComponent implements OnInit {
   movieReviews: MovieReviews;
   section: String;
   similarMovies: Movies;
+  modalOpen: boolean = false;
 
   constructor(
     private movieService: MovieService,
@@ -84,6 +85,10 @@ export class MovieComponent implements OnInit {
   }
   previewImage(image) {
     console.log(image);
+    this.modalOpen = true;
+  }
+  closeModal() {
+    this.modalOpen = false;
   }
 
 }
