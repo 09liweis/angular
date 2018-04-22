@@ -82,5 +82,8 @@ export class MovieComponent implements OnInit {
   getYoutubeEmbed(key) {
     return this.sanitizier.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key + '?autoplay=0');
   }
+  previewImage(image) {
+    console.log(image);
+  }
 
 }

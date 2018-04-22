@@ -135,16 +135,19 @@
     </div>
     <div class="container" *ngIf="section == 'images'">
         <div id="images" *ngIf="movieImages">
-            <div class="columns">
+            <div class="columns is-mobile is-multiline">
                 <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let poster of movieImages.posters">
-                    <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" />
+                    <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" (click)="previewImage(poster)" />
                 </div>
             </div>
-            <div class="columns">
+            <div class="columns is-mobile is-multiline">
                 <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let backdrop of movieImages.backdrops">
                     <img src="https://image.tmdb.org/t/p/w500{{backdrop.file_path}}" />
                 </div>
             </div>
         </div>
+        <section class="movie__imagesModal">
+            
+        </section>
     </div>
 </div>
