@@ -57,9 +57,14 @@
 .search__result:hover {
     color: #fcb208;
 }
-.search__result-poster {
+.search__result-poster img {
     display: inline-block;
+    vertical-align: middle;
     width: 20%;
+}
+.search__result-poster figcaption {
+    display: inline-block;
+    vertical-align: middle;
 }
 #search__input {
     width: 100%;
