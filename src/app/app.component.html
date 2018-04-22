@@ -13,8 +13,8 @@
                 <a class="search__result" *ngFor="let result of results" (click)="gotoDetail(result)">
                     <figure class="search__result-poster">
                         <img src="https://image.tmdb.org/t/p/w500{{result.poster_path}}" />
+                        <figcaption>{{result.title ? result.title : result.name}}</figcaption>
                     </figure>
-                    {{result.title ? result.title : result.name}}
                 </a>
             </div>
         </div>
