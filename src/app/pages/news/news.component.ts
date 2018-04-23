@@ -8,7 +8,7 @@ import { NewsService } from '../../services/news.service';
 @Component({
   selector: 'news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css'],
+  styleUrls: ['./news.component.scss'],
   animations: [
     trigger('newsAnimation', [
       transition('* => *', [
