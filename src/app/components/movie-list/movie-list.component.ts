@@ -6,7 +6,7 @@ import { Movies } from '../../models/movies';
 @Component({
   selector: 'movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css'],
+  styleUrls: ['./movie-list.component.scss'],
   animations: [
     trigger('moviesAnimation', [
       transition('* => *', [
