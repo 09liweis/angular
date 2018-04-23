@@ -11,7 +11,7 @@ import { PersonService } from '../../services/person.service';
 @Component({
   selector: 'app-persons',
   templateUrl: './persons.component.html',
-  styleUrls: ['./persons.component.css'],
+  styleUrls: ['./persons.component.scss'],
   animations: [
     trigger('personsAnimation', [
       transition('* => *', [
