@@ -1,5 +1,5 @@
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params, router }   from '@angular/router';
+import { ActivatedRoute, Params, Router }   from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Movie } from '../../models/movie';
