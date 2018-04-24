@@ -9,7 +9,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   animations: [
     trigger('searchAnimation', [
       transition('* => *', [
