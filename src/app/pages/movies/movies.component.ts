@@ -1,5 +1,5 @@
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params }   from '@angular/router';
+import { ActivatedRoute, Params, Router }   from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Movie } from '../../models/movie';
@@ -26,6 +26,7 @@ export class MoviesComponent implements OnInit {
     private titleService: Title,
     private movieService: MovieService,
     private route: ActivatedRoute,
+    private router: Router
   ) {}
   
   ngOnInit(): void {
@@ -36,7 +37,6 @@ export class MoviesComponent implements OnInit {
       'top_rated',
       'upcoming'
     ];
-    this.selectedLink = 'now_playing';
 
     this.route.params
     // (+) converts string 'id' to a number
@@ -51,6 +51,11 @@ export class MoviesComponent implements OnInit {
       var title = this.formateTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle(title);
     });
+  }
+  gotoLink(link) {
+    this.selectedLink = link;
+    this.movies.results = [];
+    this.router.navigate(['movies/' + link]); 
   }
   
   onSelect(movie: Movie): void {
