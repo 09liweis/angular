@@ -18,16 +18,16 @@
     color: #fcb208;
     transition: color 0.3s;
     position: relative;
-}
-.nav__link:before {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #fcb208;
-    transition: width 0.4s ease;
+    &:before {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #fcb208;
+        transition: width 0.4s ease;
+    }
 }
 .nav__link:hover:before {
     width: 100%;
