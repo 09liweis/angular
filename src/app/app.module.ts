@@ -92,7 +92,7 @@ import { TvComponent } from './pages/tv/tv.component';
         component: MovieComponent
       },
       {
-        path:'persons/:type',
+        path:'people/:type',
         component:PersonsComponent
       }
       
