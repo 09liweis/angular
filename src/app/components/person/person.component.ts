@@ -7,7 +7,7 @@ import { Cast } from '../../models/cast';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-  @Input() cast: Cast;
+  @Input() person: Cast;
   constructor() { }
 
   ngOnInit() {
