@@ -28,9 +28,9 @@
         background-color: #fcb208;
         transition: width 0.4s ease;
     }
-}
-.nav__link:hover:before {
-    width: 100%;
+    &:hover:before {
+        width: 100%;
+    }
 }
 #mainContainer {
     margin-top: 125px;
