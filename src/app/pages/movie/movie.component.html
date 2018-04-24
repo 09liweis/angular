@@ -108,29 +108,9 @@
         </div>
     </div>
     <div class="container" *ngIf="section == 'casts'">
-        <div class="row" *ngIf="movieCredits">
-            <div class="col s6">
-                <div class="row" *ngFor="let cast of movieCredits.cast">
-                    <div class="col s4">
-                        <img *ngIf="cast.profile_path" src="https://image.tmdb.org/t/p/w500{{cast.profile_path}}">
-                    </div>
-                    <div class="col s8">
-                        <p>{{ cast.name }}</p>
-                        <p>{{ cast.character }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="row" *ngFor="let crew of movieCredits.crew">
-                    <div class="col s4">
-                        <img *ngIf="crew.profile_path" src="https://image.tmdb.org/t/p/w500{{crew.profile_path}}">
-                    </div>
-                    <div class="col s8">
-                        <p>{{ crew.name }}</p>
-                        <p>{{ crew.job }}</p>
-                    </div>
-                </div>
-            </div>
+        <div class="columns is-multiline" *ngIf="movieCredits">
+            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.cast" [cast]=cast></person>
+            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.crew" [cast]=cast></person>
         </div>
     </div>
     <div class="container" *ngIf="section == 'images'">
