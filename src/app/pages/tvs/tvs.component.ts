@@ -1,5 +1,5 @@
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params }   from '@angular/router';
+import { ActivatedRoute, Params, router }   from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Movie } from '../../models/movie';
@@ -25,6 +25,7 @@ export class TvsComponent implements OnInit {
     private titleService: Title,
     private tvService: TvService,
     private route: ActivatedRoute,
+    private router: Router
   ) {}
   
   ngOnInit() {
@@ -50,6 +51,12 @@ export class TvsComponent implements OnInit {
       var title = this.formateTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle(title);
     });
+  }
+  
+  gotoLink(link) {
+    this.selectedLink = link;
+    this.tvs.results = [];
+    this.router.navigate(['tvs/' + link]); 
   }
   
   //need to find out string vs String

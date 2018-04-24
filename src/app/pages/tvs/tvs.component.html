@@ -1,5 +1,5 @@
 <div class="tab">
-    <a class="tab__link" [class.is-active]="selectedLink == link" *ngFor="let link of links" [routerLink]="['/tvs', link]" (click)="selectedLink=link">{{formateTitle(link)}}</a>
+    <a class="tab__link" [class.is-active]="selectedLink == link" *ngFor="let link of links" [routerLink]="['/tvs', link]" (click)="gotoLink(link)">{{formateTitle(link)}}</a>
 </div>
 
 <movie-list [movies]=tvs [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>
