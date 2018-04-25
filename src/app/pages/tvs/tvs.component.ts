@@ -60,15 +60,5 @@ export class TvsComponent implements OnInit {
     this.tvs.results = [];
     this.router.navigate(['tvs/' + link]); 
   }
-  
-  //need to find out string vs String
-  formateTitle(title: string): string {
-    // format 'now_playing' to 'Now Playing'
-    const result = title.split('_').map(function(word) {
-      //make word to Capitalize
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-    return result;
-  }
 
 }
