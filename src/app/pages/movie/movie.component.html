@@ -5,9 +5,9 @@
     <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a>
     <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
 </div>
-<div id="movie" *ngIf="movie" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'">
+<div id="movie" *ngIf="movie">
+    <div class="movie__backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'"></div>
     <div id="movie__header" *ngIf="section == 'home'">
-        <!--<img class="movie__backdrop" src="https://image.tmdb.org/t/p/w1400_and_h450_bestv2/{{movie.backdrop_path}}" />-->
         <div class="movie__info columns">
             <figure class="column is-4">
                 <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
