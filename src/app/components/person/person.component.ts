@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Cast } from '../../models/cast';
+import {UtilsService} from '../../services/utils.service';
 
 @Component({
   selector: 'person',
@@ -8,16 +9,12 @@ import { Cast } from '../../models/cast';
 })
 export class PersonComponent implements OnInit {
   @Input() person: Cast;
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit() {
   }
-  getCastImage(path) {
-    if (path) {
-      return 'https://image.tmdb.org/t/p/w500' + path;
-    } else {
-      return 'https://netbranding.co.nz/wp-content/uploads/2014/04/avatar-2.png';
-    }
+  getCastImage(path: string): string {
+    return this.utilsService.getImagePath(path);
   }
 
 }

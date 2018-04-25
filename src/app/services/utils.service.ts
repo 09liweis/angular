@@ -14,7 +14,7 @@ export class UtilsService {
   }
   getImagePath(file: string): string {
     if (file) {
-      return 'https://image.tmdb.org/t/p/w500' + path;
+      return 'https://image.tmdb.org/t/p/w500' + file;
     } else {
       return 'https://netbranding.co.nz/wp-content/uploads/2014/04/avatar-2.png';
     }

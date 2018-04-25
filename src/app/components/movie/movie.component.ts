@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'single-movie',
@@ -10,9 +11,12 @@ export class SingleMovieComponent implements OnInit {
   @Input() movie: Movie;
   @Input() list: String;
 
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit() {
+  }
+  getMoviePoster(path: string): string {
+    return this.utilsService.getImagePath(path);
   }
 
 }
