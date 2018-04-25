@@ -4,5 +4,9 @@ import { Injectable } from '@angular/core';
 export class UtilsService {
 
   constructor() { }
+  
+  formateTitle(title: string): string {
+      
+  }
 
 }
