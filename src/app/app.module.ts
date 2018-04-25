@@ -25,6 +25,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { TvsComponent } from './pages/tvs/tvs.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TvComponent } from './pages/tv/tv.component';
+import { UtilsService } from './services/utils.service';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { TvComponent } from './pages/tv/tv.component';
     NewsService,
     TvService,
     SessionService,
-    SearchService
+    SearchService,
+    UtilsService
   ],
   bootstrap: [AppComponent]
 })
