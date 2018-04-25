@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { Movies } from '../../models/movies';
 import { MovieService } from '../../services/movie.service';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'movies',
@@ -26,7 +27,8 @@ export class MoviesComponent implements OnInit {
     private titleService: Title,
     private movieService: MovieService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utilsService: UtilsService
   ) {}
   
   ngOnInit(): void {
@@ -48,7 +50,7 @@ export class MoviesComponent implements OnInit {
       this.currentPage = movies.page;
       this.totalPages = Array(movies.total_pages).fill(1).map((x,i)=>i)
       // set Page title
-      var title = this.formateTitle(this.route.snapshot.params['type']);
+      var title = this.utilsService.formatTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle('Movies - ' + title);
     });
   }
@@ -62,14 +64,8 @@ export class MoviesComponent implements OnInit {
     this.selectedMovie = movie;
   }
   
-  //need to find out string vs String
-  formateTitle(title: string): string {
-    // format 'now_playing' to 'Now Playing'
-    const result = title.split('_').map(function(word) {
-      //make word to Capitalize
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-    return result;
+  formatTitle(title: string): string {
+    return this.utilsService.formatTitle(title);
   }
 
 }
