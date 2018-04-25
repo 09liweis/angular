@@ -60,5 +60,9 @@ export class TvsComponent implements OnInit {
     this.tvs.results = [];
     this.router.navigate(['tvs/' + link]); 
   }
+  
+  formatTitle(title: string): string {
+    return this.utilsService.formatTitle(title);
+  }
 
 }
