@@ -49,7 +49,7 @@ export class MoviesComponent implements OnInit {
       this.totalPages = Array(movies.total_pages).fill(1).map((x,i)=>i)
       // set Page title
       var title = this.formateTitle(this.route.snapshot.params['type']);
-      this.titleService.setTitle(title);
+      this.titleService.setTitle('Movies - ' + title);
     });
   }
   gotoLink(link) {
