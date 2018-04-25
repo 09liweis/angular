@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { Movies } from '../../models/movies';
 import { TvService } from '../../services/tv.service';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'tvs',
@@ -25,7 +26,8 @@ export class TvsComponent implements OnInit {
     private titleService: Title,
     private tvService: TvService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utilsService: UtilsService
   ) {}
   
   ngOnInit() {
@@ -48,7 +50,7 @@ export class TvsComponent implements OnInit {
       this.currentPage = tvs.page;
       this.totalPages = Array(tvs.total_pages).fill(1).map((x,i)=>i)
       // set Page title
-      var title = this.formateTitle(this.route.snapshot.params['type']);
+      var title = this.utilsService.formatTitle(this.route.snapshot.params['type']);
       this.titleService.setTitle('TVs - ' + title);
     });
   }
