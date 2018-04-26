@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -17,7 +18,7 @@ export class MovieService {
     private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
     private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private httpClient: HttpClient) { }
     
     getMovies(type: String, page: number): Promise<Movies> {
         const moviesUrl = this.baseUrl + type + this.apiKey + '&page=' + page;

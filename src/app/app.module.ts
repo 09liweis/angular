@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { PersonListComponent } from './components/person-list/person-list.compon
     BrowserAnimationsModule,
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',

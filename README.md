@@ -9,7 +9,8 @@ Live demo: [http://movie-angular.herokuapp.com/](http://movie-angular.herokuapp.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Run application on Cloud9
-ng serve --host 0.0.0.0 --disable-host-check
+nvm use 10
+ng serve --host 0.0.0.0 --port 8080 --disable-host-check
 
 ## Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
