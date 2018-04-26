@@ -1,32 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-
-import 'rxjs/add/operator/toPromise';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs/Rx';
 
 import { Movies } from '../models/movies';
 import { Movie } from '../models/movie';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class TvService {
     
     private baseUrl = 'https://api.themoviedb.org/3/tv/';
     private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
-    private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
   
-    getTvs(type: String, page: number): Promise<Movies> {
+    getTvs(type: String, page: number): Observable<any> {
         const url = this.baseUrl + type + this.apiKey + '&page=' + page;
-        const tvs = this.http.get(url)
-                        .toPromise()
-                        .then(response => response.json() as Movies)
-                        .catch(this.handleError);
+        const tvs = this.http.get(url);
         return tvs;
     }
     
     getDetail(id: number) {
         const url = this.baseUrl + id + this.apiKey;
-        const tv = this.http.get(url).toPromise().then(res => res.json()).catch(this.handleError);
+        const tv = this.http.get(url);
         return tv;
     }
     

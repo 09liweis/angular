@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       this.movies = movies;
     });
     
-    this.tvService.getTvs('airing_today', 1).then(tvs => {
+    this.tvService.getTvs('airing_today', 1).subscribe(tvs => {
       const list = tvs.results.slice(0, 6);
       tvs.results = list;
       this.tvs = tvs;
