@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs/Rx';
 
-import 'rxjs/add/operator/toPromise';
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 import { Persons } from '../models/person/persons';
 import { Person } from '../models/person/person';
@@ -14,14 +17,11 @@ export class PersonService{
     private headers = new Headers({'Content-Type': 'application/json'});
 
 
-    constructor(private http: Http){}
+    constructor(private http: HttpClient){}
 
-    getPopular(type: String): Promise<Persons>{
+    getPopular(type: String): Observable<any>{
         const personsUrl = this.baseUrl + type + this.apiKey + '&page=1';
-        const persons = this.http.get(personsUrl)
-        .toPromise()
-        .then(response => response.json() as Persons)
-        .catch(this.handleError);
+        const persons = this.http.get(personsUrl);
         return persons;
     }
 
