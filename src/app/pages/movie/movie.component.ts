@@ -50,7 +50,8 @@ export class MovieComponent implements OnInit {
       window.scrollTo(0, 0);
       
       this.movieService.getMovieDetail(+params['id'])
-      .then(movie => {
+      .subscribe(movie => {
+        console.log(movie);
         this.movie = movie;
         this.titleService.setTitle(movie.title);
       });

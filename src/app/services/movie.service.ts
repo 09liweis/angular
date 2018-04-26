@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Rx';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -21,7 +21,7 @@ export class MovieService {
     
     private baseUrl = 'https://api.themoviedb.org/3/movie/';
     private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
-    private headers = new Headers({'Content-Type': 'application/json'});
+    // private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http, private httpClient: HttpClient) { }
     
@@ -31,12 +31,9 @@ export class MovieService {
         return movies;
     }
     
-    getMovieDetail(id: number): Promise<Movie> {
+    getMovieDetail(id: number): Observable<any> {
         const movieDetail = this.baseUrl + id + this.apiKey;
-        const movie = this.http.get(movieDetail)
-                        .toPromise()
-                        .then(response => response.json() as Movie)
-                        .catch(this.handleError);
+        const movie = this.httpClient.get(movieDetail);
         return movie;
     }
     
