@@ -37,44 +37,29 @@ export class MovieService {
         return movie;
     }
     
-    getMovieImages(id: number): Promise<MovieImage> {
+    getMovieImages(id: number): Observable<any> {
         const movieCredits = this.baseUrl + id + '/images' + this.apiKey;
-        return this.http.get(movieCredits)
-                    .toPromise()
-                    .then(res => res.json() as MovieImage)
-                    .catch(this.handleError);
+        return this.httpClient.get(movieCredits)
     }
     
-    getMovieCredits(id: number): Promise<MovieCredits> {
+    getMovieCredits(id: number): Observable<any> {
         const movieCredits = this.baseUrl + id + '/credits' + this.apiKey;
-        return this.http.get(movieCredits)
-                    .toPromise()
-                    .then(res => res.json() as MovieCredits)
-                    .catch(this.handleError);
+        return this.httpClient.get(movieCredits);
     }
     
-    getMovieVideos(id: number): Promise<MovieVideo> {
+    getMovieVideos(id: number): Observable<any> {
         const movieVideo = this.baseUrl + id + '/videos' + this.apiKey;
-        return this.http.get(movieVideo)
-                    .toPromise()
-                    .then(res => res.json() as MovieVideo)
-                    .catch(this.handleError);
+        return this.httpClient.get(movieVideo);
     }
     
-    getMovieReviews(id: number): Promise<MovieReviews> {
+    getMovieReviews(id: number): Observable<any> {
         const movieReviews = this.baseUrl + id +'/reviews' + this.apiKey;
-        return this.http.get(movieReviews)
-                    .toPromise()
-                    .then(res => res.json() as MovieReviews)
-                    .catch(this.handleError);
+        return this.httpClient.get(movieReviews);
     }
     
-    getSimilarMovies(id: number): Promise<Movies> {
+    getSimilarMovies(id: number): Observable<any> {
         const similarMovies = this.baseUrl + id + '/similar' + this.apiKey;
-        return this.http.get(similarMovies)
-                    .toPromise()
-                    .then(res => res.json() as Movies)
-                    .catch(this.handleError);
+        return this.httpClient.get(similarMovies);
     }
     
     private handleError(error: any): Promise<any> {

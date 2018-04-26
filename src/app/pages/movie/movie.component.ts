@@ -51,27 +51,26 @@ export class MovieComponent implements OnInit {
       
       this.movieService.getMovieDetail(+params['id'])
       .subscribe(movie => {
-        console.log(movie);
         this.movie = movie;
         this.titleService.setTitle(movie.title);
       });
       
       this.movieService.getMovieImages(+params['id'])
-      .then(movieImages => this.movieImages = movieImages);
+      .subscribe(movieImages => this.movieImages = movieImages);
       
       this.movieService.getMovieCredits(+params['id'])
-      .then(movieCredits => this.movieCredits = movieCredits);
+      .subscribe(movieCredits => this.movieCredits = movieCredits);
       
       this.movieService.getMovieVideos(+params['id'])
-      .then(movieVideo => this.movieVideo = movieVideo);
+      .subscribe(movieVideo => this.movieVideo = movieVideo);
       
       this.movieService.getMovieReviews(+params['id'])
-      .then(movieReviews => {
+      .subscribe(movieReviews => {
         this.movieReviews = movieReviews;
       });
       
       this.movieService.getSimilarMovies(+params['id'])
-      .then(similarMovies => {
+      .subscribe(similarMovies => {
         this.similarMovies = similarMovies;
       });
     });
