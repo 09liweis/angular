@@ -18,7 +18,8 @@
     -ms-filter: blur(5px);
     filter: blur(5px);
 }
-.movie__home {
+.movie__home,
+.movie__tabs {
     position: relative;
     z-index: 1;
 }
