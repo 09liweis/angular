@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs/Rx';
 
 import { News } from '../models/news';
 
-import 'rxjs/add/operator/toPromise';
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class NewsService {
     
     private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
     }
     
-    getNewsFromRottentomatoes(): Promise<News[]> {
+    getNewsFromRottentomatoes(): Observable<any> {
         const url = 'https://editorial.rottentomatoes.com/wp-json/articles/';
-        const news = this.http.get(url)
-                        .toPromise()
-                        .then(response => response.json() as News[])
-                        .catch(this.handleError);
+        const news = this.http.get(url);
         return news;
     }
     

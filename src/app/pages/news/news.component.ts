@@ -35,7 +35,7 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     this.newsService.getNewsFromRottentomatoes()
-      .then(news => {
+      .subscribe(news => {
         this.news = news;
         this.titleService.setTitle('Movie Paradise - News');
       });
