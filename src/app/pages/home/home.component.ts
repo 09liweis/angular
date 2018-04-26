@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.movieService.getMovies('now_playing', 1).then(movies => {
+    this.movieService.getMovies('now_playing', 1).subscribe(movies => {
       const list = movies.results.slice(0, 6);
       movies.results = list;
       this.movies = movies;

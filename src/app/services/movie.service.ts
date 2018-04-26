@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,6 +12,10 @@ import { MovieImage } from '../models/movieImage';
 import { MovieVideo } from '../models/movieVideo';
 import { MovieReviews } from '../models/movieReviews';
 
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class MovieService {
     
@@ -20,12 +25,9 @@ export class MovieService {
 
     constructor(private http: Http, private httpClient: HttpClient) { }
     
-    getMovies(type: String, page: number): Promise<Movies> {
+    getMovies(type: String, page: number): Observable<any> {
         const moviesUrl = this.baseUrl + type + this.apiKey + '&page=' + page;
-        const movies = this.http.get(moviesUrl)
-                        .toPromise()
-                        .then(response => response.json() as Movies)
-                        .catch(this.handleError);
+        const movies = this.httpClient.get(moviesUrl);
         return movies;
     }
     
