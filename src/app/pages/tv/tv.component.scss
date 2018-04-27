@@ -1,5 +1,6 @@
 #tv {
     position: relative;
+    z-index: 1;
 }
 .tv__backdrop {
     background-attachment: fixed;
@@ -17,4 +18,5 @@
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
     filter: blur(5px);
+    z-index: -1;
 }
