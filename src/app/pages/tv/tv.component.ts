@@ -22,7 +22,7 @@ export class TvComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.tvService.getDetail(+params['id']).subscribe(tv => {
         this.tv = tv;
-        console.log(tv);
+        this.titleService.setTitle(tv.name);
       })
     })
   }
