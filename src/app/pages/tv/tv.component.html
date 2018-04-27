@@ -7,12 +7,17 @@
             </figure>
         </div>
         <div class="column is-8 tv__info">
-            <h1 class="tv__title">{{tv.name}}</h1>
+            <h1 class="tv__title">{{tv.name}} - {{tv.vote_average}}</h1>
             <div class=""><span class="tv__label">First Air Date:</span> {{tv.first_air_date}}</div>
             <div class=""><span class="tv__label">Last Air Date:</span> {{tv.last_air_date}}</div>
             <div class="tv__overview">
                 <h3 class="tv__label">Overview: </h3>
                 <p>{{tv.overview}}</p>
+            </div>
+            <div class=""><span class="tv__label">Homepage: </span><a href="{{tv.homepage}}">{{tv.homepage}}</a></div>
+            <div class="">
+                <span class="tv__label">Genres: </span>
+                <span class="tv__genre" *ngFor="let g of tv.genres">{{g.name}}</span>
             </div>
         </div>
     </section>
