@@ -1,13 +1,13 @@
 <div id="tv" *ngIf="tv">
     <div class="tv__backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + tv.backdrop_path + ')'"></div>
     <section class="tv__home columns">
-        <div class="column">
+        <div class="column is-4">
             <figure>
                 <img src="https://image.tmdb.org/t/p/w500{{tv.poster_path}}" />
             </figure>
         </div>
-        <div class="column">
-            
+        <div class="column is-8 tv__info">
+            <h1 class="tv__title">{{tv.name}}</h1>
         </div>
     </section>
 </div>
