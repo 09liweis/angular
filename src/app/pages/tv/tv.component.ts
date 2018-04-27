@@ -10,7 +10,9 @@ import { TvService } from '../../services/tv.service';
 })
 export class TvComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private tvService: TvService
+  ) { }
 
   ngOnInit() {
   }
