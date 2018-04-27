@@ -23,7 +23,7 @@ export class TvService {
         return tvs;
     }
     
-    getDetail(id: number) {
+    getDetail(id: number): Observable<any> {
         const url = this.baseUrl + id + this.apiKey;
         const tv = this.http.get(url);
         return tv;
