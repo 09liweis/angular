@@ -21,7 +21,15 @@
     z-index: -1;
 }
 .tv__info {
-    border: 5px;
+    color: #ffffff;
+    border-radius: 5px;
     padding: 20px;
     background-color: rgba(51, 51, 51, 0.6);
+}
+.tv__title {
+    font-size: 2em;
+}
+.tv__label {
+    color: #fcb208;
+    font-weight: bold;
 }
