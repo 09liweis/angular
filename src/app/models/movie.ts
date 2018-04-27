@@ -1,6 +1,7 @@
 export class Movie {
     id: number;
     title: string;
+    name: string;//for tv
     poster_path: string;
     adult: boolean;
     overview: string;

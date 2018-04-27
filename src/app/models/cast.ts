@@ -6,4 +6,5 @@ export class Cast {
     name: string;
     order: number;
     profile_path: string;
+    job: string;//for Crew
 }
