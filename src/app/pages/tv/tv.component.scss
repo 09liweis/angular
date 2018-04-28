@@ -32,8 +32,12 @@
 .tv__label {
     color: #fcb208;
     font-weight: bold;
+    margin-right: 10px;
 }
-.tv__genre {
+.tv__genre,
+.tv__network,
+.tv__company,
+.tv__season {
     display: inline-block;
     margin-right: 10px;
 }
