@@ -31,9 +31,9 @@
             </div>
             <div class="">
                 <h3 class="tv__label">Seasons:</h3>
-                <a class="tv__season" *ngFor="let s of tv.seasons" [routerLink]="['/tv', s.id]">
+                <span class="tv__season" *ngFor="let s of tv.seasons">
                     <img src="https://image.tmdb.org/t/p/w500{{s.poster_path}}" />
-                </a>
+                </span>
             </div>
         </div>
     </section>
