@@ -66,8 +66,6 @@ export class AppComponent {
   gotoDetail(result: any) {
     this.results = [];
     this.search = '';
-    if (result.media_type == 'movie') {
-      this.router.navigate([result.media_type + '/' + result.id]); 
-    }
+    this.router.navigate([result.media_type + '/' + result.id]); 
   }
 }
