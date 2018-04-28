@@ -14,7 +14,7 @@
                 <h3 class="tv__label">Overview: </h3>
                 <p>{{tv.overview}}</p>
             </div>
-            <div class=""><span class="tv__label">Homepage: </span><a href="{{tv.homepage}}">{{tv.homepage}}</a></div>
+            <div class=""><span class="tv__label">Homepage: </span><a target="_blank" href="{{tv.homepage}}">{{tv.homepage}}</a></div>
             <div class="">
                 <span class="tv__label">Genres: </span>
                 <span class="tv__genre" *ngFor="let g of tv.genres">{{g.name}}</span>
