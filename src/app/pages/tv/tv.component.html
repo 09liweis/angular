@@ -21,7 +21,9 @@
             </div>
             <div class="">
                 <span class="tv__label">Networks:</span>
-                <span class="tv__network" *ngFor="let n of tv.networks">{{n.name}}</span>
+                <span class="tv__network" *ngFor="let n of tv.networks">
+                    <img src="https://image.tmdb.org/t/p/w500{{n.logo_path}}" alt="{{n.name}}" />
+                </span>
             </div>
             <div class="">
                 <span class="tv__label">Production Companies:</span>
