@@ -33,6 +33,7 @@
                 <h3 class="tv__label">Seasons:</h3>
                 <figure class="tv__season" *ngFor="let s of tv.seasons">
                     <img src="https://image.tmdb.org/t/p/w500{{s.poster_path}}" alt="{{s.name}}" />
+                    <figcaption>{{s.name}}</figcaption>
                 </figure>
             </div>
         </div>

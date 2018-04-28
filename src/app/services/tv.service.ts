@@ -28,6 +28,10 @@ export class TvService {
         const tv = this.http.get(url);
         return tv;
     }
+    getCredits(id: number): Observable<any> {
+        const credits = this.baseUrl + id + '/credits' + this.apiKey;
+        return this.httpClient.get(credits);
+    }
     
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
