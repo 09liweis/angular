@@ -31,7 +31,9 @@
             </div>
             <div class="">
                 <span class="tv__label">Seasons:</span>
-                <span class="tv__season" *ngFor="let s of tv.seasons">{{s.name}}</span>
+                <span class="tv__season" *ngFor="let s of tv.seasons">
+                    <img src="https://image.tmdb.org/t/p/w500{{s.poster_path}}" />
+                </span>
             </div>
         </div>
     </section>

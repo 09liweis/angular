@@ -40,10 +40,14 @@
 .tv__season {
     display: inline-block;
     margin-right: 10px;
+    vertical-align: middle;
 }
 .tv__network {
     width: 60px;
     img {
         width: 100%;
     }
+}
+.tv__season {
+    width: 100px;
 }
