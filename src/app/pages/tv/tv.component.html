@@ -30,10 +30,10 @@
                 <span class="tv__company" *ngFor="let c of tv.production_companies">{{c.name}}</span>
             </div>
             <div class="">
-                <span class="tv__label">Seasons:</span>
-                <span class="tv__season" *ngFor="let s of tv.seasons">
+                <h3 class="tv__label">Seasons:</h3>
+                <a class="tv__season" *ngFor="let s of tv.seasons" [routerLink]="['/tv', s.id]">
                     <img src="https://image.tmdb.org/t/p/w500{{s.poster_path}}" />
-                </span>
+                </a>
             </div>
         </div>
     </section>
