@@ -12,6 +12,7 @@ import { TvService } from '../../services/tv.service';
 })
 export class TvComponent implements OnInit {
   public tv: Movie;
+  public credits;
   constructor(
     private tvService: TvService,
     private route: ActivatedRoute,
@@ -23,7 +24,10 @@ export class TvComponent implements OnInit {
       this.tvService.getDetail(+params['id']).subscribe(tv => {
         this.tv = tv;
         this.titleService.setTitle(tv.name);
-      })
+      });
+      this.tvService.getCredits(+params['id']).subscribe(credits => {
+        this.credits = credits;
+      });
     })
   }
 

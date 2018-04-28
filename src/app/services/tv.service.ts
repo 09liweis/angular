@@ -30,7 +30,7 @@ export class TvService {
     }
     getCredits(id: number): Observable<any> {
         const credits = this.baseUrl + id + '/credits' + this.apiKey;
-        return this.httpClient.get(credits);
+        return this.http.get(credits);
     }
     
     private handleError(error: any): Promise<any> {
