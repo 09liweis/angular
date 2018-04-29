@@ -32,6 +32,9 @@ export class TvService {
         const credits = this.baseUrl + id + '/credits' + this.apiKey;
         return this.http.get(credits);
     }
+    getImages(id: number): Observable<any> {
+        
+    }
     
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
