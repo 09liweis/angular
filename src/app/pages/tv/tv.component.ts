@@ -13,6 +13,7 @@ import { TvService } from '../../services/tv.service';
 export class TvComponent implements OnInit {
   public tv: Movie;
   public credits;
+  public images;
   constructor(
     private tvService: TvService,
     private route: ActivatedRoute,
@@ -27,6 +28,9 @@ export class TvComponent implements OnInit {
       });
       this.tvService.getCredits(+params['id']).subscribe(credits => {
         this.credits = credits;
+      });
+      this.tvService.getImages(+params['id']).subscribe(images => {
+        this.images = images;
       });
     })
   }
