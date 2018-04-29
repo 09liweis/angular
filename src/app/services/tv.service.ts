@@ -33,7 +33,8 @@ export class TvService {
         return this.http.get(credits);
     }
     getImages(id: number): Observable<any> {
-        
+        const images = this.baseUrl + id + '/images' + this.apiKey;
+        return this.http.get(images);
     }
     
     private handleError(error: any): Promise<any> {
