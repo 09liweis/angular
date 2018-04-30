@@ -1,3 +1,12 @@
-<p>
-  person works!
-</p>
+<div id="person" *ngIf="person">
+    <section class="columns">
+        <div class="column is-4">
+            <figure>
+                <img src="https://image.tmdb.org/t/p/w500{{person.profile_path}}" />
+            </figure>
+        </div>
+        <div class="column is-8">
+            <h1>{{person.name}}</h1>
+        </div>
+    </section>
+</div>
