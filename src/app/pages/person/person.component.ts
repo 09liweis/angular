@@ -10,6 +10,7 @@ import { PersonService } from '../../services/person.service';
   styleUrls: ['./person.component.scss']
 })
 export class PersonPageComponent implements OnInit {
+  public person;
 
   constructor(
     private personService: PersonService,
@@ -18,7 +19,12 @@ export class PersonPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+    this.route.params.subscribe(params => {
+      this.personService.getDetail(+params['id']).subscribe(p => {
+        this.person = p;
+        this.titleService.setTitle(p.name);
+      })
+    })
   }
 
 }
