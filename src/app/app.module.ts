@@ -22,7 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { PersonsComponent } from './pages/persons/persons.component';
-import { PersonComponent } from './pages/person/person.component';
+import { PersonPageComponent } from './pages/person/person.component';
 
 import { NewsComponent } from './pages/news/news.component';
 import { TvsComponent } from './pages/tvs/tvs.component';
@@ -46,6 +46,7 @@ import { PersonListComponent } from './components/person-list/person-list.compon
     HomeComponent,
     TvComponent,
     PersonListComponent,
+    PersonPageComponent
   ],
   imports: [
     FormsModule,
@@ -101,6 +102,10 @@ import { PersonListComponent } from './components/person-list/person-list.compon
       {
         path:'people/:type',
         component:PersonsComponent
+      },
+      {
+        path: 'person/:id',
+        component: PersonPageComponent
       }
       
     ]),
