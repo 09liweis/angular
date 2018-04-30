@@ -16,12 +16,14 @@ import { SessionService } from './services/session.service';
 import { NewsService } from './services/news.service';
 import { TvService } from './services/tv.service';
 import { SearchService } from './services/search.service';
+import {PersonService} from './services/person.service';
 
 import { LoginComponent } from './login/login.component';
 import { PersonComponent } from './components/person/person.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { PersonsComponent } from './pages/persons/persons.component';
-import {PersonService} from './services/person.service';
+import { PersonComponent } from './pages/person/person.component';
+
 import { NewsComponent } from './pages/news/news.component';
 import { TvsComponent } from './pages/tvs/tvs.component';
 import { HomeComponent } from './pages/home/home.component';
