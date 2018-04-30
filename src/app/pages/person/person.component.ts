@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PersonService } from '../../services/person.service';
+
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private personService: PersonService
+  ) { }
 
   ngOnInit() {
+    
   }
 
 }
