@@ -24,6 +24,9 @@ export class PersonService{
         const persons = this.http.get(personsUrl);
         return persons;
     }
+    getDetail(id: number): Observable<any> {
+        return this.http.get(this.baseUrl + id + this.apiKey);
+    }
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
