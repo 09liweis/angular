@@ -37,11 +37,6 @@ export class MovieService {
         return this.httpClient.get(this.baseUrl + id + '/' + section + this.apiKey);
     }
     
-    getCredits(id: number): Observable<any> {
-        const movieCredits = this.baseUrl + id + '/credits' + this.apiKey;
-        return this.httpClient.get(movieCredits);
-    }
-    
     getVideos(id: number): Observable<any> {
         const movieVideo = this.baseUrl + id + '/videos' + this.apiKey;
         return this.httpClient.get(movieVideo);

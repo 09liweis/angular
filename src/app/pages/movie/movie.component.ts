@@ -58,7 +58,7 @@ export class MovieComponent implements OnInit {
       this.movieService.getSection(+params['id'], 'images')
       .subscribe(movieImages => this.movieImages = movieImages);
       
-      this.movieService.getCredits(+params['id'])
+      this.movieService.getSection(+params['id'], 'credits')
       .subscribe(movieCredits => this.movieCredits = movieCredits);
       
       this.movieService.getVideos(+params['id'])
