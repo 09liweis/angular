@@ -37,11 +37,6 @@ export class MovieService {
         return this.httpClient.get(this.baseUrl + id + '/' + section + this.apiKey);
     }
     
-    getSimilar(id: number): Observable<any> {
-        const similarMovies = this.baseUrl + id + '/similar' + this.apiKey;
-        return this.httpClient.get(similarMovies);
-    }
-    
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
