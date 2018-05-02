@@ -33,7 +33,7 @@ export class MovieService {
         return movie;
     }
     
-    getMovieImages(id: number): Observable<any> {
+    getImages(id: number): Observable<any> {
         const movieCredits = this.baseUrl + id + '/images' + this.apiKey;
         return this.httpClient.get(movieCredits)
     }

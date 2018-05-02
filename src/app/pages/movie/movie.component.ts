@@ -55,7 +55,7 @@ export class MovieComponent implements OnInit {
         this.titleService.setTitle(movie.title);
       });
       
-      this.movieService.getMovieImages(+params['id'])
+      this.movieService.getImages(+params['id'])
       .subscribe(movieImages => this.movieImages = movieImages);
       
       this.movieService.getMovieCredits(+params['id'])
