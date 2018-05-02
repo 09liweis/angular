@@ -1,5 +1,6 @@
 .cast {
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 .cast:hover {
     transform: translateY(10px) !important;
