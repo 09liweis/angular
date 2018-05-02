@@ -26,7 +26,7 @@ export class MovieComponent implements OnInit {
   videos: MovieVideo;
   reviews: MovieReviews;
   section: String;
-  similarMovies: Movies;
+  similar: Movies;
   
   modalOpen: boolean = false;
   currentImage: any = 0;
@@ -70,8 +70,8 @@ export class MovieComponent implements OnInit {
       });
       
       this.movieService.getSection(+params['id'], 'similar')
-      .subscribe(similarMovies => {
-        this.similarMovies = similarMovies;
+      .subscribe(similar => {
+        this.similar = similar;
       });
     });
   }
