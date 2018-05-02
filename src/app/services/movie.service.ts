@@ -43,7 +43,7 @@ export class MovieService {
         return this.httpClient.get(movieCredits);
     }
     
-    getMovieVideos(id: number): Observable<any> {
+    getVideos(id: number): Observable<any> {
         const movieVideo = this.baseUrl + id + '/videos' + this.apiKey;
         return this.httpClient.get(movieVideo);
     }
