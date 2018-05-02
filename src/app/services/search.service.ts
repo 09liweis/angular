@@ -20,8 +20,4 @@ export class SearchService {
         const searchUrl = this.baseUrl + this.apiKey + '&query=' + search;
         return this.http.get(searchUrl);
     }
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-    }
 }
