@@ -27,7 +27,7 @@ export class MovieService {
         return movies;
     }
     
-    getMovieDetail(id: number): Observable<any> {
+    getDetail(id: number): Observable<any> {
         const movieDetail = this.baseUrl + id + this.apiKey;
         const movie = this.httpClient.get(movieDetail);
         return movie;
