@@ -68,14 +68,14 @@
     <!--    </div>-->
     <!--</div>-->
     <div class="movie__home" *ngIf="section == 'home'">
-        <div id="casts" *ngIf="movieCredits">
+        <div id="casts" *ngIf="credits">
             <div class="columns">
-                <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.cast.slice(0, 6)" [person]=cast></person>
+                <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast.slice(0, 6)" [person]=cast></person>
             </div>
         </div>
-        <div id="crews" *ngIf="movieCredits">
+        <div id="crews" *ngIf="credits">
             <div class="columns">
-                <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.crew.slice(0, 6)" [person]=cast></person>
+                <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew.slice(0, 6)" [person]=cast></person>
             </div>
         </div>
         <div id="similar-movies" *ngIf="similarMovies">
@@ -99,9 +99,9 @@
         </div>
     </div>
     <div class="container" *ngIf="section == 'casts'">
-        <div class="columns is-multiline" *ngIf="movieCredits">
-            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.cast" [person]=cast></person>
-            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of movieCredits.crew" [person]=cast></person>
+        <div class="columns is-multiline" *ngIf="credits">
+            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [person]=cast></person>
+            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew" [person]=cast></person>
         </div>
     </div>
     <div class="container" *ngIf="section == 'images'">

@@ -21,7 +21,7 @@ import { MovieService } from '../../services/movie.service';
 })
 export class MovieComponent implements OnInit {
   movie: Movie;
-  movieCredits: MovieCredits;
+  credits: MovieCredits;
   movieImages: MovieImage;
   movieVideo: MovieVideo;
   movieReviews: MovieReviews;
@@ -59,7 +59,7 @@ export class MovieComponent implements OnInit {
       .subscribe(movieImages => this.movieImages = movieImages);
       
       this.movieService.getSection(+params['id'], 'credits')
-      .subscribe(movieCredits => this.movieCredits = movieCredits);
+      .subscribe(credtis => this.credits = credtis);
       
       this.movieService.getSection(+params['id'], 'videos')
       .subscribe(movieVideo => this.movieVideo = movieVideo);
