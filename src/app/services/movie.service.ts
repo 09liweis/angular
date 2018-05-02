@@ -48,7 +48,7 @@ export class MovieService {
         return this.httpClient.get(movieVideo);
     }
     
-    getMovieReviews(id: number): Observable<any> {
+    getReviews(id: number): Observable<any> {
         const movieReviews = this.baseUrl + id +'/reviews' + this.apiKey;
         return this.httpClient.get(movieReviews);
     }

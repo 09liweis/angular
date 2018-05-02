@@ -64,7 +64,7 @@ export class MovieComponent implements OnInit {
       this.movieService.getVideos(+params['id'])
       .subscribe(movieVideo => this.movieVideo = movieVideo);
       
-      this.movieService.getMovieReviews(+params['id'])
+      this.movieService.getReviews(+params['id'])
       .subscribe(movieReviews => {
         this.movieReviews = movieReviews;
       });
