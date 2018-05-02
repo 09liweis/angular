@@ -93,7 +93,7 @@ export class MovieComponent implements OnInit {
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) { 
     if (event.key == 'ArrowRight') {
-      if (this.currentImage == this.movieImages.posters.length - 1) {
+      if (this.currentImage == this.images.posters.length - 1) {
         this.currentImage = 0
       } else {
         this.currentImage += 1;
@@ -101,7 +101,7 @@ export class MovieComponent implements OnInit {
     }
     if (event.key == 'ArrowLeft') {
       if (this.currentImage == 0) {
-        this.currentImage = this.movieImages.posters.length - 1;
+        this.currentImage = this.images.posters.length - 1;
       } else {
         this.currentImage -= 1;
       }
