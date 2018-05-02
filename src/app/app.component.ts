@@ -57,7 +57,7 @@ export class AppComponent {
     const search = event.target.value;
     if (search != '') {
       this.results = [];
-      this.searchService.getResults(search).then(res => {
+      this.searchService.getResults(search).subscribe(res => {
         this.results = res.results;
       });
     }

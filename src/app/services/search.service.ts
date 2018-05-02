@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-
-import 'rxjs/add/operator/toPromise';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs/Rx';
 
 import { Movies } from '../models/movies';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class SearchService {
@@ -11,12 +14,11 @@ export class SearchService {
     private apiKey = '?api_key=8109b23cc9abaf02cf3c699ec62ccc19';
     private headers = new Headers({'Content-Type': 'application/json'});
     
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
     
-    getResults(search: String): Promise<Movies> {
+    getResults(search: String): Observable<any> {
         const searchUrl = this.baseUrl + this.apiKey + '&query=' + search;
-        const results = this.http.get(searchUrl).toPromise().then(res => res.json() as Movies).catch(this.handleError);
-        return results;
+        return this.http.get(searchUrl);
     }
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
