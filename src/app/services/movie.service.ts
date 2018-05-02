@@ -36,12 +36,7 @@ export class MovieService {
     getSection(id: number, section: string): Observable<any> {
         return this.httpClient.get(this.baseUrl + id + '/' + section + this.apiKey);
     }
-    
-    getVideos(id: number): Observable<any> {
-        const movieVideo = this.baseUrl + id + '/videos' + this.apiKey;
-        return this.httpClient.get(movieVideo);
-    }
-    
+
     getReviews(id: number): Observable<any> {
         const movieReviews = this.baseUrl + id +'/reviews' + this.apiKey;
         return this.httpClient.get(movieReviews);
