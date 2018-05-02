@@ -53,7 +53,7 @@ export class MovieService {
         return this.httpClient.get(movieReviews);
     }
     
-    getSimilarMovies(id: number): Observable<any> {
+    getSimilar(id: number): Observable<any> {
         const similarMovies = this.baseUrl + id + '/similar' + this.apiKey;
         return this.httpClient.get(similarMovies);
     }

@@ -69,7 +69,7 @@ export class MovieComponent implements OnInit {
         this.movieReviews = movieReviews;
       });
       
-      this.movieService.getSimilarMovies(+params['id'])
+      this.movieService.getSimilar(+params['id'])
       .subscribe(similarMovies => {
         this.similarMovies = similarMovies;
       });
