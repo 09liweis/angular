@@ -1,10 +1,11 @@
 .cast {
     transition: transform 0.3s ease;
     cursor: pointer;
+    &:hover {
+        transform: translateY(10px) !important;
+    }
 }
-.cast:hover {
-    transform: translateY(10px) !important;
-}
+
 .cast__image img {
     border-radius: 5px;
     display: block;
