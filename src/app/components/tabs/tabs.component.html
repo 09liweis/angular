@@ -1,3 +1,3 @@
-<p>
-  tabs works!
-</p>
+<div class="tab">
+    <a class="tab__link" [class.is-active]="currentLink == link" *ngFor="let link of links" (click)="gotoLink(link)">{{formatTitle(link)}}</a>
+</div>
