@@ -18,7 +18,7 @@ export class MoviesComponent implements OnInit {
   links: Array<String>;
   movies: Movies;
   selectedMovie: Movie;
-  list: String;
+  list: String = 'movie';
   type: string;
   currentPage: Number;
   totalPages: Array<Number>;
@@ -32,7 +32,6 @@ export class MoviesComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    this.list = 'movie';
     this.links = [
       'now_playing',
       'popular',

@@ -16,12 +16,12 @@ export class TabsComponent implements OnInit {
   constructor(private utilsService: UtilsService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.selectedLink);
+    
   }
   
   gotoLink(link) {
     this.selectedLink = link;
-    this.router.navigate(['movies/' + link]); 
+    this.router.navigate([this.list + 's/' + link]); 
   }
   
   formatTitle(title: string): string {
