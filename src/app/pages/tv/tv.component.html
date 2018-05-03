@@ -8,29 +8,29 @@
         </div>
         <div class="column is-8 tv__info">
             <h1 class="tv__title">{{tv.name}} - {{tv.vote_average}}</h1>
-            <div class=""><span class="tv__label">First Air Date:</span>{{tv.first_air_date}}</div>
-            <div class=""><span class="tv__label">Last Air Date:</span>{{tv.last_air_date}}</div>
+            <div class=""><span class="label">First Air Date:</span>{{tv.first_air_date}}</div>
+            <div class=""><span class="label">Last Air Date:</span>{{tv.last_air_date}}</div>
             <div class="tv__overview">
-                <h3 class="tv__label">Overview:</h3>
+                <h3 class="label">Overview:</h3>
                 <p>{{tv.overview}}</p>
             </div>
-            <div class=""><span class="tv__label">Homepage:</span><a class="tv__homepage" target="_blank" href="{{tv.homepage}}">{{tv.homepage}}</a></div>
+            <div class=""><span class="label">Homepage:</span><a class="tv__homepage" target="_blank" href="{{tv.homepage}}">{{tv.homepage}}</a></div>
             <div class="">
-                <span class="tv__label">Genres:</span>
+                <span class="label">Genres:</span>
                 <span class="tv__genre" *ngFor="let g of tv.genres">{{g.name}}</span>
             </div>
             <div class="">
-                <span class="tv__label">Networks:</span>
+                <span class="label">Networks:</span>
                 <span class="tv__network" *ngFor="let n of tv.networks">
                     <img src="https://image.tmdb.org/t/p/w500{{n.logo_path}}" alt="{{n.name}}" />
                 </span>
             </div>
             <div class="">
-                <span class="tv__label">Production Companies:</span>
+                <span class="label">Production Companies:</span>
                 <span class="tv__company" *ngFor="let c of tv.production_companies">{{c.name}}</span>
             </div>
             <div class="">
-                <h3 class="tv__label">Seasons:</h3>
+                <h3 class="label">Seasons:</h3>
                 <figure class="tv__season" *ngFor="let s of tv.seasons">
                     <img src="https://image.tmdb.org/t/p/w500{{s.poster_path}}" alt="{{s.name}}" />
                     <figcaption>{{s.name}}</figcaption>
