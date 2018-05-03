@@ -16,6 +16,7 @@ export class TabsComponent implements OnInit {
   constructor(private utilsService: UtilsService, private router: Router) { }
 
   ngOnInit() {
+    console.log(this.selectedLink);
   }
   
   gotoLink(link) {

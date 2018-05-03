@@ -54,11 +54,6 @@ export class MoviesComponent implements OnInit {
       this.titleService.setTitle('Movies - ' + title);
     });
   }
-  gotoLink(link) {
-    this.selectedLink = link;
-    this.movies.results = [];
-    this.router.navigate(['movies/' + link]); 
-  }
   
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
