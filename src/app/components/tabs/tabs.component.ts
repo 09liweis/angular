@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs',
+  selector: 'tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements OnInit {
+  @Input() links: Array<string>;
+  @Input() currentLink: string; 
 
   constructor() { }
 
