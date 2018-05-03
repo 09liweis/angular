@@ -41,5 +41,12 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  ngOnChanges() {
+  }
+  
+  ngOnDestroy() {
+    console.log('destroy');
+  }
 
 }

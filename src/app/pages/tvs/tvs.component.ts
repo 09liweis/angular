@@ -19,7 +19,7 @@ export class TvsComponent implements OnInit {
   links: Array<String>;
   currentPage: Number;
   totalPages: Array<Number>;
-  list: String;
+  list: String = 'tv';
   type: string;
   
   constructor(
@@ -31,7 +31,6 @@ export class TvsComponent implements OnInit {
   ) {}
   
   ngOnInit() {
-    this.list = 'tv';
     this.links = [
       'airing_today',
       'on_the_air',
@@ -54,15 +53,4 @@ export class TvsComponent implements OnInit {
       this.titleService.setTitle('TVs - ' + title);
     });
   }
-  
-  gotoLink(link) {
-    this.selectedLink = link;
-    this.tvs.results = [];
-    this.router.navigate(['tvs/' + link]); 
-  }
-  
-  formatTitle(title: string): string {
-    return this.utilsService.formatTitle(title);
-  }
-
 }
