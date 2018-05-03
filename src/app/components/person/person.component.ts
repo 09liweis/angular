@@ -5,7 +5,7 @@ import {UtilsService} from '../../services/utils.service';
 @Component({
   selector: 'person',
   templateUrl: './person.component.html',
-  styleUrls: ['./person.component.css']
+  styleUrls: ['./person.component.scss']
 })
 export class PersonComponent implements OnInit {
   @Input() person: Cast;
