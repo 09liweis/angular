@@ -43,13 +43,14 @@ export class MoviesComponent implements OnInit {
     // (+) converts string 'id' to a number
     .switchMap((params: Params) => this.movieService.getMovies(params['type'], params['page']))
     .subscribe((movies: Movies) => {
-      this.type = this.route.snapshot.params['type'];
-      this.selectedLink = this.route.snapshot.params['type'];
+      const type = this.route.snapshot.params['type'];
+      this.type = type;
+      this.selectedLink = type;
       this.movies = movies;
       this.currentPage = movies.page;
       this.totalPages = Array(movies.total_pages).fill(1).map((x,i)=>i)
       // set Page title
-      var title = this.utilsService.formatTitle(this.route.snapshot.params['type']);
+      var title = this.utilsService.formatTitle(type);
       this.titleService.setTitle('Movies - ' + title);
     });
   }

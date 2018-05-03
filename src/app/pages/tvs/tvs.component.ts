@@ -43,13 +43,14 @@ export class TvsComponent implements OnInit {
     // (+) converts string 'id' to a number
     .switchMap((params: Params) => this.tvService.getTvs(params['type'], params['page']))
     .subscribe((tvs: Movies) => {
-      this.type = this.route.snapshot.params['type'];
-      this.selectedLink = this.route.snapshot.params['type'];
+      const type = this.route.snapshot.params['type'];
+      this.type = type;
+      this.selectedLink = type;
       this.tvs = tvs;
       this.currentPage = tvs.page;
       this.totalPages = Array(tvs.total_pages).fill(1).map((x,i)=>i)
       // set Page title
-      var title = this.utilsService.formatTitle(this.route.snapshot.params['type']);
+      var title = this.utilsService.formatTitle(type);
       this.titleService.setTitle('TVs - ' + title);
     });
   }
