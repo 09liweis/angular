@@ -9,7 +9,8 @@ import { UtilsService } from '../../services/utils.service';
 })
 export class TabsComponent implements OnInit {
   @Input() links: Array<string>;
-  @Input() currentLink: string; 
+  @Input() currentLink: string;
+  @Input() list: string; //movie or tv
 
   constructor(private utilsService: UtilsService) { }
 
