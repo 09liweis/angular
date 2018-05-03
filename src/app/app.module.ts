@@ -30,6 +30,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TvComponent } from './pages/tv/tv.component';
 import { UtilsService } from './services/utils.service';
 import { PersonListComponent } from './components/person-list/person-list.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PersonListComponent } from './components/person-list/person-list.compon
     HomeComponent,
     TvComponent,
     PersonListComponent,
-    PersonPageComponent
+    PersonPageComponent,
+    TabsComponent
   ],
   imports: [
     FormsModule,
