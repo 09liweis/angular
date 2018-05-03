@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router }   from '@angular/router';
 
 import { UtilsService } from '../../services/utils.service';
 
@@ -9,12 +10,17 @@ import { UtilsService } from '../../services/utils.service';
 })
 export class TabsComponent implements OnInit {
   @Input() links: Array<string>;
-  @Input() currentLink: string;
+  @Input() selectedLink: string;
   @Input() list: string; //movie or tv
 
-  constructor(private utilsService: UtilsService) { }
+  constructor(private utilsService: UtilsService, private router: Router) { }
 
   ngOnInit() {
+  }
+  
+  gotoLink(link) {
+    this.selectedLink = link;
+    this.router.navigate(['movies/' + link]); 
   }
   
   formatTitle(title: string): string {
