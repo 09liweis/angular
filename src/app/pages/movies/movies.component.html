@@ -1,6 +1,3 @@
-<!--<div class="tab">-->
-<!--    <a class="tab__link" [class.is-active]="selectedLink == link" *ngFor="let link of links" (click)="gotoLink(link)">{{formatTitle(link)}}</a>-->
-<!--</div>-->
 <tabs [links]=links [list]=list [selectedLink]=selectedLink ></tabs>
 
 <movie-list [movies]=movies [type]=type [list]=list [totalPages]=totalPages [currentPage]=currentPage></movie-list>

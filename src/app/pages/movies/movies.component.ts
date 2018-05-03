@@ -63,9 +63,4 @@ export class MoviesComponent implements OnInit {
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
   }
-  
-  formatTitle(title: string): string {
-    return this.utilsService.formatTitle(title);
-  }
-
 }
