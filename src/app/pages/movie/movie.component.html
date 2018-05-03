@@ -6,7 +6,7 @@
     <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
 </div>
 <div id="movie" *ngIf="movie">
-    <div class="movie__backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'"></div>
+    <div class="backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'"></div>
     <div id="movie__header" *ngIf="section == 'home'">
         <div class="movie__info columns">
             <figure class="column is-4">
