@@ -31,6 +31,7 @@ import { TvComponent } from './pages/tv/tv.component';
 import { UtilsService } from './services/utils.service';
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { FormatTitlePipe } from './pipes/format-title.pipe';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
     TvComponent,
     PersonListComponent,
     PersonPageComponent,
-    TabsComponent
+    TabsComponent,
+    FormatTitlePipe
   ],
   imports: [
     FormsModule,
