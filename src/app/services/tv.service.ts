@@ -17,7 +17,7 @@ export class TvService {
 
     constructor(private http: HttpClient) { }
   
-    getTvs(type: String, page: number): Observable<any> {
+    getList(type: String, page: number): Observable<any> {
         const url = this.baseUrl + type + this.apiKey + '&page=' + page;
         const tvs = this.http.get(url);
         return tvs;
