@@ -21,7 +21,7 @@ export class MovieService {
 
     constructor(private httpClient: HttpClient) { }
     
-    getMovies(type: String, page: number): Observable<any> {
+    getList(type: String, page: number): Observable<any> {
         const moviesUrl = this.baseUrl + type + this.apiKey + '&page=' + page;
         const movies = this.httpClient.get(moviesUrl);
         return movies;
