@@ -23,9 +23,4 @@ export class TabsComponent implements OnInit {
     this.selectedLink = link;
     this.router.navigate([this.list + 's/' + link]); 
   }
-  
-  formatTitle(title: string): string {
-    return this.utilsService.formatTitle(title);
-  }
-
 }
