@@ -41,7 +41,7 @@ export class TvsComponent implements OnInit {
 
     this.route.params
     // (+) converts string 'id' to a number
-    .switchMap((params: Params) => this.tvService.getTvs(params['type'], params['page']))
+    .switchMap((params: Params) => this.tvService.getList(params['type'], params['page']))
     .subscribe((tvs: Movies) => {
       const type = this.route.snapshot.params['type'];
       this.type = type;
