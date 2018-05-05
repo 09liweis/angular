@@ -11,8 +11,7 @@ import { PersonService } from '../../services/person.service';
 })
 export class PersonPageComponent implements OnInit {
   public person;
-  public images:
-
+  public images;
   constructor(
     private personService: PersonService,
     private route: ActivatedRoute,
@@ -21,13 +20,12 @@ export class PersonPageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.personService.getSection(+params['id'], 'images').subscribe(images => {
+        this.images = images;
+      })
       this.personService.getDetail(+params['id']).subscribe(p => {
         this.person = p;
         this.titleService.setTitle(p.name);
-      })
-      
-      this.personService.getSection(+params['id'], 'images').subscribe(images => {
-        this.images = images;
       })
     })
   }

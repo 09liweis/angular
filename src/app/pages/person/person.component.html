@@ -15,4 +15,9 @@
             <div><span class="label">Bio:</span><p>{{person.biography}}</p></div>
         </div>
     </section>
+    <section class="columns is-mobile is-multiline" *ngIf="images">
+        <figure class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let image of images.profiles; let i = index">
+            <img src="https://image.tmdb.org/t/p/w500{{image.file_path}}" />
+        </figure>
+    </section>
 </div>
