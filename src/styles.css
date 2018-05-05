@@ -10,6 +10,14 @@
     margin-right: 10px;
 }
 
+.homepage {
+    color: #fcb208;
+}
+.homepage:hover {
+    color: #fcb208;
+    text-decoration: underline;
+}
+
 .backdrop {
     background-attachment: fixed;
     background-repeat: no-repeat;
