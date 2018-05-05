@@ -11,6 +11,7 @@ import { PersonService } from '../../services/person.service';
 })
 export class PersonPageComponent implements OnInit {
   public person;
+  public images:
 
   constructor(
     private personService: PersonService,
@@ -23,6 +24,10 @@ export class PersonPageComponent implements OnInit {
       this.personService.getDetail(+params['id']).subscribe(p => {
         this.person = p;
         this.titleService.setTitle(p.name);
+      })
+      
+      this.personService.getSection(+params['id'], 'images').subscribe(images => {
+        this.images = images;
       })
     })
   }
