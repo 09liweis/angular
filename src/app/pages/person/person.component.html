@@ -7,7 +7,9 @@
         </div>
         <div class="column is-8">
             <h1>{{person.name}}</h1>
+            <div><span class="label">Known as:</span><span *ngFor="let n of person.also_known_as">{{n}}, </span></div>
             <div><span class="label">Birthday:</span>{{person.birthday}}</div>
+            <div><span class="label">Place of Brith:</span>{{person.place_of_birth}}</div>
             <div *ngIf="person.homepage"><span class="label">Homepage:</span><a class="homepage" href="{{person.homepage}}" target="_blank">{{person.homepage}}</a></div>
             <div><span class="label">IMDB:</span><a target="_blank" class="homepage" href="https://www.imdb.com/name/{{person.imdb_id}}">{{person.imdb_id}}</a></div>
             <div><span class="label">Bio:</span><p>{{person.biography}}</p></div>
