@@ -104,7 +104,7 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
         component: MovieComponent
       },
       {
-        path:'people/:type',
+        path:'persons/:type',
         component:PersonsComponent
       },
       {

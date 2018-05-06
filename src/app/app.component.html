@@ -3,7 +3,7 @@
         <a id="logo" routerLink="/">Movie Paradise</a>
         <a class="nav__link" routerLink="/movies/now_playing">Movies</a>
         <a class="nav__link" routerLink="/tvs/airing_today/page/1">Tv Show</a>
-        <a class="nav__link" routerLink="/people/popular">People</a>
+        <a class="nav__link" routerLink="/persons/popular">People</a>
         <a class="nav__link" routerLink="/news">News</a>
         <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
