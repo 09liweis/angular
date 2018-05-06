@@ -26,8 +26,7 @@ export class PersonsComponent implements OnInit {
 
   ngOnInit() :void{
     this.links=[
-      'popular',
-      'latest'
+      'popular'
     ];
     this.selectedLink = 'popular';
 
