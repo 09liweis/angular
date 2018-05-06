@@ -19,8 +19,8 @@ export class PersonService{
 
     constructor(private http: HttpClient){}
 
-    getPopular(type: String): Observable<any>{
-        const personsUrl = this.baseUrl + type + this.apiKey + '&page=1';
+    getList(type: String): Observable<any>{
+        const personsUrl = this.baseUrl + type + this.apiKey;
         const persons = this.http.get(personsUrl);
         return persons;
     }

@@ -32,7 +32,7 @@ export class PersonsComponent implements OnInit {
     this.selectedLink = 'popular';
 
     this.route.params
-    .switchMap((params: Params) => this.personService.getPopular(params['type']))
+    .switchMap((params: Params) => this.personService.getList(params['type']))
     .subscribe((persons: Persons) =>{
       this.persons = persons;
     })
