@@ -16,10 +16,12 @@
         </div>
     </section>
     <section class="columns is-mobile is-multiline" *ngIf="credits">
-        <figure class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast">
-            <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
-            <figcaption>{{cast.original_title}} - {{cast.character}}</figcaption>
-        </figure>
+        <a class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [routerLink]="['/', cast.media_type, cast.id]">
+            <figure>
+                <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
+                <figcaption>{{cast.title ? cast.title : cast.name}} - {{cast.character}}</figcaption>
+            </figure>
+        </a>
     </section>
     <section class="columns is-mobile is-multiline" *ngIf="images">
         <figure class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let image of images.profiles; let i = index">
