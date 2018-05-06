@@ -17,6 +17,7 @@ export class PersonsComponent implements OnInit {
   links: Array<String>;
   persons: Persons;
   selectedPerson: Person;
+  list: String = 'person';
 
   constructor( 
     private titleService: Title,
