@@ -10,9 +10,9 @@
     margin: 0 10px;
     color: #fcb208;
     transition: all 0.3s ease;
-}
-.tab__link.is-active,
-.tab__link:hover {
-    color: #ffffff;
-    background-color: #fcb209;
+    &.is-active,
+    &:hover {
+        color: #ffffff;
+        background-color: #fcb209;
+    }
 }
