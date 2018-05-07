@@ -11,6 +11,7 @@ import { TvService } from '../../services/tv.service';
   styleUrls: ['./tv.component.scss']
 })
 export class TvComponent implements OnInit {
+  public section: String;
   public tv: Movie;
   public credits;
   public images;
