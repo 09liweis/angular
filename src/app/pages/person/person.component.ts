@@ -21,6 +21,11 @@ export class PersonPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (typeof this.route.snapshot.params['section'] != 'undefined') {
+      this.section = this.route.snapshot.params['section'];
+    } else {
+      this.section = 'home';
+    }
     this.route.params.subscribe(params => {
       this.personService.getSection(+params['id'], 'images').subscribe(images => {
         this.images = images;
