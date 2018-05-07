@@ -39,5 +39,9 @@ export class PersonPageComponent implements OnInit {
       })
     })
   }
+  
+  changeSection(section: string): string {
+    this.section = section;
+  }
 
 }
