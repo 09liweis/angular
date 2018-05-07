@@ -41,7 +41,7 @@ export class TvComponent implements OnInit {
     })
   }
   
-  changeSection(section: string): string {
+  changeSection(section: string): void {
     this.section = section;
   }
 

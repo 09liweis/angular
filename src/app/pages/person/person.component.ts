@@ -40,7 +40,7 @@ export class PersonPageComponent implements OnInit {
     })
   }
   
-  changeSection(section: string): string {
+  changeSection(section: string): void {
     this.section = section;
   }
 
