@@ -40,5 +40,9 @@ export class TvComponent implements OnInit {
       });
     })
   }
+  
+  changeSection(section: string): string {
+    this.section = section;
+  }
 
 }
