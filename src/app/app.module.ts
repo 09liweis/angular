@@ -114,6 +114,10 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
       {
         path: 'person/:id',
         component: PersonPageComponent
+      },
+      {
+        path: 'person/:id/:section',
+        component: PersonPageComponent
       }
       
     ]),
