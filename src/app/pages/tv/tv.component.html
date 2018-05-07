@@ -45,7 +45,7 @@
             </div>
         </div>
     </section>
-    <section *ngIf="credits">
+    <section *ngIf="credits && section == 'casts'">
         <div class="columns">
             <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast.slice(0, 6)" [person]=cast></person>
         </div>
@@ -53,7 +53,7 @@
             <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let crew of credits.crew.slice(0, 6)" [person]=crew></person>
         </div>
     </section>
-    <section id="images" *ngIf="images">
+    <section id="images" *ngIf="images && section == 'images'">
         <div class="columns is-mobile is-multiline">
             <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let poster of images.posters; let i = index">
                 <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" />
