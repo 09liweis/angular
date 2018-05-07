@@ -21,6 +21,11 @@ export class TvComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (typeof this.route.snapshot.params['section'] != 'undefined') {
+      this.section = this.route.snapshot.params['section'];
+    } else {
+      this.section = 'home';
+    }
     this.route.params.subscribe(params => {
       this.tvService.getDetail(+params['id']).subscribe(tv => {
         this.tv = tv;
