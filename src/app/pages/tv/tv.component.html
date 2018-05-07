@@ -46,7 +46,7 @@
         </div>
     </section>
     <section *ngIf="credits && section == 'casts'">
-        <div class="columns">
+        <div class="columns is-mobile is-multiline">
             <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [person]=cast></person>
         </div>
         <div class="columns">
