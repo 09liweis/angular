@@ -13,6 +13,7 @@ export class PersonPageComponent implements OnInit {
   public person;
   public images;
   public credits;
+  public section: String;
   constructor(
     private personService: PersonService,
     private route: ActivatedRoute,
