@@ -1,7 +1,7 @@
 <div class="tab" *ngIf="person">
     <a class="tab__link" (click)="changeSection('home')" [routerLink]="['/person', person.id]">Home</a>
     <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/person', person.id, 'images']">Images</a>
-    <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/person', person.id, 'casts']">Casts</a>
+    <a class="tab__link" (click)="changeSection('credits')" [routerLink]="['/person', person.id, 'credits']">Credits</a>
 </div>
 <div id="person" *ngIf="person">
     <section class="columns" *ngIf="section =='home'">
@@ -20,7 +20,7 @@
             <div><span class="label">Bio:</span><p>{{person.biography}}</p></div>
         </div>
     </section>
-    <section class="columns is-mobile is-multiline" *ngIf="credits && section == 'casts'">
+    <section class="columns is-mobile is-multiline" *ngIf="credits && section == 'credits'">
         <a class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [routerLink]="['/', cast.media_type, cast.id]">
             <figure>
                 <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
