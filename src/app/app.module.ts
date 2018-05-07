@@ -2,7 +2,6 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -56,7 +55,6 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
     FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
-    HttpModule,
     HttpClientModule,
     RouterModule.forRoot([
       {
