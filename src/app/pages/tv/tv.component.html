@@ -1,3 +1,10 @@
+<div class="movie__tabs tab" *ngIf="tv">
+    <a class="tab__link" (click)="changeSection('home')" [routerLink]="['/tv', tv.id]">Home</a>
+    <a class="tab__link" (click)="changeSection('reviews')" [routerLink]="['/tv', tv.id, 'reviews']">Reviews</a>
+    <a class="tab__link" (click)="changeSection('videos')" [routerLink]="['/tv', tv.id, 'videos']">Videos</a>
+    <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/tv', tv.id, 'images']">Images</a>
+    <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/tv', tv.id, 'casts']">Casts</a>
+</div>
 <div id="tv" *ngIf="tv">
     <div class="backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + tv.backdrop_path + ')'"></div>
     <section class="tv__home columns">
