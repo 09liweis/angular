@@ -1,5 +1,5 @@
 <div id="person" *ngIf="person">
-    <section class="columns">
+    <section class="columns" *ngIf="section =='home'">
         <div class="column is-4">
             <figure>
                 <img src="https://image.tmdb.org/t/p/w500{{person.profile_path}}" />
@@ -15,7 +15,7 @@
             <div><span class="label">Bio:</span><p>{{person.biography}}</p></div>
         </div>
     </section>
-    <section class="columns is-mobile is-multiline" *ngIf="credits">
+    <section class="columns is-mobile is-multiline" *ngIf="credits && section == 'casts'">
         <a class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [routerLink]="['/', cast.media_type, cast.id]">
             <figure>
                 <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
@@ -23,7 +23,7 @@
             </figure>
         </a>
     </section>
-    <section class="columns is-mobile is-multiline" *ngIf="images">
+    <section class="columns is-mobile is-multiline" *ngIf="images && section == 'images'">
         <figure class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let image of images.profiles; let i = index">
             <img src="https://image.tmdb.org/t/p/w500{{image.file_path}}" />
         </figure>
