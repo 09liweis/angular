@@ -84,6 +84,10 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
         component: TvComponent
       },
       {
+        path: 'tv/:id/:section',
+        component: TvComponent
+      },
+      {
         path: 'movies',
         component: MoviesComponent
       },
