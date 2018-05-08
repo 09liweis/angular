@@ -46,7 +46,7 @@ export class AppComponent {
   ) {}
   
   login(): void {
-    this.sessionService.getToken(this.username, this.password).then(res => this.sessionId = res.session_id);
+    // this.sessionService.getToken(this.username, this.password).subscribe(res => this.sessionId = res.session_id);
   }
   
   logout(): void {
