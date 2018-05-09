@@ -33,7 +33,7 @@ export class TvComponent implements OnInit {
         this.tv = tv;
         this.titleService.setTitle(tv.name);
       });
-      this.tvService.getCredits(+tvId).subscribe(credits => {
+      this.tvService.getSection(+tvId, 'credits').subscribe(credits => {
         this.credits = credits;
       });
       this.tvService.getImages(+tvId).subscribe(images => {
