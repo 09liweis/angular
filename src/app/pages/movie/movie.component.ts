@@ -46,30 +46,31 @@ export class MovieComponent implements OnInit {
       this.section = 'home';
     }
     this.route.params.subscribe(params => {
+      const movieId = params['id'];
       //scroll page to top
       window.scrollTo(0, 0);
       
-      this.movieService.getDetail(+params['id'])
+      this.movieService.getDetail(+movieId)
       .subscribe(movie => {
         this.movie = movie;
         this.titleService.setTitle(movie.title);
       });
       
-      this.movieService.getSection(+params['id'], 'images')
+      this.movieService.getSection(+movieId, 'images')
       .subscribe(images => this.images = images);
       
-      this.movieService.getSection(+params['id'], 'credits')
+      this.movieService.getSection(+movieId, 'credits')
       .subscribe(credtis => this.credits = credtis);
       
-      this.movieService.getSection(+params['id'], 'videos')
+      this.movieService.getSection(+movieId, 'videos')
       .subscribe(videos => this.videos = videos);
       
-      this.movieService.getSection(+params['id'], 'reviews')
+      this.movieService.getSection(+movieId, 'reviews')
       .subscribe(reviews => {
         this.reviews = reviews;
       });
       
-      this.movieService.getSection(+params['id'], 'similar')
+      this.movieService.getSection(+movieId, 'similar')
       .subscribe(similar => {
         this.similar = similar;
       });
