@@ -35,8 +35,4 @@ export class TvService {
         const credits = this.baseUrl + id + '/credits' + this.apiKey;
         return this.http.get(credits);
     }
-    getImages(id: number): Observable<any> {
-        const images = this.baseUrl + id + '/images' + this.apiKey;
-        return this.http.get(images);
-    }
 }
