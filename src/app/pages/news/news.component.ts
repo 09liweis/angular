@@ -39,6 +39,10 @@ export class NewsComponent implements OnInit {
         this.news = news;
         this.titleService.setTitle('Movie Paradise - News');
       });
+    
+    this.newsService.getNews().subscribe(news => {
+      console.log(news);
+    });
   }
 
 }
