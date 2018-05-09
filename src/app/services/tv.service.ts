@@ -31,8 +31,4 @@ export class TvService {
     getSection(id: number, section:string): Observable<any> {
         return this.http.get(this.baseUrl + id + '/' + section + this.apiKey);
     }
-    getCredits(id: number): Observable<any> {
-        const credits = this.baseUrl + id + '/credits' + this.apiKey;
-        return this.http.get(credits);
-    }
 }
