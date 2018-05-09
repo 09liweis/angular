@@ -10,8 +10,6 @@ const httpOptions = {
 
 @Injectable()
 export class NewsService {
-    
-    private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: HttpClient) {
     }
