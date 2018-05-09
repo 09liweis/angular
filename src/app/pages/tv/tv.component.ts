@@ -36,7 +36,7 @@ export class TvComponent implements OnInit {
       this.tvService.getSection(+tvId, 'credits').subscribe(credits => {
         this.credits = credits;
       });
-      this.tvService.getImages(+tvId).subscribe(images => {
+      this.tvService.getSection(+tvId, 'images').subscribe(images => {
         this.images = images;
       });
     })
