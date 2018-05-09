@@ -10,7 +10,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Run application on Cloud9
 nvm use 10
-ng serve --host 0.0.0.0 --port 8080 --disable-host-check
+npm run c9
 
 ## Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
