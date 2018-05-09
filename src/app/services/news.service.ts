@@ -17,8 +17,6 @@ export class NewsService {
     }
     
     getNewsFromRottentomatoes(): Observable<any> {
-        const url = 'https://editorial.rottentomatoes.com/wp-json/articles/';
-        const news = this.http.get(url);
-        return news;
+        return this.http.get('https://editorial.rottentomatoes.com/wp-json/articles/');
     }
 }
