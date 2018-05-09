@@ -28,14 +28,15 @@ export class TvComponent implements OnInit {
       this.section = 'home';
     }
     this.route.params.subscribe(params => {
-      this.tvService.getDetail(+params['id']).subscribe(tv => {
+      const tvId = params['id'];
+      this.tvService.getDetail(+tvId).subscribe(tv => {
         this.tv = tv;
         this.titleService.setTitle(tv.name);
       });
-      this.tvService.getCredits(+params['id']).subscribe(credits => {
+      this.tvService.getCredits(+tvId).subscribe(credits => {
         this.credits = credits;
       });
-      this.tvService.getImages(+params['id']).subscribe(images => {
+      this.tvService.getImages(+tvId).subscribe(images => {
         this.images = images;
       });
     })
