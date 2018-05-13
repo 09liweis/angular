@@ -13,9 +13,8 @@
                 <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
             </figure>
             <div class="column is-8">
-                <h1 class="movie__title">{{movie.title}}</h1>
+                <h1 class="movie__title">{{movie.title}} - {{movie.vote_average}}</h1>
                 <div class="movie__date">{{movie.release_date}}</div>
-                <div class="movie__rating">{{movie.vote_average}}</div>
                 <p>{{movie.tagline}}</p>
                 <p>{{ movie.overview }}</p>
                 <div class="genres">
