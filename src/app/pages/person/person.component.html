@@ -17,7 +17,7 @@
             <div><span class="label">Place of Brith:</span>{{person.place_of_birth}}</div>
             <div *ngIf="person.homepage"><span class="label">Homepage:</span><a class="homepage" href="{{person.homepage}}" target="_blank">{{person.homepage}}</a></div>
             <div><span class="label">IMDB:</span><a target="_blank" class="homepage" href="https://www.imdb.com/name/{{person.imdb_id}}">{{person.imdb_id}}</a></div>
-            <div><span class="label">Bio:</span><p>{{person.biography}}</p></div>
+            <div *ngIf="person.biography"><span class="label">Bio:</span><p>{{person.biography}}</p></div>
         </div>
     </section>
     <section class="columns is-mobile is-multiline" *ngIf="credits && section == 'credits'">
