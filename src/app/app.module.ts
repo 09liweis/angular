@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { routes } from './routes.ts';
+
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
