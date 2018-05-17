@@ -1,5 +1,15 @@
 import { Routes } from '@angular/router';
 
+import { LoginComponent } from './login/login.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { MovieComponent } from './pages/movie/movie.component';
+import { PersonsComponent } from './pages/persons/persons.component';
+import { PersonPageComponent } from './pages/person/person.component';
+import { NewsComponent } from './pages/news/news.component';
+import { TvsComponent } from './pages/tvs/tvs.component';
+import { HomeComponent } from './pages/home/home.component';
+import { TvComponent } from './pages/tv/tv.component';
+
 export const routes: Routes = [
     {
         path: '',
