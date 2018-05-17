@@ -14,6 +14,12 @@ import { MovieVideo } from '../../models/movieVideo';
 import { MovieReviews } from '../../models/movieReviews';
 import { MovieService } from '../../services/movie.service';
 
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import { Video } from '../../models/video';
+import { AppState } from '../../app.state';
+import * as VideoActions from '../../actions/video.actions';
+
 @Component({
   selector: 'movie',
   templateUrl: './movie.component.html',
@@ -36,7 +42,8 @@ export class MovieComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private titleService: Title,
-    private sanitizier: DomSanitizer
+    private sanitizier: DomSanitizer,
+    private store: Store<AppState>
   ) { }
 
   ngOnInit() {
@@ -83,8 +90,17 @@ export class MovieComponent implements OnInit {
   getYoutubeEmbed(key) {
     return this.sanitizier.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key + '?autoplay=0');
   }
+  addVideo() {
+    this.store.dispatch(new VideoActions.AddVideo({
+      id: this.movie.id,
+      title: this.movie.title,
+      type: 'movie',
+      video: ''
+    }));
+    this.store.select('videos').subscribe(data => console.log(data) );
+  }
+  
   previewImage(image, index) {
-    console.log(index);
     this.currentImage = index;
     this.modalOpen = true;
   }

@@ -4,6 +4,12 @@ import { SessionService } from './services/session.service';
 import { SearchService } from './services/search.service';
 import { Token } from './models/token';
 
+import { Observable } from 'rxjs/Observable';
+import { Store, select } from '@ngrx/store';
+import { Video } from './models/video';
+import { AppState } from './app.state';
+import * as VideoActions from './actions/video.actions';
+
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
@@ -39,11 +45,30 @@ export class AppComponent {
   results: Array<any> = [];
   search: string = '';
   
+  videos: Observable<Video[]>;
+  
   constructor(
     private sessionService: SessionService,
     private searchService: SearchService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private store: Store<AppState>
+  ) {
+    store.select('videos').subscribe((data) => console.log(data) );
+  }
+  
+  ngOnInit() {
+  }
+  
+  addVideo() {
+    this.store.dispatch(new VideoActions.AddVideo({
+      id: 1234,
+      title: 'title',
+      type: 'movie',
+      video: ''
+    }));
+    this.videos = this.store.select('videos');
+    console.log(this.videos);
+  }
   
   login(): void {
     // this.sessionService.getToken(this.username, this.password).subscribe(res => this.sessionId = res.session_id);

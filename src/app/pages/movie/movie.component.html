@@ -10,7 +10,7 @@
     <div id="movie__header" *ngIf="section == 'home'">
         <div class="movie__info columns">
             <figure class="column is-4">
-                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" />
+                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" (click)="addVideo()" />
             </figure>
             <div class="column is-8">
                 <h1 class="movie__title">{{movie.title}} - {{movie.vote_average}}</h1>
