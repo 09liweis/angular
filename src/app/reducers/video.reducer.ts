@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store'
-import { Video } from './models/video'
-import * as VideoActions from './actions/video.actions'
+import { Video } from '../models/video'
+import * as VideoActions from '../actions/video.actions'
 
 export function reducer(state: Video[] = [], action: VideoActions.Actions) {
     switch(action.type) {

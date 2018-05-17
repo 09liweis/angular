@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { routes } from './routes';
 
 import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers/video.reducer';
 
 import { AppComponent } from './app.component';
 
@@ -62,6 +63,9 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      video: reducer
+    }),
     RouterModule.forRoot(routes),
   ],
   providers: [

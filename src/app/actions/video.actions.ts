@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Video } from './models/video';
+import { Video } from '../models/video';
 
 export const ADD_VIDEO = 'ADD_VIDEO';
 
