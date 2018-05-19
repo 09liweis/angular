@@ -11,7 +11,10 @@
     position: relative;
 }
 .movie__info {
-    padding: 5%;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.6);
 }
 .movie__title {
     font-size: 1.5em;
