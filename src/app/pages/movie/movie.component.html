@@ -14,7 +14,7 @@
             </figure>
             <div class="column is-8">
                 <div class="movie__info">
-                    <h1 class="movie__title">{{movie.title}} - {{movie.vote_average}}</h1>
+                    <h1 class="movie__title">{{movie.title}} - {{movie.vote_average | number}}</h1>
                     <div class="movie__date">{{movie.release_date}}</div>
                     <p>{{movie.tagline}}</p>
                     <p>{{ movie.overview }}</p>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="data">
                         <h6 class="label">Runtime:</h6>
-                        <span>{{movie.runtime}}mins</span>
+                        <span>{{movie.runtime}} mins</span>
                     </div>
                     <div class="data">
                         <h6 class="label">Revenue:</h6>
