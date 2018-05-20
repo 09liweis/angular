@@ -34,11 +34,11 @@
                 </span>
             </div>
             <div class="">
-                <span class="label">Production Companies:</span>
+                <span class="label">Production Companies:</span><br/>
                 <span class="tv__company" *ngFor="let c of tv.production_companies">{{c.name}}</span>
             </div>
             <div class="">
-                <h3 class="label">Seasons:</h3>
+                <h3 class="label">Seasons:</h3><br/>
                 <figure class="tv__season" *ngFor="let s of tv.seasons">
                     <img src="https://image.tmdb.org/t/p/w500{{s.poster_path}}" alt="{{s.name}}" />
                     <figcaption>{{s.name}}</figcaption>
