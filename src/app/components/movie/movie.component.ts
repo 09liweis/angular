@@ -15,8 +15,4 @@ export class SingleMovieComponent implements OnInit {
 
   ngOnInit() {
   }
-  getMoviePoster(path: string): string {
-    return this.utilsService.getImagePath(path);
-  }
-
 }
