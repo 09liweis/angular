@@ -46,7 +46,9 @@
                         <h6 class="label">Revenue:</h6>
                         <span>{{movie.revenue | currency}}</span>
                     </div>
-                    <div class="data"></div>
+                    <div class="data">
+                        <h6 class="label">IMDB:</h6>
+                    </div>
                     <div class="data" *ngIf="movie.homepage">
                         <h6 class="label">Homepage:</h6>
                         <a class="homepage" href="{{movie.homepage}}" target="_blank">{{movie.homepage}}</a>
