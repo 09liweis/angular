@@ -7,15 +7,6 @@
 .movie:hover {
     
 }
-
-.movie__image {
-    transform: scale(1);
-    transition: transform 0.4s ease;
-    border-radius: 5px;
-    &:hover {
-        transform: rotate3d(1, 2, 1, 15deg);
-    }
-}
 .movie__rating {
     border-radius: 5px;
     padding: 5px;
@@ -24,8 +15,4 @@
     position: absolute;
     top: 12px;
     left: 12px;
-}
-.movie_title {
-    color: #cac1c1;
-    font-size: 1rem;
 }
