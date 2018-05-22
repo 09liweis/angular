@@ -1,0 +1,12 @@
+.image__source {
+    transform: scale(1);
+    transition: transform 0.4s ease;
+    border-radius: 5px;
+    &:hover {
+        transform: rotate3d(1, 2, 1, 15deg);
+    }
+}
+.image__caption {
+    color: #cac1c1;
+    font-size: 1rem;
+}
