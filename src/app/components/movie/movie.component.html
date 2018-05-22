@@ -1,7 +1,8 @@
 <a class="movie" [routerLink]="['/', list, movie.id]">
-    <figure class="movie__poster">
-        <img class="movie__image" [src]=getMoviePoster(movie.poster_path) alt="{{ movie.title }}" />
-        <figcaption class="movie_title">{{movie.title ? movie.title : movie.name}}</figcaption>
-    </figure>
+    <!--<figure class="movie__poster">-->
+    <!--    <img class="movie__image" [src]=getMoviePoster(movie.poster_path) alt="{{ movie.title }}" />-->
+    <!--    <figcaption class="movie_title">{{movie.title ? movie.title : movie.name}}</figcaption>-->
+    <!--</figure>-->
+    <image [path]=movie.poster_path [alt]=movie.title [caption]="movie.title ? movie.title : movie.name"></image>
     <span class="movie__rating">{{movie.vote_average}}</span>
 </a>
