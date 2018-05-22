@@ -38,6 +38,7 @@ import { TvComponent } from './pages/tv/tv.component';
 import { UtilsService } from './services/utils.service';
 
 import { FormatTitlePipe } from './pipes/format-title.pipe';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
     PersonListComponent,
     PersonPageComponent,
     TabsComponent,
-    FormatTitlePipe
+    FormatTitlePipe,
+    ImageComponent
   ],
   imports: [
     FormsModule,
