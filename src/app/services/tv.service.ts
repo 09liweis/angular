@@ -23,12 +23,8 @@ export class TvService {
         return tvs;
     }
     
-    getDetail(id: number): Observable<any> {
-        const url = this.baseUrl + id + this.apiKey;
-        const tv = this.http.get(url);
-        return tv;
-    }
     getSection(id: number, section:string): Observable<any> {
-        return this.http.get(this.baseUrl + id + '/' + section + this.apiKey);
+        section = section == '' ? section : '/' + section;
+        return this.http.get(this.baseUrl + id + section + this.apiKey);
     }
 }
