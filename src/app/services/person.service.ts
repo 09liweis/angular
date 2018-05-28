@@ -24,10 +24,9 @@ export class PersonService{
         const persons = this.http.get(personsUrl);
         return persons;
     }
-    getDetail(id: number): Observable<any> {
-        return this.http.get(this.baseUrl + id + this.apiKey);
-    }
+
     getSection(id: number, section: string): Observable<any> {
-        return this.http.get(this.baseUrl + id + '/' + section + this.apiKey);
+        section = section == '' ? section : '/' + section;
+        return this.http.get(this.baseUrl + id + section + this.apiKey);
     }
 }

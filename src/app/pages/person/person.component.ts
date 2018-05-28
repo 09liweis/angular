@@ -30,7 +30,7 @@ export class PersonPageComponent implements OnInit {
       this.personService.getSection(+params['id'], 'images').subscribe(images => {
         this.images = images;
       })
-      this.personService.getDetail(+params['id']).subscribe(p => {
+      this.personService.getSection(+params['id'], '').subscribe(p => {
         this.person = p;
         this.titleService.setTitle(p.name);
       })
