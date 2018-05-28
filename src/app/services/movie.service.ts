@@ -27,13 +27,8 @@ export class MovieService {
         return movies;
     }
     
-    getDetail(id: number): Observable<any> {
-        const movieDetail = this.baseUrl + id + this.apiKey;
-        const movie = this.httpClient.get(movieDetail);
-        return movie;
-    }
-    
     getSection(id: number, section: string): Observable<any> {
-        return this.httpClient.get(this.baseUrl + id + '/' + section + this.apiKey);
+        section = section == '' ? section : '/' + section;
+        return this.httpClient.get(this.baseUrl + id + section + this.apiKey);
     }
 }
