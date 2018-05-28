@@ -6,9 +6,7 @@
 <div id="person" *ngIf="person">
     <section class="columns" *ngIf="section =='home'">
         <div class="column is-4">
-            <figure>
-                <img src="https://image.tmdb.org/t/p/w500{{person.profile_path}}" />
-            </figure>
+            <image [path]="person.profile_path" [alt]="person.name"></image>
         </div>
         <div class="column is-8">
             <h1>{{person.name}}</h1>
