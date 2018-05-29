@@ -9,7 +9,7 @@
             <image [path]="person.profile_path" [alt]="person.name"></image>
         </div>
         <div class="column is-8">
-            <h1>{{person.name}}</h1>
+            <h1 class="person__title">{{person.name}}</h1>
             <div *ngIf="person.also_known_as.length != 0"><span class="label">Known as:</span><span *ngFor="let n of person.also_known_as">{{n}}, </span></div>
             <div *ngIf="person.birthday"><span class="label">Birthday:</span>{{person.birthday}}</div>
             <div *ngIf="person.place_of_birth"><span class="label">Place of Brith:</span>{{person.place_of_birth}}</div>
