@@ -70,5 +70,5 @@ export const routes: Routes = [
     {
         path: 'person/:id/:section',
         component: PersonPageComponent
-}
+    }   
 ]
