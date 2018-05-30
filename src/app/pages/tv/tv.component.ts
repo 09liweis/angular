@@ -22,6 +22,7 @@ export class TvComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     if (typeof this.route.snapshot.params['section'] != 'undefined') {
       this.section = this.route.snapshot.params['section'];
     } else {
