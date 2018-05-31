@@ -1,6 +1,6 @@
 <div class="movie__tabs tab" *ngIf="movie">
     <a class="tab__link" (click)="changeSection('home')" [routerLink]="['/movie', movie.id]">Home</a>
-    <a class="tab__link" (click)="changeSection('reviews')" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a>
+    <!--<a class="tab__link" (click)="changeSection('reviews')" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a>-->
     <a class="tab__link" (click)="changeSection('videos')" [routerLink]="['/movie', movie.id, 'videos']">Videos</a>
     <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a>
     <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
@@ -72,12 +72,12 @@
     <!--</div>-->
     <div class="movie__home" *ngIf="section == 'home'">
         <div id="casts" *ngIf="credits">
-            <div class="columns">
+            <div class="columns is-mobile is-multiline">
                 <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast.slice(0, 6)" [person]=cast></person>
             </div>
         </div>
         <div id="crews" *ngIf="credits">
-            <div class="columns">
+            <div class="columns is-mobile is-multiline">
                 <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew.slice(0, 6)" [person]=cast></person>
             </div>
         </div>
