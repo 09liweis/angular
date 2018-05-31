@@ -1,7 +1,7 @@
 <nav id="nav" role="navigation" aria-label="main navigation">
     <div class="container">
         <a id="logo" routerLink="/">Movie Paradise</a>
-        <div class="menu__button">Menu</div>
+        <div class="menu__button" (click)="toggleMenu()">Menu</div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
         <div id="search">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div [ngClass]="{'opened': menuOpen}" id="menu">
+    <div [ngClass]="{'opened': menuOpen}" id="menu" (click)="toggleMenu()">
         <a class="nav__link" routerLink="/movies/now_playing">Movies</a>
         <a class="nav__link" routerLink="/tvs/airing_today/page/1">Tv Show</a>
         <a class="nav__link" routerLink="/persons/popular">People</a>
