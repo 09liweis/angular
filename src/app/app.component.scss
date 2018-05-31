@@ -74,7 +74,10 @@
     padding: 10px;
 }
 
-.menu {
+.menu__button {
+    float: right;
+}
+#menu {
     position: fixed;
     top: 0;
     right: 0;
