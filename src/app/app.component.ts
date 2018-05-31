@@ -47,6 +47,8 @@ export class AppComponent {
   
   videos: Observable<Video[]>;
   
+  menuOpen: Boolean = false;
+  
   constructor(
     private sessionService: SessionService,
     private searchService: SearchService,
@@ -57,6 +59,10 @@ export class AppComponent {
   }
   
   ngOnInit() {
+  }
+  
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
   
   addVideo() {
