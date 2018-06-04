@@ -1,5 +1,6 @@
 import { Video } from './models/video';
 
 export interface AppState {
-  readonly videos: Video[];
+  videos: Video[];
+  count: number;
 }
