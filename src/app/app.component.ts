@@ -45,7 +45,7 @@ export class AppComponent {
   results: Array<any> = [];
   search: string = '';
   
-  videos: Observable<Video[]>;
+  count: Observable<number>;
   
   menuOpen: Boolean = false;
   
@@ -55,7 +55,9 @@ export class AppComponent {
     private router: Router,
     private store: Store<AppState>
   ) {
-    store.select('videos').subscribe((data) => console.log(data) );
+    this.store.select('count').subscribe(state => {
+      console.log(state);
+    });
   }
   
   ngOnInit() {
@@ -65,15 +67,8 @@ export class AppComponent {
     this.menuOpen = !this.menuOpen;
   }
   
-  addVideo() {
-    this.store.dispatch(new VideoActions.AddVideo({
-      id: 1234,
-      title: 'title',
-      type: 'movie',
-      video: ''
-    }));
-    this.videos = this.store.select('videos');
-    console.log(this.videos);
+  increment() {
+    this.store.dispatch({ type: 'INCREMENT' });
   }
   
   login(): void {
