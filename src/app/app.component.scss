@@ -9,7 +9,6 @@
 #logo {
     display: inline-block;
     color: #ffffff;
-    margin-right: 10px;
     font-size: 1.8em;
 }
 .nav__link {
@@ -76,11 +75,14 @@
 }
 
 .menu__button {
-    float: right;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     color: #ffffff;
     border: 1px solid #fcb208;
-    padding: 10px;
     cursor: pointer;
+    min-width: 50px;
+    text-align: center;
 }
 #menu {
     position: fixed;
