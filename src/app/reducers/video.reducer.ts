@@ -6,16 +6,18 @@ export const INCREMENT = 'INCREMENT';
 
 const initialState = {
     videos: [],
+    count: 0,
     language: 'en',
     country: 'US'
 };
 
 
-export function reducer(state: Video[] = [], action: VideoActions.Actions) {
+export function reducer(state: number = 0, action: Action) {
     switch(action.type) {
-        case VideoActions.ADD_VIDEO:
-            console.log(state);
-            return [...state, action.payload];
+        case INCREMENT: {
+            console.log(state + 1);
+            return state + 1;
+        }
         default:
             return state;
     }
