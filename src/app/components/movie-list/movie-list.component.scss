@@ -3,6 +3,9 @@
 // }
 .pagination-link {
     color: #fcb208;
+    &:focus {
+        border-color: #fcb208;
+    }
 }
 .pagination-link.is-current {
     color: #ffffff;
