@@ -4,3 +4,17 @@
 .person__title {
     font-size: 2em;
 }
+.casts {
+    max-width: 768px;
+    width: 100%;
+    margin: auto;
+}
+.cast {
+    color: #ffffff;
+    &:hover {
+        color: #fcb208;
+    }
+}
+.cast__title {
+    font-size: 1.5em;
+}

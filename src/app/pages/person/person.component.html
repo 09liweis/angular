@@ -18,12 +18,19 @@
             <div *ngIf="person.biography"><span class="label">Bio:</span><p>{{person.biography}}</p></div>
         </div>
     </section>
-    <section class="columns is-mobile is-multiline" *ngIf="casts && section == 'casts'">
-        <a class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of casts" [routerLink]="['/', cast.media_type, cast.id]">
-            <figure>
-                <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
-                <figcaption>{{cast.title ? cast.title : cast.name}} - {{cast.character}}</figcaption>
-            </figure>
+    <section class="casts container" *ngIf="casts && section == 'casts'">
+        <a class="cast columns is-mobile" *ngFor="let cast of casts" [routerLink]="['/', cast.media_type, cast.id]">
+            <div class="column is-4">
+                <figure>
+                    <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="column is-8">
+                <h2 class="cast__title">{{cast.title ? cast.title : cast.name}} - {{cast.vote_average}}</h2>
+                <h3>{{cast.character}}</h3>
+                <div>{{cast.release_date}}</div>
+            </div>
         </a>
     </section>
     <section class="columns is-mobile is-multiline" *ngIf="images && section == 'images'">
