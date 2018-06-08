@@ -1,7 +1,7 @@
 # Movie Paradise
 A clone web application from themoviedb.org
 
-Tech Stack: Angular5, themoviedb API
+Tech Stack: Angular 6, themoviedb API
 
 Live demo: [http://movie-angular.herokuapp.com/](http://movie-angular.herokuapp.com/)
 
@@ -23,3 +23,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 * Implement Region selector
 * Global video player
 * Lazy loading for image
+* Style person cast list
+* Pagination style
