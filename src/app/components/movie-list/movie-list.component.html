@@ -1,7 +1,7 @@
 <div class="columns is-mobile is-multiline" [@moviesAnimation]="movies.results.length" *ngIf="movies">
     <single-movie class="movie__container column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let movie of movies.results" [movie]=movie [list]=list></single-movie>
 </div>
-<nav class="pagination is-centered" role="navigation" aria-label="pagination" *ngIf="totalPages">
+<nav id="pagination" role="navigation" aria-label="pagination" *ngIf="totalPages">
     <a class="pagination-previous">Previous</a>
     <a class="pagination-next">Next</a>
     <ul class="pagination-list">
