@@ -1,8 +1,5 @@
 <div class="tab" *ngIf="person">
     <a *ngFor="let s of sections" class="tab__link" [ngClass]="{'is-active': section == s.link}" (click)="changeSection(s.link)" [routerLink]="['/person', person.id, s.link]">{{s.text}}</a>
-    <a class="tab__link" [ngClass]="{'is-active': section == 'home'}" (click)="changeSection('home')" [routerLink]="['/person', person.id]">Home</a>
-    <a class="tab__link" [ngClass]="{'is-active': section == 'images'}" (click)="changeSection('images')" [routerLink]="['/person', person.id, 'images']">Images</a>
-    <a class="tab__link" [ngClass]="{'is-active': section == 'casts'}" (click)="changeSection('casts')" [routerLink]="['/person', person.id, 'casts']">Casts</a>
 </div>
 <div id="person" *ngIf="person">
     <section class="columns" *ngIf="section =='home'">
