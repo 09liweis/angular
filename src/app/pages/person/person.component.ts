@@ -14,6 +14,20 @@ export class PersonPageComponent implements OnInit {
   public images;
   public casts;
   public section: String;
+  public sections: Array<any> = [
+    {
+      text: 'Home',
+      link: 'home'
+    },
+    {
+      text: 'Images',
+      link: 'images'
+    },
+    {
+      text: 'Casts',
+      link: 'casts'
+    }
+  ]
   constructor(
     private personService: PersonService,
     private route: ActivatedRoute,
