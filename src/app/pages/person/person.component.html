@@ -1,7 +1,7 @@
 <div class="tab" *ngIf="person">
     <a class="tab__link" [ngClass]="{'is-active': section == 'home'}" (click)="changeSection('home')" [routerLink]="['/person', person.id]">Home</a>
     <a class="tab__link" [ngClass]="{'is-active': section == 'images'}" (click)="changeSection('images')" [routerLink]="['/person', person.id, 'images']">Images</a>
-    <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/person', person.id, 'casts']">Casts</a>
+    <a class="tab__link" [ngClass]="{'is-active': section == 'casts'}" (click)="changeSection('casts')" [routerLink]="['/person', person.id, 'casts']">Casts</a>
 </div>
 <div id="person" *ngIf="person">
     <section class="columns" *ngIf="section =='home'">
