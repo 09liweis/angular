@@ -4,6 +4,8 @@ import { Title, DomSanitizer } from '@angular/platform-browser';
 
 import { PersonService } from '../../services/person.service';
 
+import { Cast } from '../../models/person/cast';
+
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
@@ -12,7 +14,7 @@ import { PersonService } from '../../services/person.service';
 export class PersonPageComponent implements OnInit {
   public person;
   public images;
-  public casts;
+  public casts: Array<Cast>;
   public section: String;
   public sections: Array<any> = [
     {
@@ -50,10 +52,10 @@ export class PersonPageComponent implements OnInit {
         this.titleService.setTitle(p.name);
       })
       this.personService.getSection(+params['id'], 'combined_credits').subscribe(credits => {
-        // this.casts = credits.cast.sort((a, b) => {
-        //   return new Date(b.release_date) - new Date(a.release_date);
-        // });
-        this.casts = credits.cast;
+        this.casts = credits.cast.sort((a, b) => {
+          return new Date(b.release_date) - new Date(a.release_date);
+        });
+        // this.casts = credits.cast;
       })
     })
   }
