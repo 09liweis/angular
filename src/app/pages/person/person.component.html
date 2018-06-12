@@ -17,6 +17,7 @@
         </div>
     </section>
     <section class="casts container" *ngIf="casts && section == 'casts'">
+        <div>Sort by: <a (click)="sortBy('date')">Date</a> <a (click)="sortBy('rate')">Rating</a></div>
         <a class="cast columns is-mobile" *ngFor="let cast of casts" [routerLink]="['/', cast.media_type, cast.id]">
             <div class="column is-4">
                 <figure>

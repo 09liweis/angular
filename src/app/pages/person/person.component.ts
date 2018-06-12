@@ -52,10 +52,10 @@ export class PersonPageComponent implements OnInit {
         this.titleService.setTitle(p.name);
       })
       this.personService.getSection(+params['id'], 'combined_credits').subscribe(credits => {
-        this.casts = credits.cast.sort((a, b) => {
-          return new Date(b.release_date) - new Date(a.release_date);
-        });
-        // this.casts = credits.cast;
+        // this.casts = credits.cast.sort((a, b) => {
+        //   return new Date(b.release_date) - new Date(a.release_date);
+        // });
+        this.casts = credits.cast;
       })
     })
   }
