@@ -25,3 +25,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 * Lazy loading for image
 * Style person cast list
 * Pagination style
+* Image Gallery for movie, person page

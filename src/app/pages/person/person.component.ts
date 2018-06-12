@@ -58,16 +58,16 @@ export class PersonPageComponent implements OnInit {
   }
   
   sortBy(property) {
-    if (property == 'date') {
-      this.casts = this.casts.sort((a, b) => {
-        return new Date(b.release_date) - new Date(a.release_date);
-      });
-    }
-    if (property == 'rate') {
-      this.casts = this.casts.sort((a, b) => {
-        return b.vote_average - a.vote_average;
-      });
-    }
+    // if (property == 'date') {
+    //   this.casts = this.casts.sort((a, b) => {
+    //     return new Date(b.release_date) - new Date(a.release_date);
+    //   });
+    // }
+    // if (property == 'rate') {
+    //   this.casts = this.casts.sort((a, b) => {
+    //     return b.vote_average - a.vote_average;
+    //   });
+    // }
   }
   
   changeSection(section: string): void {
