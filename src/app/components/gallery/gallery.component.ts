@@ -8,7 +8,7 @@ import { MovieImage } from '../../models/movieImage';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  images: MovieImage;
+  @Input() images: MovieImage;
   modalOpen: boolean = false;
   currentImage: any = 0;
 
