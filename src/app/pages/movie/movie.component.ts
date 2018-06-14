@@ -64,7 +64,9 @@ export class MovieComponent implements OnInit {
       });
       
       this.movieService.getSection(+movieId, 'images')
-      .subscribe(images => this.images = images);
+      .subscribe(images => {
+        this.images = images.posters.concat(images.backdrops);
+      });
       
       this.movieService.getSection(+movieId, 'credits')
       .subscribe(credtis => this.credits = credtis);
