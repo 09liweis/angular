@@ -39,6 +39,7 @@ import { UtilsService } from './services/utils.service';
 
 import { FormatTitlePipe } from './pipes/format-title.pipe';
 import { ImageComponent } from './components/image/image.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ImageComponent } from './components/image/image.component';
     PersonPageComponent,
     TabsComponent,
     FormatTitlePipe,
-    ImageComponent
+    ImageComponent,
+    GalleryComponent
   ],
   imports: [
     FormsModule,
