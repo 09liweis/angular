@@ -99,30 +99,4 @@ export class MovieComponent implements OnInit {
     }));
     this.store.select('videos').subscribe(data => console.log(data) );
   }
-  
-  previewImage(image, index) {
-    this.currentImage = index;
-    this.modalOpen = true;
-  }
-  closeModal() {
-    this.modalOpen = false;
-  }
-  @HostListener('document:keyup', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) { 
-    if (event.key == 'ArrowRight') {
-      if (this.currentImage == this.images.posters.length - 1) {
-        this.currentImage = 0
-      } else {
-        this.currentImage += 1;
-      }
-    }
-    if (event.key == 'ArrowLeft') {
-      if (this.currentImage == 0) {
-        this.currentImage = this.images.posters.length - 1;
-      } else {
-        this.currentImage -= 1;
-      }
-    }
-  }
-
 }
