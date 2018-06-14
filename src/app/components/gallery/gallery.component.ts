@@ -1,14 +1,12 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 
-import { MovieImage } from '../../models/movieImage';
-
 @Component({
   selector: 'gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  @Input() images: MovieImage;
+  @Input() images;
   modalOpen: boolean = false;
   currentImage: any = 0;
 
