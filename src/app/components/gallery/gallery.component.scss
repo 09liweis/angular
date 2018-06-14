@@ -1,17 +1,30 @@
-.movie__imagesModal {
+.imagesModal {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
     transition: all 0.3 ease;
     transform: scale(0);
     z-index: 12;
 }
-.movie__imagesModal.open {
+.imagesModal.open {
     transform: scale(1);
 }
-.movie__currentImage {
+.modal__bg {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+.currentImage {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
     margin: auto;
+    transform: translateY(-50%);
 }

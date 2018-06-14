@@ -11,7 +11,8 @@
             </div>
         </div>
     </div>
-    <section *ngIf="modalOpen" class="movie__imagesModal {{modalOpen ? 'open' : ''}}" (click)="closeModal()">
-        <img class="movie__currentImage" src="https://image.tmdb.org/t/p/w500{{images.posters[currentImage].file_path}}" />
+    <section class="imagesModal {{modalOpen ? 'open' : ''}}">
+        <div class="modal__bg" (click)="closeModal()"></div>
+        <img class="currentImage" src="https://image.tmdb.org/t/p/w500{{images.posters[currentImage].file_path}}" />
     </section>
 </div>
