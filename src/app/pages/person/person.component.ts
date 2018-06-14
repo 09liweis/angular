@@ -45,7 +45,7 @@ export class PersonPageComponent implements OnInit {
     }
     this.route.params.subscribe(params => {
       this.personService.getSection(+params['id'], 'images').subscribe(images => {
-        this.images = images;
+        this.images = images.profiles;
       })
       this.personService.getSection(+params['id'], '').subscribe(p => {
         this.person = p;

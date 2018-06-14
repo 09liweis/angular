@@ -32,9 +32,5 @@
             </div>
         </a>
     </section>
-    <section class="columns is-mobile is-multiline" *ngIf="images && section == 'images'">
-        <figure class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let image of images.profiles; let i = index">
-            <img src="https://image.tmdb.org/t/p/w500{{image.file_path}}" />
-        </figure>
-    </section>
+    <gallery *ngIf="section == 'images' && images" [images]=images></gallery>
 </div>
