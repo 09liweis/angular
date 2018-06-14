@@ -8,6 +8,6 @@
     </div>
     <section class="imagesModal {{modalOpen ? 'open' : ''}}">
         <div class="modal__bg" (click)="closeModal()"></div>
-        <img class="currentImage" src="https://image.tmdb.org/t/p/w500{{images.posters[currentImage].file_path}}" />
+        <img class="currentImage" src="https://image.tmdb.org/t/p/w500{{images[currentImage].file_path}}" />
     </section>
 </div>
