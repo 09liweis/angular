@@ -38,7 +38,7 @@ export class TvComponent implements OnInit {
         this.credits = credits;
       });
       this.tvService.getSection(+tvId, 'images').subscribe(images => {
-        this.images = images;
+        this.images = images.posters.concat(images.backdrops);
       });
     })
   }
