@@ -107,21 +107,5 @@
             <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew" [person]=cast></person>
         </div>
     </div>
-    <div class="container" *ngIf="section == 'images'">
-        <div id="images" *ngIf="images">
-            <div class="columns is-mobile is-multiline">
-                <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let poster of images.posters; let i = index">
-                    <img src="https://image.tmdb.org/t/p/w500{{poster.file_path}}" (click)="previewImage(poster, i)" />
-                </div>
-            </div>
-            <div class="columns is-mobile is-multiline">
-                <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let backdrop of images.backdrops">
-                    <img src="https://image.tmdb.org/t/p/w500{{backdrop.file_path}}" />
-                </div>
-            </div>
-        </div>
-        <section *ngIf="modalOpen" class="movie__imagesModal {{modalOpen ? 'open' : ''}}" (click)="closeModal()">
-            <img class="movie__currentImage" src="https://image.tmdb.org/t/p/w500{{images.posters[currentImage].file_path}}" />
-        </section>
-    </div>
+    <gallery *ngIf="section == 'images' && images" [images]=images></gallery>
 </div>

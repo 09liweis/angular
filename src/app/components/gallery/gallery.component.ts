@@ -1,9 +1,9 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 import { MovieImage } from '../../models/movieImage';
 
 @Component({
-  selector: 'app-gallery',
+  selector: 'gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
