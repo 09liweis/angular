@@ -37,3 +37,23 @@
     margin: auto;
     transform: translateY(-50%);
 }
+.direction {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fcb208;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fcb208;
+    transition: all 0.2s ease;
+    &:hover {
+        background: #fcb208;
+        color: #ffffff;
+    }
+}
+.previous {
+    left: 0;
+}
+.next {
+    right: 0;
+}
