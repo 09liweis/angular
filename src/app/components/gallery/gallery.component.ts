@@ -22,6 +22,13 @@ export class GalleryComponent implements OnInit {
   closeModal() {
     this.modalOpen = false;
   }
+  previous() {
+    if (this.currentImage == 0) {
+      this.currentImage = this.images.length - 1;
+    } else {
+      this.currentImage -= 1;
+    }
+  }
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) { 
     if (event.key == 'ArrowRight') {
@@ -32,11 +39,7 @@ export class GalleryComponent implements OnInit {
       }
     }
     if (event.key == 'ArrowLeft') {
-      if (this.currentImage == 0) {
-        this.currentImage = this.images.length - 1;
-      } else {
-        this.currentImage -= 1;
-      }
+      this.previous();
     }
   }
 
