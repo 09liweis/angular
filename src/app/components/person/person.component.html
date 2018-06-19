@@ -1,7 +1,9 @@
 <div class="cast" [routerLink]="['/person', person.id]">
-    <figure class="cast__image">
-        <img [src]=getCastImage(person.profile_path) alt="{{person.name}}">
-        <figcaption class="cast__info">
+    <figure class="columns is-mobile">
+        <div class="column is-4-mobile">
+            <img class="cast__image" [src]=getCastImage(person.profile_path) alt="{{person.name}}">
+        </div>
+        <figcaption class="cast__info column is-8-mobile">
             <span class="cast__name">{{ person.name }}</span>
             <span *ngIf="person.character">{{ person.character }}</span>
             <span *ngIf="person.job">{{person.job}}</span>

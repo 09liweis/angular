@@ -1,11 +1,15 @@
 .cast {
+    margin-bottom: 20px;
     transition: transform 0.3s ease;
     cursor: pointer;
     &:hover {
         transform: translateY(10px) !important;
     }
 }
-.cast__image img {
+.column {
+    padding: 0;
+}
+.cast__image {
     border-radius: 5px;
     display: block;
     width: 100%;
