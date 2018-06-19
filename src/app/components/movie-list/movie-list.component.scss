@@ -1,6 +1,8 @@
-// .movie__container:nth-last-of-type(-n+2) {
-//     font-size: 1.5em;
-// }
+@media screen and (max-width: 412px) {
+    .column {
+        width: 50%;
+    }
+}
 .pagination-link {
     color: #fcb208;
     &:focus {
