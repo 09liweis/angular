@@ -20,6 +20,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## TODO
 * Implement ngRx
+* Mobile Design
 * Implement Region selector
 * Global video player
 * Lazy loading for image
