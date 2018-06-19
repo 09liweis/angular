@@ -12,6 +12,7 @@
 
 .homepage {
     color: #fcb208;
+    word-wrap: break-word;
 }
 .homepage:hover {
     color: #fcb208;
