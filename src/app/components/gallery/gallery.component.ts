@@ -29,14 +29,17 @@ export class GalleryComponent implements OnInit {
       this.currentImage -= 1;
     }
   }
+  next() {
+    if (this.currentImage == this.images.length - 1) {
+      this.currentImage = 0
+    } else {
+      this.currentImage += 1;
+    }
+  }
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) { 
     if (event.key == 'ArrowRight') {
-      if (this.currentImage == this.images.length - 1) {
-        this.currentImage = 0
-      } else {
-        this.currentImage += 1;
-      }
+      this.next();
     }
     if (event.key == 'ArrowLeft') {
       this.previous();
