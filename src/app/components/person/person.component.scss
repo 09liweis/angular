@@ -10,14 +10,24 @@
     padding: 0;
 }
 .cast__image {
+    width: 35%;
+}
+.image {
     display: block;
     width: 100%;
 }
 .cast__info {
     background-color: #ffffff;
     padding: 10px;
+    width: 65%;
 }
 .cast__name {
     font-weight: bold;
     display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .cast__image, .cast__info {
+        width: 100%;
+    }
 }
