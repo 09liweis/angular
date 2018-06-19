@@ -76,11 +76,6 @@
                 <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast.slice(0, 6)" [person]=cast></person>
             </div>
         </div>
-        <div id="crews" *ngIf="credits">
-            <div class="columns is-mobile is-multiline">
-                <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew.slice(0, 6)" [person]=cast></person>
-            </div>
-        </div>
         <div id="similar-movies" *ngIf="similar">
             <div class="columns">
                 <a class="column" [routerLink]="['/movie', movie.id, 'similar']">View All Similar Movies</a>
