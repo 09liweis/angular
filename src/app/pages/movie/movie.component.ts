@@ -8,7 +8,6 @@ import 'rxjs/add/operator/switchMap';
 
 import { Movie } from '../../models/movie';
 import { Movies } from '../../models/movies';
-import { MovieCredits } from '../../models/movieCredits';
 import { MovieVideo } from '../../models/movieVideo';
 import { MovieReviews } from '../../models/movieReviews';
 import { MovieService } from '../../services/movie.service';
@@ -26,7 +25,6 @@ import * as VideoActions from '../../actions/video.actions';
 })
 export class MovieComponent implements OnInit {
   movie: Movie;
-  credits: MovieCredits;
   videos: MovieVideo;
   reviews: MovieReviews;
   section: String;
@@ -57,9 +55,6 @@ export class MovieComponent implements OnInit {
         this.movie = movie;
         this.titleService.setTitle(movie.title);
       });
-      
-      this.movieService.getSection(+movieId, 'credits')
-      .subscribe(credtis => this.credits = credtis);
       
       this.movieService.getSection(+movieId, 'videos')
       .subscribe(videos => this.videos = videos);
