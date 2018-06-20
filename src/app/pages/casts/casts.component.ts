@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+
+import { MovieCredits } from '../../models/movieCredits';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-casts',
@@ -6,10 +10,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./casts.component.scss']
 })
 export class CastsComponent implements OnInit {
-
-  constructor() { }
+  credits: MovieCredits;
+  id: String;
+  type: String;
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      const type = params['type'];
+      this.id = id;
+      this.type = type;
+      this.apiService.getSection('movie', +id, 'casts').subscribe(credits => {
+        this.credits = credits;
+      });
+    });
   }
 
 }

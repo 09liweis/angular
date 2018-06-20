@@ -10,6 +10,7 @@ import { TvsComponent } from './pages/tvs/tvs.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TvComponent } from './pages/tv/tv.component';
 import { ImagesComponent } from './pages/images/images.component';
+import { CastsComponent } from './pages/casts/casts.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,10 @@ export const routes: Routes = [
     {
         path: ':type/:id/images',
         component: ImagesComponent
+    },
+    {
+        path: ':type/:id/casts',
+        component: CastsComponent
     },
     {
         path: 'tvs/:type',

@@ -95,10 +95,4 @@
             </div>
         </div>
     </div>
-    <div class="container" *ngIf="section == 'casts'">
-        <div class="columns is-multiline is-mobile" *ngIf="credits">
-            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [person]=cast></person>
-            <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew" [person]=cast></person>
-        </div>
-    </div>
 </div>
