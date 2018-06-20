@@ -25,6 +25,10 @@ export const routes: Routes = [
         component: NewsComponent
     },
     {
+        path: ':type/:id/images',
+        component: ImagesComponent
+    },
+    {
         path: 'tvs/:type',
         component: TvsComponent
     },
@@ -71,9 +75,5 @@ export const routes: Routes = [
     {
         path: 'person/:id/:section',
         component: PersonPageComponent
-    },
-    {
-        path: ':type/:id/images',
-        component: ImagesComponent
     },
 ]

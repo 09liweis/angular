@@ -11,6 +11,7 @@ import { MovieService } from '../../services/movie.service';
 export class ImagesComponent implements OnInit {
   images: MovieImage;
   id: String;
+  type: String;
 
   constructor(
     private movieService: MovieService,
@@ -19,10 +20,12 @@ export class ImagesComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const movieId = params['id'];
-      this.id = movieId;
+      const id = params['id'];
+      const type = params['type'];
+      this.id = id;
+      this.type = type;
       window.scrollTo(0, 0);
-      this.movieService.getSection(+movieId, 'images').subscribe(images => {
+      this.movieService.getSection(+id, 'images').subscribe(images => {
         this.images = images.posters.concat(images.backdrops);
       });
     })
