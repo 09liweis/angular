@@ -1,3 +1,7 @@
-<p>
-  images works!
-</p>
+<div class="movie__tabs tab" *ngIf="id">
+    <a class="tab__link" [routerLink]="['/movie', id]">Home</a>
+    <a class="tab__link" [routerLink]="['/movie', id, 'reviews']">Reviews</a>
+    <a class="tab__link" [routerLink]="['/movie', id, 'images']">Images</a>
+    <a class="tab__link" [routerLink]="['/movie', id, 'casts']">Casts</a>
+</div>
+<gallery *ngIf="images" [images]=images></gallery>
