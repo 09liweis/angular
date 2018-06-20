@@ -57,10 +57,6 @@ export const routes: Routes = [
         component: MovieComponent
     },
     {
-        path: 'movie/:id/images',
-        component: ImagesComponent
-    },
-    {
         path: 'movie/:id/:section',
         component: MovieComponent
     },
@@ -75,5 +71,9 @@ export const routes: Routes = [
     {
         path: 'person/:id/:section',
         component: PersonPageComponent
-    }   
+    },
+    {
+        path: ':type/:id/images',
+        component: ImagesComponent
+    },
 ]
