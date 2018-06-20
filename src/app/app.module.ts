@@ -41,6 +41,7 @@ import { FormatTitlePipe } from './pipes/format-title.pipe';
 import { ImageComponent } from './components/image/image.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ImagesComponent } from './pages/images/images.component';
+import { CastsComponent } from './pages/casts/casts.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ImagesComponent } from './pages/images/images.component';
     FormatTitlePipe,
     ImageComponent,
     GalleryComponent,
-    ImagesComponent
+    ImagesComponent,
+    CastsComponent
   ],
   imports: [
     FormsModule,
