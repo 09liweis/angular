@@ -9,7 +9,6 @@ import 'rxjs/add/operator/switchMap';
 import { Movie } from '../../models/movie';
 import { Movies } from '../../models/movies';
 import { MovieCredits } from '../../models/movieCredits';
-import { MovieImage } from '../../models/movieImage';
 import { MovieVideo } from '../../models/movieVideo';
 import { MovieReviews } from '../../models/movieReviews';
 import { MovieService } from '../../services/movie.service';
@@ -28,14 +27,10 @@ import * as VideoActions from '../../actions/video.actions';
 export class MovieComponent implements OnInit {
   movie: Movie;
   credits: MovieCredits;
-  images: MovieImage;
   videos: MovieVideo;
   reviews: MovieReviews;
   section: String;
   similar: Movies;
-  
-  modalOpen: boolean = false;
-  currentImage: any = 0;
 
   constructor(
     private movieService: MovieService,
@@ -61,11 +56,6 @@ export class MovieComponent implements OnInit {
       .subscribe(movie => {
         this.movie = movie;
         this.titleService.setTitle(movie.title);
-      });
-      
-      this.movieService.getSection(+movieId, 'images')
-      .subscribe(images => {
-        this.images = images.posters.concat(images.backdrops);
       });
       
       this.movieService.getSection(+movieId, 'credits')
