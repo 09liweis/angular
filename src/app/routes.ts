@@ -9,6 +9,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { TvsComponent } from './pages/tvs/tvs.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TvComponent } from './pages/tv/tv.component';
+import { ImagesComponent } from './pages/images/images.component';
 
 export const routes: Routes = [
     {
@@ -54,6 +55,10 @@ export const routes: Routes = [
     {
         path: 'movie/:id',
         component: MovieComponent
+    },
+    {
+        path: 'movie/:id/images',
+        component: ImagesComponent
     },
     {
         path: 'movie/:id/:section',
