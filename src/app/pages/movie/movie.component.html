@@ -1,9 +1,9 @@
 <div class="movie__tabs tab" *ngIf="movie">
-    <a class="tab__link" [routerLink]="['/movie', movie.id]">Home</a>
-    <a class="tab__link" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a>
+    <a class="tab__link" (click)="changeSection('home')" [routerLink]="['/movie', movie.id]">Home</a>
+    <a class="tab__link" (click)="changeSection('reviews')" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a>
     <!--<a class="tab__link" (click)="changeSection('videos')" [routerLink]="['/movie', movie.id, 'videos']">Videos</a>-->
-    <a class="tab__link" [routerLink]="['/movie', movie.id, 'images']">Images</a>
-    <a class="tab__link" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
+    <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a>
+    <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
 </div>
 <div id="movie" *ngIf="movie">
     <div class="backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'"></div>
