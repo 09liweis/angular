@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs/Rx';
 
-import { Movies } from '../models/movies';
-import { Movie } from '../models/movie';
-import { MovieCredits } from '../models/movieCredits';
-import { MovieImage } from '../models/movieImage';
-import { MovieVideo } from '../models/movieVideo';
-import { MovieReviews } from '../models/movieReviews';
-
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
