@@ -24,7 +24,10 @@ export class CastsComponent implements OnInit {
       const type = params['type'];
       this.id = id;
       this.type = type;
-      const endpoint = (type == 'movie') ? 'casts' : 'credits';
+      let endpoint = (type == 'movie') ? 'casts' : 'credits';
+      if (type == 'person') {
+        endpoint = 'combined_credits';
+      }
       this.apiService.getSection(type, +id, endpoint).subscribe(credits => {
         this.credits = credits;
       });
