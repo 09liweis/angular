@@ -13,7 +13,6 @@ import { Cast } from '../../models/person/cast';
 })
 export class PersonPageComponent implements OnInit {
   public person;
-  public images;
   public casts: Array<Cast>;
   public section: String;
   public sections: Array<any> = [
@@ -44,9 +43,6 @@ export class PersonPageComponent implements OnInit {
       this.section = 'home';
     }
     this.route.params.subscribe(params => {
-      this.personService.getSection(+params['id'], 'images').subscribe(images => {
-        this.images = images.profiles;
-      })
       this.personService.getSection(+params['id'], '').subscribe(p => {
         this.person = p;
         this.titleService.setTitle(p.name);
