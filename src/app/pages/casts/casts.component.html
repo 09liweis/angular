@@ -5,8 +5,24 @@
     <a class="tab__link" [routerLink]="['/', type, id, 'casts']">Casts</a>
 </div>
 <div class="container">
-    <div class="columns is-multiline is-mobile" *ngIf="credits">
+    <div class="columns is-multiline is-mobile" *ngIf="credits && type != 'person'">
         <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [person]=cast></person>
         <person class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.crew" [person]=cast></person>
     </div>
 </div>
+<section class="casts container" *ngIf="credits && type == 'person'">
+    <!--<div>Sort by: <a (click)="sortBy('date')">Date</a> <a (click)="sortBy('rate')">Rating</a></div>-->
+    <a class="cast columns is-mobile" *ngFor="let cast of credits.cast" [routerLink]="['/', cast.media_type, cast.id]">
+        <div class="column is-4">
+            <figure>
+                <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
+                <figcaption></figcaption>
+            </figure>
+        </div>
+        <div class="column is-8">
+            <h2 class="cast__title">{{cast.title ? cast.title : cast.name}} - {{cast.vote_average}}</h2>
+            <h3>{{cast.character}}</h3>
+            <div>{{cast.release_date}}</div>
+        </div>
+    </a>
+</section>
