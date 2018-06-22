@@ -13,8 +13,6 @@ import { Cast } from '../../models/person/cast';
 })
 export class PersonPageComponent implements OnInit {
   public person;
-  public casts: Array<Cast>;
-  public section: String;
   public sections: Array<any> = [
     {
       text: 'Home',
@@ -47,9 +45,6 @@ export class PersonPageComponent implements OnInit {
         this.person = p;
         this.titleService.setTitle(p.name);
       })
-      this.personService.getSection(+params['id'], 'combined_credits').subscribe(credits => {
-        this.casts = credits.cast;
-      })
     })
   }
   
@@ -65,9 +60,4 @@ export class PersonPageComponent implements OnInit {
     //   });
     // }
   }
-  
-  changeSection(section: string): void {
-    this.section = section;
-  }
-
 }
