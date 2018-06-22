@@ -13,6 +13,20 @@ export class CastsComponent implements OnInit {
   credits: MovieCredits;
   id: String;
   type: String;
+  tabs: Array<any> = [
+    {
+      link: '',
+      title: 'Home'
+    },
+    {
+      link: 'images',
+      title: 'Images'
+    },
+    {
+      link: 'casts',
+      title: 'Casts'
+    }
+  ];
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
