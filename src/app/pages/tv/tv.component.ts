@@ -11,10 +11,7 @@ import { TvService } from '../../services/tv.service';
   styleUrls: ['./tv.component.scss']
 })
 export class TvComponent implements OnInit {
-  public section: String;
   public tv: Movie;
-  public credits;
-  public images;
   constructor(
     private tvService: TvService,
     private route: ActivatedRoute,
@@ -34,14 +31,6 @@ export class TvComponent implements OnInit {
         this.tv = tv;
         this.titleService.setTitle(tv.name);
       });
-      this.tvService.getSection(+tvId, 'credits').subscribe(credits => {
-        this.credits = credits;
-      });
     })
   }
-  
-  changeSection(section: string): void {
-    this.section = section;
-  }
-
 }
