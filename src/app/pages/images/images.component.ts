@@ -12,6 +12,20 @@ export class ImagesComponent implements OnInit {
   images: MovieImage;
   id: String;
   type: String;
+  tabs: Array<any> = [
+    {
+      link: '',
+      title: 'Home'
+    },
+    {
+      link: 'images',
+      title: 'Images'
+    },
+    {
+      link: 'casts',
+      title: 'Casts'
+    }
+  ];
 
   constructor(
     private apiService: ApiService,
