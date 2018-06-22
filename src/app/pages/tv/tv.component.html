@@ -5,7 +5,7 @@
 </div>
 <div id="tv" *ngIf="tv">
     <div class="backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + tv.backdrop_path + ')'"></div>
-    <section class="tv__home columns" *ngIf="section == 'home'">
+    <section class="tv__home columns">
         <div class="column is-4">
             <image [path]=tv.poster_path [alt]=tv.name [caption]=""></image>
         </div>
