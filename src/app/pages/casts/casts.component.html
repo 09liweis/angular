@@ -1,8 +1,5 @@
 <div class="tab" *ngIf="id">
-    <a class="tab__link" [routerLink]="['/', type, id]">Home</a>
-    <a class="tab__link" [routerLink]="['/', type, id, 'reviews']">Reviews</a>
-    <a class="tab__link" [routerLink]="['/', type, id, 'images']">Images</a>
-    <a class="tab__link" [routerLink]="['/', type, id, 'casts']">Casts</a>
+    <a class="tab__link" [class.is-active]="tab.link == 'casts'" *ngFor="let tab of tabs" [routerLink]="['/', type, id, tab.link]">{{tab.title}}</a>
 </div>
 <div class="container">
     <div class="columns is-multiline is-mobile" *ngIf="credits && type != 'person'">
