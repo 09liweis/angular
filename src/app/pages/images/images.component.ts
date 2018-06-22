@@ -26,7 +26,11 @@ export class ImagesComponent implements OnInit {
       this.type = type;
       window.scrollTo(0, 0);
       this.apiService.getSection(type, +id, 'images').subscribe(images => {
-        this.images = images.posters.concat(images.backdrops);
+        if (type == 'person') {
+          this.images = images.profiles;
+        } else {
+          this.images = images.posters.concat(images.backdrops);
+        }
       });
     })
   }

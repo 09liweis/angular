@@ -16,21 +16,5 @@
             <div *ngIf="person.biography"><span class="label">Bio:</span><p>{{person.biography}}</p></div>
         </div>
     </section>
-    <section class="casts container" *ngIf="casts && section == 'casts'">
-        <div>Sort by: <a (click)="sortBy('date')">Date</a> <a (click)="sortBy('rate')">Rating</a></div>
-        <a class="cast columns is-mobile" *ngFor="let cast of casts" [routerLink]="['/', cast.media_type, cast.id]">
-            <div class="column is-4">
-                <figure>
-                    <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
-                    <figcaption></figcaption>
-                </figure>
-            </div>
-            <div class="column is-8">
-                <h2 class="cast__title">{{cast.title ? cast.title : cast.name}} - {{cast.vote_average}}</h2>
-                <h3>{{cast.character}}</h3>
-                <div>{{cast.release_date}}</div>
-            </div>
-        </a>
-    </section>
     <gallery *ngIf="section == 'images' && images" [images]=images></gallery>
 </div>
