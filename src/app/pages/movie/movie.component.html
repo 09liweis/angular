@@ -1,7 +1,7 @@
 <div class="movie__tabs tab" *ngIf="movie">
     <a class="tab__link" [routerLink]="['/movie', movie.id]">Home</a>
     <a class="tab__link" [routerLink]="['/movie', movie.id, 'reviews']">Reviews</a>
-    <a class="tab__link" (click)="changeSection('images')" [routerLink]="['/movie', movie.id, 'images']">Images</a>
+    <a class="tab__link" [routerLink]="['/movie', movie.id, 'images']">Images</a>
     <a class="tab__link" (click)="changeSection('casts')" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
 </div>
 <div id="movie" *ngIf="movie">
