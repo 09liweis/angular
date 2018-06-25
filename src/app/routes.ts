@@ -46,10 +46,6 @@ export const routes: Routes = [
         component: TvComponent
     },
     {
-        path: 'tv/:id/:section',
-        component: TvComponent
-    },
-    {
         path: 'movies',
         component: MoviesComponent
     },
@@ -66,19 +62,11 @@ export const routes: Routes = [
         component: MovieComponent
     },
     {
-        path: 'movie/:id',
-        component: MovieComponent
-    },
-    {
         path: 'persons/:type',
         component: PersonsComponent
     },
     {
         path: 'person/:id',
-        component: PersonPageComponent
-    },
-    {
-        path: 'person/:id/:section',
         component: PersonPageComponent
     },
 ]
