@@ -71,9 +71,6 @@ export class MovieComponent implements OnInit {
     });
   }
 
-  changeSection(section): void {
-    this.section = section;
-  }
   getYoutubeEmbed(key) {
     return this.sanitizier.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key + '?autoplay=0');
   }
