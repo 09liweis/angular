@@ -31,6 +31,7 @@ export class TvsComponent implements OnInit {
   ) {}
   
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.links = [
       'airing_today',
       'on_the_air',
