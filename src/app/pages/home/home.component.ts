@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.movieService.getList('now_playing', 1).subscribe(movies => {
       const list = movies.results.slice(0, 6);
       movies.results = list;
