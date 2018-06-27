@@ -26,6 +26,10 @@ export const routes: Routes = [
         component: NewsComponent
     },
     {
+        path: 'movie/:id',
+        component: MovieComponent
+    },
+    {
         path: ':type/:id/images',
         component: ImagesComponent
     },
@@ -56,10 +60,6 @@ export const routes: Routes = [
     {
         path: 'movies/:type/page/:page',
         component: MoviesComponent
-    },
-    {
-        path: 'movie/:id',
-        component: MovieComponent
     },
     {
         path: 'persons/:type',
