@@ -29,7 +29,7 @@
                     <img src="https://image.tmdb.org/t/p/w500{{n.logo_path}}" alt="{{n.name}}" />
                 </span>
             </div>
-            <div class="">
+            <div class="" *ngIf="tv.production_companies.length">
                 <span class="label">Production Companies:</span><br/>
                 <span class="tv__company" *ngFor="let c of tv.production_companies">{{c.name}}</span>
             </div>
