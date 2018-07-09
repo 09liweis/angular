@@ -36,9 +36,5 @@ export class PersonsComponent implements OnInit {
     .subscribe((persons: Persons) =>{
       this.persons = persons;
     })
-  
   }
-
-
-  
 }
