@@ -4,17 +4,6 @@
         <div class="menu__button" (click)="toggleMenu()">M</div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a>{{ username }}</a></div>
         <div class="navbar-item" *ngIf="sessionId != ''"><a (click)="logout()">Logout</a></div>
-        <div id="search">
-            <input id="search__input" placeholder="Search Something" type="text" (keyup)="onKey($event)" [(ngModel)]="search" />
-            <div id="search__results" *ngIf="results" [@searchAnimation]="results.length">
-                <a class="search__result" *ngFor="let result of results" (click)="gotoDetail(result)">
-                    <figure class="search__result-poster">
-                        <img src="https://image.tmdb.org/t/p/w500{{result.poster_path}}" />
-                        <figcaption>{{result.title ? result.title : result.name}}</figcaption>
-                    </figure>
-                </a>
-            </div>
-        </div>
     </div>
     <div [ngClass]="{'opened': menuOpen}" id="menu" (click)="toggleMenu()">
         <a class="nav__link" routerLink="/movies/now_playing">Movies</a>
