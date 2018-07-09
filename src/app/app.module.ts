@@ -42,6 +42,7 @@ import { ImageComponent } from './components/image/image.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ImagesComponent } from './pages/images/images.component';
 import { CastsComponent } from './pages/casts/casts.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CastsComponent } from './pages/casts/casts.component';
     ImageComponent,
     GalleryComponent,
     ImagesComponent,
-    CastsComponent
+    CastsComponent,
+    SearchComponent
   ],
   imports: [
     FormsModule,
