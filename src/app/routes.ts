@@ -11,11 +11,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { TvComponent } from './pages/tv/tv.component';
 import { ImagesComponent } from './pages/images/images.component';
 import { CastsComponent } from './pages/casts/casts.component';
+import { SearchComponent } from './pages/search/search.component';
 
 export const routes: Routes = [
     {
         path: '',
         component: HomeComponent
+    },
+    {
+        path: 'search',
+        component: SearchComponent
     },
     {
         path: 'login',
