@@ -25,6 +25,7 @@ export class PersonsComponent implements OnInit {
     private route: ActivatedRoute,) { }
 
   ngOnInit() :void{
+    window.scrollTo(0, 0);
     this.links=[
       'popular'
     ];
