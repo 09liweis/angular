@@ -56,5 +56,4 @@ export class SearchComponent implements OnInit {
     this.search = '';
     this.router.navigate([result.media_type + '/' + result.id]); 
   }
-
 }
