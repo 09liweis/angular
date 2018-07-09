@@ -37,43 +37,6 @@
     width: 100%;
     padding: 0 15px;
 }
-#search {
-    display: inline-block;
-    position: relative;
-    width: 300px;
-}
-#search__results {
-    position: absolute;
-    top: 55px;
-    left: 0;
-    width: 100%;
-}
-.search__result {
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-    transition: all 0.2s ease;
-    color: #ffffff;
-    background-color: #232b31;
-    &:hover {
-        color: #fcb208;
-    }
-}
-.search__result-poster {
-    img {
-        display: inline-block;
-        vertical-align: middle;
-        width: 20%;
-    }
-    figcaption {
-        display: inline-block;
-        vertical-align: middle;
-    }
-}
-#search__input {
-    width: 100%;
-    padding: 10px;
-}
 
 .menu__button {
     position: absolute;
