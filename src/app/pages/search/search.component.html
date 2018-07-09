@@ -1,6 +1,6 @@
 <div id="search">
     <input id="search__input" placeholder="Search Something" type="text" (keyup)="onKey($event)" [(ngModel)]="search" />
-    <div id="search__results" *ngIf="results" [@searchAnimation]="results.length">
+    <div id="search__results" class="columns" *ngIf="results" [@searchAnimation]="results.length">
         <a class="search__result" *ngFor="let result of results" (click)="gotoDetail(result)">
             <figure class="search__result-poster">
                 <img src="https://image.tmdb.org/t/p/w500{{result.poster_path}}" />
