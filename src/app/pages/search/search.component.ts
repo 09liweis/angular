@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import { SearchService } from '../../services/search.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
-})
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./search.component.scss'],
   animations: [
     trigger('searchAnimation', [
       transition('* => *', [
@@ -33,10 +29,31 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 })
 
 export class SearchComponent implements OnInit {
+  results: Array<any> = [];
+  search: string = '';
 
-  constructor() { }
+  constructor(
+    private searchService: SearchService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+  
+  onKey(event: any) {
+    const search = event.target.value;
+    if (search != '') {
+      this.results = [];
+      this.searchService.getResults(search).subscribe(res => {
+        this.results = res.results;
+      });
+    }
+  }
+  
+  gotoDetail(result: any) {
+    this.results = [];
+    this.search = '';
+    this.router.navigate([result.media_type + '/' + result.id]); 
   }
 
 }
