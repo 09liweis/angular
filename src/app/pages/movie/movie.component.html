@@ -6,11 +6,11 @@
 <div id="movie" *ngIf="movie">
     <div class="backdrop" [style.background-image]="'url(https://image.tmdb.org/t/p/w1400_and_h450_bestv2/' + movie.backdrop_path + ')'"></div>
     <div id="movie__header" *ngIf="section == 'home'">
-        <div class="columns">
-            <div class="column is-4">
+        <div class="columns is-mobile is-multiline">
+            <div class="column is-4-mobile is-4-tablet">
                 <image [path]=movie.poster_path [alt]=movie.title [caption]=""></image>
             </div>
-            <div class="column is-8">
+            <div class="column is-8-mobile is-8-tablet">
                 <div class="movie__info">
                     <h1 class="movie__title">{{movie.title}} - {{movie.vote_average | number}}</h1>
                     <div class="movie__date">{{movie.release_date}}</div>
