@@ -4,7 +4,7 @@
         <a class="search__result column is-6 is-4-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let result of results" (click)="gotoDetail(result)">
             <figure class="search__result-poster">
                 <img src="https://image.tmdb.org/t/p/w500{{result.poster_path}}" />
-                <figcaption>{{result.title ? result.title : result.name}}</figcaption>
+                <figcaption class="search__result-title">{{result.title ? result.title : result.name}}</figcaption>
             </figure>
         </a>
     </div>
