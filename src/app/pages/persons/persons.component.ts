@@ -27,7 +27,7 @@ export class PersonsComponent implements OnInit {
   ngOnInit() :void{
     window.scrollTo(0, 0);
     this.links=[
-      'popular'
+      //'popular'
     ];
     this.selectedLink = 'popular';
 
