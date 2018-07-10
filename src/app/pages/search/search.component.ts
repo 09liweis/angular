@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import { Title, DomSanitizer } from '@angular/platform-browser';
 import { SearchService } from '../../services/search.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
@@ -35,10 +36,12 @@ export class SearchComponent implements OnInit {
   constructor(
     private searchService: SearchService,
     private router: Router,
+    private titleService: Title,
   ) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    this.titleService.setTitle('Search');
   }
   
   onKey(event: any) {
