@@ -16,7 +16,7 @@ export class SingleMovieComponent implements OnInit {
   ngOnInit() {
   }
   
-  renderRatingColor(rating) {
+  renderRatingColor(rating: number): String {
     let cssClass = 'movie__rating';
     if (rating >= 7) {
       cssClass += ' green';
