@@ -34,5 +34,8 @@
 <!--</div>-->
 
 <main id="main" class="container fluid">
+    <div *ngFor="let video of videos | async">
+        <h1>{{video.title}}</h1>
+    </div>
     <router-outlet></router-outlet>
 </main>
