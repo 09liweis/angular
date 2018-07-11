@@ -17,6 +17,13 @@ export class SingleMovieComponent implements OnInit {
   }
   
   renderRatingColor(rating) {
-    return 'movie__rating';
+    let cssClass = 'movie__rating';
+    if (rating >= 7) {
+      cssClass += ' green';
+    }
+    if (rating < 6) {
+      cssClass += ' red';
+    }
+    return cssClass;
   }
 }
