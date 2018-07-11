@@ -1,5 +1,5 @@
 <div class="movie__tabs tab" *ngIf="movie">
-    <a class="tab__link" [routerLink]="['/movie', movie.id]">Home</a>
+    <a class="tab__link is-active" [routerLink]="['/movie', movie.id]">Home</a>
     <a class="tab__link" [routerLink]="['/movie', movie.id, 'images']">Images</a>
     <a class="tab__link" [routerLink]="['/movie', movie.id, 'casts']">Casts</a>
 </div>
