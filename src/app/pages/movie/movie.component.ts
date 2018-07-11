@@ -75,12 +75,12 @@ export class MovieComponent implements OnInit {
     return this.sanitizier.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key + '?autoplay=0');
   }
   addVideo() {
-    this.store.dispatch(new VideoActions.AddVideo({
-      id: this.movie.id,
-      title: this.movie.title,
-      type: 'movie',
-      video: ''
-    }));
-    this.store.select('videos').subscribe(data => console.log(data) );
+    // this.store.dispatch(new VideoActions.AddVideo({
+    //   id: this.movie.id,
+    //   title: this.movie.title,
+    //   type: 'movie',
+    //   video: ''
+    // }));
+    // this.store.select('videos').subscribe(data => console.log(data) );
   }
 }
