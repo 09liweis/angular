@@ -16,4 +16,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    &.green {
+        background-color: #43a047;
+    }
+    &.red {
+        background-color: #ef5350;
+    }
 }
