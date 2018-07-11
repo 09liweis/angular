@@ -1,5 +1,5 @@
 <div class="tab" *ngIf="person">
-    <a *ngFor="let s of sections" class="tab__link" [ngClass]="{'is-active': section == s.link}" [routerLink]="['/person', person.id, s.link]">{{s.text}}</a>
+    <a *ngFor="let s of sections" class="tab__link" [ngClass]="{'is-active': s.link == ''}" [routerLink]="['/person', person.id, s.link]">{{s.text}}</a>
 </div>
 <div id="person" *ngIf="person">
     <section class="columns">
