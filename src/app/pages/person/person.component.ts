@@ -16,7 +16,7 @@ export class PersonPageComponent implements OnInit {
   public sections: Array<any> = [
     {
       text: 'Home',
-      link: 'home'
+      link: ''
     },
     {
       text: 'Images',
