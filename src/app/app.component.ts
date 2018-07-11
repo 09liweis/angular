@@ -22,7 +22,7 @@ export class AppComponent {
   sessionId: string = '';
   
   
-  count: Observable<number>;
+  videos: Observable<Video[]>;
   
   menuOpen: Boolean = false;
   
@@ -31,9 +31,8 @@ export class AppComponent {
     
     private store: Store<AppState>
   ) {
-    this.store.select('count').subscribe(state => {
-      console.log(state);
-    });
+    this.videos = store.select('videos');
+    console.log(this.videos);
   }
   
   ngOnInit() {
