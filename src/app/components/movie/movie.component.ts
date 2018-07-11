@@ -15,4 +15,8 @@ export class SingleMovieComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  renderRatingColor(rating) {
+    return 'movie__rating';
+  }
 }
