@@ -38,14 +38,16 @@ export class GalleryComponent implements OnInit {
   }
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key == 'Escape') {
-      this.closeModal();
-    }
-    if (event.key == 'ArrowRight') {
-      this.next();
-    }
-    if (event.key == 'ArrowLeft') {
-      this.previous();
+    switch (event.key) {
+      case 'Escape':
+        this.closeModal();
+        break;
+      case 'ArrowRight':
+        this.next();
+        break;
+      case 'ArrowLeft':
+        this.previous();
+        break;
     }
   }
 }
