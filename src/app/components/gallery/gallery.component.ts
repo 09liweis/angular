@@ -37,7 +37,7 @@ export class GalleryComponent implements OnInit {
     }
   }
   @HostListener('document:keyup', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) { 
+  handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key == 'Escape') {
       this.closeModal();
     }
@@ -48,5 +48,4 @@ export class GalleryComponent implements OnInit {
       this.previous();
     }
   }
-
 }
