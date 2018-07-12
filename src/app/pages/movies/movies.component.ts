@@ -32,6 +32,7 @@ export class MoviesComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.links = [
       'now_playing',
       'popular',
