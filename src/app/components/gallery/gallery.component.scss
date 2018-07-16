@@ -14,11 +14,7 @@
     top: 0;
     left: 0;
     transition: all 0.3 ease;
-    transform: scale(0);
     z-index: 12;
-}
-.imagesModal.open {
-    transform: scale(1);
 }
 .modal__bg {
     background-color: rgba(0, 0, 0, 0.8);
