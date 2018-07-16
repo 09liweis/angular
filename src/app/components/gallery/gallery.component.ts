@@ -18,7 +18,19 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
             style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
           ]))]), {optional: true})
       ])
-    ])
+    ]),
+    trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({transform: 'scale(0.7)', opacity: 0}),
+          animate('150ms', style({transform: 'scale(1)', opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({transform: 'scale(1)', opacity: 1}),
+          animate('150ms', style({transform: 'scale(0.7)', opacity: 0}))
+        ])
+      ]
+    )
   ]
 })
 export class GalleryComponent implements OnInit {
