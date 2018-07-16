@@ -6,7 +6,7 @@
             </div>
         </div>
     </div>
-    <section class="imagesModal {{modalOpen ? 'open' : ''}}">
+    <section [@enterAnimation] class="imagesModal" *ngIf="modalOpen">
         <div class="modal__bg" (click)="closeModal()"></div>
         <img class="currentImage" src="https://image.tmdb.org/t/p/w500{{images[currentImage].file_path}}" />
         <div class="direction previous" (click)="previous()">Previous</div>
