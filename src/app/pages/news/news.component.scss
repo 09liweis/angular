@@ -23,3 +23,8 @@
 .news__content {
     padding: 20px;
 }
+@media screen and (max-width: 375px) {
+    .column {
+        width: 100%;
+    }
+}
