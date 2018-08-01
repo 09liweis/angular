@@ -1,3 +1,4 @@
+<h1 class="news__title">News</h1>
 <div class="columns is-multiline" *ngIf="news" [@newsAnimation]="news.length">
     <a class="column is-12-mobile is-4-tablet is-3-desktop is-3-widescreen is-3-fullhd" *ngFor="let item of news" href="{{item.link}}" target="_blank">
         <div class="news">
