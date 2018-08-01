@@ -35,6 +35,7 @@
 #main {
     margin-top: 100px;
     width: 100%;
+    padding: 0 15px;
 }
 
 .menu__button {
@@ -59,5 +60,11 @@
     transform: translateX(100%);
     &.opened {
         transform: translateX(0);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #main {
+        padding: 0;
     }
 }
