@@ -40,7 +40,7 @@
                         <h6 class="label">Revenue:</h6>
                         <span>{{movie.revenue | currency}}</span>
                     </div>
-                    <div class="data">
+                    <div class="data" *ngIf="movie.imdb_id">
                         <h6 class="label">IMDB:</h6>
                         <a class="imdb" target="_blank" href="https://www.imdb.com/title/{{movie.imdb_id}}">{{movie.imdb_id}}</a>
                     </div>
