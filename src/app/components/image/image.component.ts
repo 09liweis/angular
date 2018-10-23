@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
   @Input() path: String;
-  @Input() alt: String;
+  @Input() alt: String; //Not sure Why I can't remove this property
   @Input() caption: String;
   constructor() { }
 
