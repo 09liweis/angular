@@ -28,7 +28,7 @@
                         <h6 class="label">Original Language:</h6>
                         <span>{{movie.original_language}}</span>
                     </div>
-                    <div class="data">
+                    <div class="data" *ngIf="movie.runtime">
                         <h6 class="label">Runtime:</h6>
                         <span>{{movie.runtime}} mins</span>
                     </div>
