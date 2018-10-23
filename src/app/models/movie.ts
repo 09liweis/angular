@@ -25,4 +25,6 @@ export class Movie {
     spoken_languages: Array<any>;
     status: string;
     tagline: string;
+    first_air_date: string;
+    character: string;
 }
