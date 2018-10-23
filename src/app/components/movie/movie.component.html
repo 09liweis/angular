@@ -1,5 +1,5 @@
 <a class="movie" [routerLink]="['/', list, movie.id]">
-    <image [path]=movie.poster_path [alt]="movie.title ? movie.title : movie.name" [caption]="movie.title ? movie.title : movie.name"></image>
+    <image [path]=movie.poster_path [caption]="movie.title ? movie.title : movie.name"></image>
     <span [ngClass]="renderRatingColor(movie.vote_average)">{{movie.vote_average | number : '1.1-2'}}</span>
     <span class="movie__date">{{movie.release_date ? movie.release_date : movie.first_air_date}}</span>
     <p class="movie__character">{{movie.character}}</p>
