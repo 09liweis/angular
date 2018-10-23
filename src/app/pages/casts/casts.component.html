@@ -10,16 +10,6 @@
 <section class="casts container" *ngIf="credits && type == 'person'">
     <!--<div>Sort by: <a (click)="sortBy('date')">Date</a> <a (click)="sortBy('rate')">Rating</a></div>-->
     <div class="columns is-mobile is-multiline">
-        <a class="cast column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [routerLink]="['/', cast.media_type, cast.id]">
-            <figure>
-                <img src="https://image.tmdb.org/t/p/w500{{cast.poster_path}}" />
-                <figcaption></figcaption>
-            </figure>
-            <div class="">
-                <h2 class="cast__title">{{cast.title ? cast.title : cast.name}} - {{cast.vote_average}}</h2>
-                <h3>{{cast.character}}</h3>
-                <div>{{cast.release_date}}</div>
-            </div>
-        </a>
+        <single-movie class="column is-4-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let cast of credits.cast" [movie]=cast [list]=cast.media_type></single-movie>
     </div>
 </section>
