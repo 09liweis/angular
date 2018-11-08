@@ -1,7 +1,7 @@
 <div class="container">
     <div id="images">
         <div class="columns is-mobile is-multiline" [@galleryAnimation]="images.length">
-            <div class="column is-6-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let image of images; let i = index">
+            <div class="column is-6-mobile is-4-tablet is-2-desktop is-2-widescreen is-2-fullhd" *ngFor="let image of images; let i = index">
                 <img class="image" src="https://image.tmdb.org/t/p/w500{{image.file_path}}" (click)="previewImage(image, i)" />
             </div>
         </div>

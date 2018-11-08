@@ -2,7 +2,7 @@
     <a *ngFor="let s of sections" class="tab__link" [ngClass]="{'is-active': s.link == ''}" [routerLink]="['/person', person.id, s.link]">{{s.text}}</a>
 </div>
 <div id="person" *ngIf="person">
-    <section class="columns">
+    <section class="columns is-mobile is-multiline">
         <div class="column is-4">
             <image [path]="person.profile_path" [alt]="person.name"></image>
         </div>
