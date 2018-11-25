@@ -57,3 +57,13 @@
     color: #ffffff;
     background-color: #fcb209;
 }
+.imdb {
+    background-color: #f5de50;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    &:hover {
+        background-color: #dcc953;
+    }
+}
