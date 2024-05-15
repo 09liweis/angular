@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component,Inject, Injectable, OnInit } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
+import { DOCUMENT } from '@angular/common';
 import * as mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -9,12 +10,17 @@ import * as mapboxgl from 'mapbox-gl';
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
+
 export class AppComponent {
+  constructor(@Inject(DOCUMENT) private document: Document) {}
   title = "world";
   map: mapboxgl.Map | undefined;
   lat: number = 30.2672;
   lng: number = -97.7431;
   ngOnInit() {
+    if (typeof document == "undefined") {
+      return;
+    }
     this.map = new mapboxgl.Map({
       accessToken: 'pk.eyJ1Ijoic2FtbGl3ZWlzZW4iLCJhIjoiY2twZWR6ZzZyMDZtbTJybzJsbWxoYW1sOCJ9.lhs_TcMlrQEiKk6LAGxo2A',
       container: 'main',
