@@ -21,6 +21,14 @@ export class AppComponent {
     if (typeof document == "undefined") {
       return;
     }
+    navigator.geolocation.getCurrentPosition(({coords:{latitude,longitude}})=>{
+      this.lng = longitude;
+      this.lat = latitude;
+      this.initMap();
+    })
+    
+  }
+  initMap() {
     this.map = new mapboxgl.Map({
       accessToken: 'pk.eyJ1Ijoic2FtbGl3ZWlzZW4iLCJhIjoiY2twZWR6ZzZyMDZtbTJybzJsbWxoYW1sOCJ9.lhs_TcMlrQEiKk6LAGxo2A',
       container: 'main',
