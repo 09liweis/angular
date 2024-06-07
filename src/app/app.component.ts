@@ -42,8 +42,7 @@ export class AppComponent {
     });
   }
   async getSearchAddress(search:string) {
-    const sessionToken = '&session_token=0148440e-4094-4d51-88fe-ebe473b01bf6';
-    const SEARCH_API = `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?proximity=ip&access_token=${API_KEY}${sessionToken}&country=CA`;
+    const SEARCH_API = `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?proximity=ip&access_token=${API_KEY}&country=CA`;
     const response = await fetch(SEARCH_API);
     const json = await response.json();
     
